@@ -157,3 +157,6 @@ tr.hit td{background:var(--hl)}
 .nl.dc svg{width:28px;height:auto;display:block}
 .nl.dc:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
 @media (max-width:760px){.nl.dc{padding:4px 2px}.nl.dc svg{width:24px}}
+
+.syslist{margin:.2em 0 1.2em;color:var(--muted);font-size:.95rem;line-height:1.5}
+.syslist strong{color:var(--ink);margin-right:.4em}

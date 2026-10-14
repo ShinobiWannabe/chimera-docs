@@ -27,10 +27,13 @@
   // ---- filter: each .tools block filters the table/cards that follows it ----
   document.querySelectorAll('.tools').forEach(function(t){
     var f=t.querySelector('.gfilter'),cnt=t.querySelector('.count'),nx=t.nextElementSibling;
-    var items=[].slice.call(nx.querySelectorAll('tbody tr, .card'));if(nx.classList.contains('cards'))items=[].slice.call(nx.children);
+    var items=[].slice.call(nx.querySelectorAll('tbody tr, .card')),grids=[];
+    if(nx.classList.contains('cards')){items=[].slice.call(nx.children);grids=[nx];}
+    else if(nx.tagName==='H3'){items=[];for(var e=nx;e;e=e.nextElementSibling){if(e.classList&&e.classList.contains('cards')){grids.push(e);items=items.concat([].slice.call(e.children))}else if(e.tagName==='H2')break}}
     f.addEventListener('input',function(){var q=f.value.toLowerCase(),n=0;
       items.forEach(function(r){var m=!q||r.textContent.toLowerCase().indexOf(q)>-1;r.hidden=!m;if(m)n++});
-      cnt.textContent=n+' of '+items.length});
+      cnt.textContent=n+' of '+items.length;
+      grids.forEach(function(g){var h=g.previousElementSibling;if(h&&h.tagName==='H3')h.hidden=!g.querySelector('.card:not([hidden])')})});
   });
   // ---- sortable tables: numbers numerically, text naturally, blanks last ----
   var coll=new Intl.Collator(undefined,{numeric:true,sensitivity:'base'});
