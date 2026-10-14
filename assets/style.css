@@ -160,3 +160,6 @@ tr.hit td{background:var(--hl)}
 
 .syslist{margin:.2em 0 1.2em;color:var(--muted);font-size:.95rem;line-height:1.5}
 .syslist strong{color:var(--ink);margin-right:.4em}
+
+.ddhead{font-family:ui-monospace,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);padding:8px 11px 4px}
+.ddmenu .ddhead~.ddhead{margin-top:6px;border-top:1px solid var(--hairs);padding-top:10px}
