@@ -173,3 +173,6 @@ tr.hit td{background:var(--hl)}
 .tocbox li{break-inside:avoid}
 .tocbox li a{display:block;padding:3px 0;font-size:.9rem;color:var(--muted);text-decoration:none}
 .tocbox li a:hover,.tocbox li a:focus-visible{color:var(--ink);text-decoration:underline}
+@media (max-width:760px){.nl.dc svg{width:21px}.nav{gap:6px}.navsearch{min-width:0}.navsearch input{min-width:0}.nl.gh{padding-left:4px;padding-right:4px}}
+@media (max-width:420px){.nl.dc svg{width:19px}.nl.dc{padding:4px 1px}.nav{padding:10px 8px}.brand{font-size:.9rem}}
+@media (max-width:600px){.nav{flex-wrap:wrap}.navsearch{order:10;flex:1 1 100%;width:100%}.navsearch input{padding:7px 12px}.brand{margin-right:auto}}
