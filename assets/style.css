@@ -176,3 +176,10 @@ tr.hit td{background:var(--hl)}
 @media (max-width:760px){.nl.dc svg{width:21px}.nav{gap:6px}.navsearch{min-width:0}.navsearch input{min-width:0}.nl.gh{padding-left:4px;padding-right:4px}}
 @media (max-width:420px){.nl.dc svg{width:19px}.nl.dc{padding:4px 1px}.nav{padding:10px 8px}.brand{font-size:.9rem}}
 @media (max-width:600px){.nav{flex-wrap:wrap}.navsearch{order:10;flex:1 1 100%;width:100%}.navsearch input{padding:7px 12px}.brand{margin-right:auto}}
+
+.nl.gh{display:inline-flex;align-items:center;padding:6px 8px;color:var(--ink)}
+.nl.gh svg{width:84px;height:auto;display:block}
+.nl.gh:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+@media (max-width:760px){.nl.gh{padding:4px 2px}.nl.gh svg{width:72px}}
+@media (max-width:420px){.nl.gh svg{width:62px}}
+@media (max-width:600px){.navsearch{flex:1 1 140px;width:auto}.themesw{order:11}}
