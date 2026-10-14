@@ -163,3 +163,13 @@ tr.hit td{background:var(--hl)}
 
 .ddhead{font-family:ui-monospace,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);padding:8px 11px 4px}
 .ddmenu .ddhead~.ddhead{margin-top:6px;border-top:1px solid var(--hairs);padding-top:10px}
+
+.tocgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:14px 0 8px}
+.tocbox{border:2.5px solid var(--hair);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.tocbox.wide{grid-column:1/-1}
+.tocbox.wide ul{columns:3 190px;column-gap:24px}
+.tochead{margin:0;font-weight:700;color:var(--ink);font-size:.95rem}
+.tocbox ul{list-style:none;margin:6px 0 0;padding:0}
+.tocbox li{break-inside:avoid}
+.tocbox li a{display:block;padding:3px 0;font-size:.9rem;color:var(--muted);text-decoration:none}
+.tocbox li a:hover,.tocbox li a:focus-visible{color:var(--ink);text-decoration:underline}
