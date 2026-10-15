@@ -183,3 +183,22 @@ tr.hit td{background:var(--hl)}
 @media (max-width:760px){.nl.gh{padding:4px 2px}.nl.gh svg{width:72px}}
 @media (max-width:420px){.nl.gh svg{width:62px}}
 @media (max-width:600px){.navsearch{flex:1 1 140px;width:auto}.themesw{order:11}}
+
+/* lua tutorial */
+pre.lua{background:var(--panel);border:1.5px solid var(--hair);border-radius:10px;padding:12px 14px;margin:.6em 0 1.2em;overflow-x:auto;font-size:.85rem;line-height:1.5;tab-size:3}
+pre.lua code{background:none;border:0;padding:0;font-size:inherit;word-break:normal;white-space:pre}
+pre.lua .tc{color:#64748b;font-style:italic}
+pre.lua .ts{color:#15803d}
+pre.lua .tk{color:#9333ea;font-weight:600}
+pre.lua .tn{color:#b45309}
+:root[data-theme="dark"] pre.lua .tc{color:#94a3b8}
+:root[data-theme="dark"] pre.lua .ts{color:#86efac}
+:root[data-theme="dark"] pre.lua .tk{color:#d8b4fe}
+:root[data-theme="dark"] pre.lua .tn{color:#fdba74}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) pre.lua .tc{color:#94a3b8}
+:root:not([data-theme="light"]) pre.lua .ts{color:#86efac}
+:root:not([data-theme="light"]) pre.lua .tk{color:#d8b4fe}
+:root:not([data-theme="light"]) pre.lua .tn{color:#fdba74}
+}
+p.callout{border-left:4px solid var(--accent);background:var(--panel);border-radius:6px;padding:10px 14px;margin:.8em 0 1.2em}
