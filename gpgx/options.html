@@ -44,7 +44,7 @@
     <h2 id="settings">Settings</h2>
     <div class="tools"><input class="gfilter" type="search" placeholder="Filter settings…" aria-label="Filter settings"><span class="count" aria-live="polite">22 of 22</span></div>
     <div class="tablewrap"><table class="sortable"><thead><tr><th scope="col" aria-sort="none" data-col="0"><button type="button">Display name<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="1"><button type="button">Allowed values / range<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="2"><button type="button">Default<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="3"><button type="button">Description<span class="arr" aria-hidden="true"></span></button></th></tr></thead><tbody>
-<tr id="opt-console-hardware"><td class=nm><strong>Console Hardware</strong></td><td class=mono>genesis, segacd, sms, gg, sg</td><td class=mono>genesis</td><td class=desc>Which machine this project is: a Mega Drive, a Sega CD, a Master System, a Game Gear or an SG-1000. The choice is saved in the project and recorded in the movie, and the core never guesses it from a file name. The Sega CD takes discs. The others each take their own kind of cartridge.</td></tr>
+<tr id="opt-console-hardware"><td class=nm><strong>Console Hardware</strong></td><td class=mono>genesis, segacd, sms, gg, sg, pico</td><td class=mono>genesis</td><td class=desc>Which machine this project is: a Mega Drive, a Sega CD, a Master System, a Game Gear, an SG-1000 or a Sega Pico. The choice is saved in the project and recorded in the movie, and the core never guesses it from a file name. The Sega CD takes discs. The others each take their own kind of cartridge; a Pico cartridge says so in its header, and the core refuses one that does not match the machine.</td></tr>
 <tr id="opt-control-type-left-port-mega-drive-genesis-sega-cd-mega-cd"><td class=nm><strong>Control Type - Left Port (Mega Drive / Genesis, Sega CD / Mega CD)</strong></td><td class=mono>gamepad, none, mouse, xea1p, activator, teamplayer, wayplay, paddle</td><td class=mono>gamepad</td><td class=desc>What is plugged into the console&#x27;s left controller port. Some games expect a particular device. Only gamepads (also through a multitap) work so far. The other devices are not supported yet.</td></tr>
 <tr id="opt-control-type-right-port-mega-drive-genesis-sega-cd-mega-cd"><td class=nm><strong>Control Type - Right Port (Mega Drive / Genesis, Sega CD / Mega CD)</strong></td><td class=mono>gamepad, none, mouse, xea1p, activator, teamplayer, wayplay, paddle</td><td class=mono>gamepad</td><td class=desc>What is plugged into the console&#x27;s right controller port.</td></tr>
 <tr id="opt-use-six-button-controllers"><td class=nm><strong>Use Six Button Controllers</strong></td><td class=mono>true, false</td><td class=mono>false</td><td class=desc>Uses six-button controllers instead of three-button ones for every ordinary gamepad. Some games do not work properly with six-button controllers.</td></tr>
@@ -68,12 +68,12 @@
 <tr id="opt-game-gear-extended-screen"><td class=nm><strong>Game Gear Extended Screen</strong></td><td class=mono>true, false</td><td class=mono>false</td><td class=desc>Shows the Game Gear&#x27;s extended picture area (256x192).</td></tr>
 </tbody></table></div>
     <h2 id="about-data">About this data</h2>
-    <p>20 settings, 75 rows. There is one row for each machine and each option. A setting for several machines is repeated for each machine. A setting with no rule is listed under every machine as &#x27;Always shown&#x27;. Origin says where the setting came from. 6 machine changes narrow the choices or the default for some machines, and they are applied here.</p>
+    <p>20 settings, 86 rows. There is one row for each machine and each option. A setting for several machines is repeated for each machine. A setting with no rule is listed under every machine as &#x27;Always shown&#x27;. Origin says where the setting came from. 6 machine changes narrow the choices or the default for some machines, and they are applied here.</p>
 
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
-<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-gpgx">chimera-core-gpgx</a> @ <code>387347b</code></footer>
+<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-gpgx">chimera-core-gpgx</a> @ <code>6dab3e2</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
 </body>
