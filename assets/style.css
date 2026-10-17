@@ -201,4 +201,33 @@ pre.lua .tn{color:#b45309}
 :root:not([data-theme="light"]) pre.lua .tk{color:#d8b4fe}
 :root:not([data-theme="light"]) pre.lua .tn{color:#fdba74}
 }
+/* lua reference */
+.fn{border-top:1px solid var(--hair);padding:.7em 0 .2em;scroll-margin-top:70px}
+.fn h4{margin:0 0 .35em;font-size:1rem;display:flex;flex-wrap:wrap;gap:.4em .6em;align-items:baseline}
+.fn h4 code{font-size:.95rem;word-break:break-word}
+.fn p{margin:.3em 0;overflow-wrap:anywhere}
+.fn .plist{margin:.2em 0 .4em;padding-left:1.2em}
+.fn .meta{color:var(--muted);font-size:.92rem}
+.fn pre.lua{margin:.4em 0 .8em}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 9px;border:1.5px solid var(--hair);white-space:nowrap}
+.tag.all{color:#15803d;border-color:#15803d}
+.tag.some{color:#b45309;border-color:#b45309}
+.tag.none{color:#b91c1c;border-color:#b91c1c}
+.tag.dep{color:#64748b;border-color:#64748b}
+:root[data-theme="dark"] .tag.all{color:#86efac;border-color:#86efac}
+:root[data-theme="dark"] .tag.some{color:#fdba74;border-color:#fdba74}
+:root[data-theme="dark"] .tag.none{color:#fca5a5;border-color:#fca5a5}
+:root[data-theme="dark"] .tag.dep{color:#94a3b8;border-color:#94a3b8}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) .tag.all{color:#86efac;border-color:#86efac}
+:root:not([data-theme="light"]) .tag.some{color:#fdba74;border-color:#fdba74}
+:root:not([data-theme="light"]) .tag.none{color:#fca5a5;border-color:#fca5a5}
+:root:not([data-theme="light"]) .tag.dep{color:#94a3b8;border-color:#94a3b8}
+}
+.tablewrap.ref code{white-space:nowrap;word-break:normal}
+.fnindex{line-height:1.9;margin:.4em 0 1em}
+.fnindex a{margin-right:.7em;white-space:nowrap}
+details.cores{margin:.3em 0 .5em}
+details.cores summary{cursor:pointer;color:var(--muted);font-size:.92rem}
+details.cores p{margin:.3em 0}
 p.callout{border-left:4px solid var(--accent);background:var(--panel);border-radius:6px;padding:10px 14px;margin:.8em 0 1.2em}
