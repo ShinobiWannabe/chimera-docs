@@ -44,9 +44,9 @@
     <h2 id="settings">Settings</h2>
     <div class="tools"><input class="gfilter" type="search" placeholder="Filter settings…" aria-label="Filter settings"><span class="count" aria-live="polite">3 of 3</span></div>
     <div class="tablewrap"><table class="sortable"><thead><tr><th scope="col" aria-sort="none" data-col="0"><button type="button">Display name<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="1"><button type="button">Allowed values / range<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="2"><button type="button">Default<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="3"><button type="button">Description<span class="arr" aria-hidden="true"></span></button></th></tr></thead><tbody>
-<tr id="opt-left-port-peripheral"><td class=nm><strong>Left Port Peripheral</strong></td><td class=mono>none, gamepad, fourScore, arkanoidNES, arkanoidFamicom</td><td class=mono>gamepad</td><td class=desc>What is plugged into controller port 1. Changing it changes the machine, so it reboots the core.</td></tr>
-<tr id="opt-right-port-peripheral"><td class=nm><strong>Right Port Peripheral</strong></td><td class=mono>none, gamepad, fourScore</td><td class=mono>none</td><td class=desc>What is plugged into controller port 2. The Four Score in this port is the second half of a four-player adapter.</td></tr>
-<tr id="opt-visible-sprites"><td class=nm><strong>Visible Sprites</strong></td><td class=mono>0 to 64</td><td class=mono>8</td><td class=desc>Sprites drawn per scanline. 8 is what the console does (and what makes sprites flicker); 64 draws them all. Presentation only - it does not affect emulation, and is not recorded in movies.</td></tr>
+<tr id="opt-left-port-peripheral"><td class=nm><strong>Left Port Peripheral</strong></td><td class=mono>none, gamepad, fourScore, arkanoidNES, arkanoidFamicom</td><td class=mono>gamepad</td><td class=desc>What is plugged into controller port 1. It is part of the machine, so changing it restarts the core.</td></tr>
+<tr id="opt-right-port-peripheral"><td class=nm><strong>Right Port Peripheral</strong></td><td class=mono>none, gamepad, fourScore</td><td class=mono>none</td><td class=desc>What is plugged into controller port 2. The Four Score here is the second half of a four-player adapter.</td></tr>
+<tr id="opt-visible-sprites"><td class=nm><strong>Visible Sprites</strong></td><td class=mono>0 to 64</td><td class=mono>8</td><td class=desc>How many sprites are drawn on one line of the picture. 8 is what the console does, and it is why sprites flicker. 64 draws them all. It changes the picture only. The game runs the same, and the setting is not saved in movies.</td></tr>
 </tbody></table></div>
     <h2 id="about-data">About this data</h2>
     <p>3 settings, 3 rows. There is one row for each machine and each option. A setting for several machines is repeated for each machine. A setting with no rule is listed under every machine as &#x27;Always shown&#x27;. Origin says where the setting came from.</p>
@@ -54,7 +54,7 @@
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
-<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-quickernes">chimera-core-quickernes</a> @ <code>9fbfac3</code></footer>
+<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-quickernes">chimera-core-quickernes</a> @ <code>abfaccd</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
 </body>

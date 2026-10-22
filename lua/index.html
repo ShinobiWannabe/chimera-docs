@@ -275,6 +275,15 @@ console.log(sum(<span class="tn">1</span>, <span class="tn">2</span>, <span clas
 <span class="tk">end</span>)
 console.log(ok, message)</code></pre>
 <p>The style guide asks that a failure which can be expected, such as a missing file, returns <code>nil</code> and a message. A mistake in how a function is used raises an error.</p>
+<p>The message that <code>pcall</code> gives back says what went wrong. Chimera uses this when it refuses a call. For example, a core that cannot run a Lua function in the middle of a frame refuses <code>event.on_bus_read</code>, and the message gives the reason. Without <code>pcall</code>, the error stops the script and the Lua Console prints the reason once on its first line. Guarding the call lets the script go on.</p>
+<pre class="lua"><code><span class="tk">local</span> <span class="tk">function</span> on_read(address, value, flags)
+   console.log(address)
+<span class="tk">end</span>
+
+<span class="tk">local</span> ok, message = pcall(event.on_bus_read, on_read, <span class="tn">0x200</span>)
+<span class="tk">if</span> <span class="tk">not</span> ok <span class="tk">then</span>
+   console.log(message)
+<span class="tk">end</span></code></pre>
 <h2 id="advanced">Metatables, coroutines and garbage collection (manual 2.4 to 2.6)</h2>
 <p>These are rarely needed in game scripts, so each gets only a short note.</p>
 <ul>

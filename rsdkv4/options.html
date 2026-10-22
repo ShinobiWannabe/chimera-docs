@@ -42,7 +42,7 @@
     <div class="eyebrow">rsdkv4</div><h1>Options</h1>
     <p class="lead">Settings the rsdkv4 core exposes in the New Project wizard. Click a column heading to sort. Click again to reverse. Settings that are identical on every machine are listed once.</p>
     <h2 id="settings">Settings</h2>
-    <div class="tools"><input class="gfilter" type="search" placeholder="Filter settings…" aria-label="Filter settings"><span class="count" aria-live="polite">6 of 6</span></div>
+    <div class="tools"><input class="gfilter" type="search" placeholder="Filter settings…" aria-label="Filter settings"><span class="count" aria-live="polite">7 of 7</span></div>
     <div class="tablewrap"><table class="sortable"><thead><tr><th scope="col" aria-sort="none" data-col="0"><button type="button">Display name<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="1"><button type="button">Allowed values / range<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="2"><button type="button">Default<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="3"><button type="button">Description<span class="arr" aria-hidden="true"></span></button></th></tr></thead><tbody>
 <tr id="opt-game"><td class=nm><strong>Game</strong></td><td class=mono>sonic1, sonic2</td><td class=mono>sonic1</td><td class=desc>Which game this project plays (it is the System in Chimera): &quot;sonic1&quot; is Sonic the Hedgehog, &quot;sonic2&quot; Sonic the Hedgehog 2, each the 2013 remaster. The game decides which data file the project needs.</td></tr>
 <tr id="opt-language"><td class=nm><strong>Language</strong></td><td class=mono>en, fr, it, de, es, ja, pt, ru, ko, zh, zhs</td><td class=mono>en</td><td class=desc>The language of the menus and the game&#x27;s texts (the engine&#x27;s Language setting): English, French, Italian, German, Spanish, Japanese, Portuguese, Russian, Korean, Chinese (traditional) or Chinese (simplified). The game reads it, so a movie records it.</td></tr>
@@ -50,14 +50,15 @@
 <tr id="opt-skip-start-menu"><td class=nm><strong>Skip Start Menu</strong></td><td class=mono>true, false</td><td class=mono>false</td><td class=desc>Starts the game itself at power-on, without the remaster&#x27;s start menu (the engine&#x27;s SkipStartMenu setting): no SEGA and Christian Whitehead screens, no 3D title, no save select. Off by default, as upstream. It changes what the first frames are, so a movie records it.</td></tr>
 <tr id="opt-render-scale"><td class=nm><strong>Render Scale</strong></td><td class=mono>1 to 2</td><td class=mono>1</td><td class=desc>Draws the picture at once (1) or twice (2) the screen&#x27;s size each way (the engine&#x27;s WindowScale setting). At 2 the menus, the 3D title and the touch controls are sharper; the stages are the same pixels made bigger. It changes the picture only.</td></tr>
 <tr id="opt-random-seed"><td class=nm><strong>Random Seed</strong></td><td class=mono>0 to 2147483647</td><td class=mono>0</td><td class=desc>The number the engine&#x27;s random numbers start from. The engine takes it from the clock when it starts (time()); here it is this number, so a movie plays the same every time. A movie records it.</td></tr>
+<tr id="opt-developer-menu"><td class=nm><strong>Developer Menu</strong></td><td class=mono>true, false</td><td class=mono>false</td><td class=desc>Turns on the engine&#x27;s developer menu (DevMenu in its settings file), as the decompilation&#x27;s settings.ini does, and adds a Dev Menu control that opens it (Escape on a PC keyboard). From the menu a stage can be chosen directly. It changes what the game does, so it is part of the project.</td></tr>
 </tbody></table></div>
     <h2 id="about-data">About this data</h2>
-    <p>6 settings, 12 rows. There is one row for each machine and each option. A setting for several machines is repeated for each machine. A setting with no rule is listed under every machine as &#x27;Always shown&#x27;. Origin says where the setting came from.</p>
+    <p>7 settings, 14 rows. There is one row for each machine and each option. A setting for several machines is repeated for each machine. A setting with no rule is listed under every machine as &#x27;Always shown&#x27;. Origin says where the setting came from.</p>
 
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
-<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-rsdkv4">chimera-core-rsdkv4</a> @ <code>af0845e</code></footer>
+<footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-rsdkv4">chimera-core-rsdkv4</a> @ <code>f46f84d</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
 </body>

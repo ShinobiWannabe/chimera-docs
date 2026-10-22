@@ -447,25 +447,46 @@ apply_plan(<span class="ts">"plan.txt"</span>)</code></pre>
 export_movie(<span class="ts">"movie-input.txt"</span>)</code></pre>
 <h2 id="events">Events</h2>
 <p>An <strong>event</strong> function tells Chimera to call your function when something happens. Each one returns an identifier, which you can pass to <code>event.unregisterbyid</code> to stop it. Give a name as the last argument to find it in the Registered Functions list of the Lua Console.</p>
-<div class="tablewrap"><table><thead><tr><th>Function</th><th>Your function runs</th><th>When to use it</th></tr></thead><tbody>
-<tr><td class="mono"><code>event.onframestart(fn)</code>, <code>event.onframeend(fn)</code></td><td class="desc">At the start or the end of every frame.</td><td class="desc">Per frame jobs with no loop.</td></tr>
-<tr><td class="mono"><code>event.oninputpoll(fn)</code></td><td class="desc">Each time the core reads the controller.</td><td class="desc">Changing input at the last moment.</td></tr>
-<tr><td class="mono"><code>event.onmemoryread(fn, address)</code>, <code>event.onmemorywrite(fn, address)</code></td><td class="desc">Just before the core reads or writes an address.</td><td class="desc">Finding the code that touches a value.</td></tr>
-<tr><td class="mono"><code>event.onmemoryexecute(fn, address)</code></td><td class="desc">Just before the core runs the code at an address.</td><td class="desc">Following what the game does at one point.</td></tr>
-<tr><td class="mono"><code>event.onexit(fn)</code></td><td class="desc">After the script stops.</td><td class="desc">Closing files.</td></tr>
+<div class="tablewrap"><table><thead><tr><th>Function</th><th>Your function runs</th><th>Where it works</th></tr></thead><tbody>
+<tr><td class="mono"><code>event.onframestart(fn)</code>, <code>event.onframeend(fn)</code></td><td class="desc">At the start or the end of every frame.</td><td class="desc">Every core.</td></tr>
+<tr><td class="mono"><code>event.oninputpoll(fn)</code></td><td class="desc">Each time the core reads the controller, partway through the frame.</td><td class="desc">Only 8 cores. Any other core refuses it with an error.</td></tr>
+<tr><td class="mono"><code>event.on_bus_*</code></td><td class="desc">Just before the core reads, writes or runs an address. The four are on_bus_read, on_bus_write, on_bus_exec and on_bus_exec_any.</td><td class="desc">No core. Every core refuses them with an error.</td></tr>
+<tr><td class="mono"><code>event.onmemory*</code></td><td class="desc">The older names of the four events above.</td><td class="desc">No core.</td></tr>
+<tr><td class="mono"><code>event.onexit(fn)</code></td><td class="desc">After the script stops.</td><td class="desc">Every core.</td></tr>
 </tbody></table></div>
+<p>A core runs in a sandbox that Chimera calls once for each frame. It cannot stop partway through a frame to run a Lua function unless it was written to call back into Chimera. The memory events are kept so that scripts written for other emulators still load, and the Lua Functions list in Chimera marks them Not available. To watch an address in Chimera, read it on every frame with <code>event.onframeend</code> or <code>event.onframestart</code> and compare it with the last value.</p>
 <pre class="lua"><code><span class="tk">local</span> lives_address = <span class="tn">0x0359</span>
+<span class="tk">local</span> last_lives = mainmemory.read_u8(lives_address)
 
-<span class="tk">local</span> <span class="tk">function</span> on_lives_write(address, value)
-   console.log(<span class="ts">"Lives written at frame "</span> .. emu.framecount() .. <span class="ts">" value "</span> .. value)
+<span class="tk">local</span> <span class="tk">function</span> on_frame_end()
+   <span class="tk">local</span> lives = mainmemory.read_u8(lives_address)
+   <span class="tk">if</span> lives ~= last_lives <span class="tk">then</span>
+      console.log(<span class="ts">"Lives went from "</span> .. last_lives .. <span class="ts">" to "</span> .. lives .. <span class="ts">" at frame "</span> .. emu.framecount())
+      last_lives = lives
+   <span class="tk">end</span>
 <span class="tk">end</span>
 
-<span class="tk">local</span> callback_id = event.onmemorywrite(on_lives_write, lives_address, <span class="ts">"lives watch"</span>)
+<span class="tk">local</span> callback_id = event.onframeend(on_frame_end, <span class="ts">"lives watch"</span>)
 
 event.onexit(<span class="tk">function</span>()
    event.unregisterbyid(callback_id)
 <span class="tk">end</span>)</code></pre>
-<p class="callout">Memory callbacks run very often. Keep the function short, and use <code>event.unregisterbyid</code> to stop them when they are not needed.</p>
+<p><code>event.oninputpoll</code> needs a core that reports its reads of the controls, which are Gambatte, Genesis Plus GX, quickerNES, QuickerNesHawk, Snes9x, Stella, TIC-80, Uzem. Guard the call with <code>pcall</code> so that the script goes on when a core refuses it. The function runs inside the frame, so it may read memory but must not advance the emulation, save a state or load one.</p>
+<pre class="lua"><code><span class="tk">local</span> polls = <span class="tn">0</span>
+
+<span class="tk">local</span> <span class="tk">function</span> on_input_poll()
+   polls = polls + <span class="tn">1</span>
+<span class="tk">end</span>
+
+<span class="tk">local</span> ok, message = pcall(event.oninputpoll, on_input_poll, <span class="ts">"input reads"</span>)
+<span class="tk">if</span> <span class="tk">not</span> ok <span class="tk">then</span>
+   console.log(message)
+<span class="tk">end</span>
+
+event.onframeend(<span class="tk">function</span>()
+   gui.text(<span class="tn">10</span>, <span class="tn">10</span>, <span class="ts">"Input reads so far "</span> .. polls)
+<span class="tk">end</span>)</code></pre>
+<p class="callout">The function runs more than once in a frame on some cores, as many times as the game reads its controls. Keep it short, and use <code>event.unregisterbyid</code> to stop it when it is not needed.</p>
 <h2 id="example">Putting it together</h2>
 <p>This script shows a small display, holds right, and jumps when you press the space bar. It is the old Common Functions script reduced to its useful parts and written for Chimera. Change the addresses for your game.</p>
 <pre class="lua"><code><span class="tk">local</span> LIVES_ADDRESS = <span class="tn">0x0359</span>

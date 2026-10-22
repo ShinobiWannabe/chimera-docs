@@ -231,3 +231,7 @@ details.cores{margin:.3em 0 .5em}
 details.cores summary{cursor:pointer;color:var(--muted);font-size:.92rem}
 details.cores p{margin:.3em 0}
 p.callout{border-left:4px solid var(--accent);background:var(--panel);border-radius:6px;padding:10px 14px;margin:.8em 0 1.2em}
+/* controller picture */
+figure.ctrlpic{margin:.4em 0 1.2em;padding:12px;background:#fff;border:1.5px solid var(--hair);border-radius:10px;text-align:center}
+figure.ctrlpic img{display:block;margin:0 auto;max-width:100%;height:auto;max-height:300px;width:auto}
+figure.ctrlpic figcaption{margin-top:.6em;color:#475569;font-size:.9rem;text-align:left}
