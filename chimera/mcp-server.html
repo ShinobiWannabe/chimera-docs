@@ -55,7 +55,7 @@
 <h2 id="what">What an MCP server is</h2>
 <p>An <strong>AI agent</strong> is a program that uses an AI model to carry out a task for you. Claude Code, Claude Desktop and Cursor are agent programs. <strong>MCP</strong> stands for Model Context Protocol. It is an open standard that lets an agent program use another program. A program that follows it is an <strong>MCP server</strong>.</p>
 <p>An MCP server publishes a list of <strong>tools</strong>. Each tool has a name, a short description and named inputs. The agent program reads the list. When the model wants something done, it picks a tool and fills in the inputs. The server runs the tool and sends back an answer. An answer can be text or a picture.</p>
-<p>Chimera has an MCP server. It lets an agent look at the project you have open. It can read the movie input, the picture on the screen, the memory and the processor registers. It can search memory for a value. If you allow it, it can also edit the input, move the playback position, save branches, add markers and write to memory. Everything it does shows in TAStudio as it happens.</p>
+<p>Chimera has an MCP server. It lets an agent look at the project you have open. It can read the movie input, the picture on the screen, the memory and the processor registers. It can search memory for a value. If you allow it, it can also edit the input, move the playback position, save branches, add markers, write to memory, make, save and close projects, and run Lua. Everything it does shows in TAStudio as it happens.</p>
 <p>The server runs only on your computer. Chimera has no network code, and the server uses none. It is off until you start it, and you can stop it at any time.</p>
 <h2 id="used-for">What it is used for</h2>
 <ul>
@@ -64,16 +64,18 @@
 <li>Reviewing a movie. The agent reads the input and looks at screenshots, then tells you what it sees.</li>
 <li>Trying an edit. The agent changes the input, plays it, looks at the result, and undoes it if it does not work.</li>
 <li>Doing the same job on many frames. A slow job done by hand, such as clearing a button over a long stretch, takes one call.</li>
+<li>Running a whole job with no clicking. The agent makes a project for a game, plays a schedule of button presses, takes pictures at set times, saves the project and closes it.</li>
+<li>Using Lua. The agent lists the Lua functions of Chimera and runs Lua or a script file in the Lua Console.</li>
 <li>Working with no window. The agent opens a game on a machine of its own, plays a movie and saves the result as a project.</li>
 </ul>
 <h2 id="needs">What you need</h2>
 <div class="tablewrap"><table><thead><tr><th>You need</th><th>Why</th></tr></thead><tbody>
 <tr><td class="nm"><strong>A Chimera build with chimera-mcp</strong></td><td class="desc">chimera-mcp is the small program the agent starts. The Linux and Windows release bundles carry it in the <code>dll</code> folder, beside <code>chimera-run</code>, the command-line program that runs a project without a window.</td></tr>
 <tr><td class="nm"><strong>An agent program that can run MCP servers on your computer</strong></td><td class="desc">The Tools menu gives you the command for Claude Code. Other programs, such as Claude Desktop and Cursor, run the same file as an MCP server that talks over standard input and output. Look in their own help for where a server is added.</td></tr>
-<tr><td class="nm"><strong>A project open in Chimera</strong></td><td class="desc">The server works on the project that is open. With none open, most tools answer that no project is open.</td></tr>
+<tr><td class="nm"><strong>A project open in Chimera</strong></td><td class="desc">The server works on the project that is open. With none open, most tools answer that no project is open. With changes allowed, <code>create_project</code> can make one.</td></tr>
 <tr><td class="nm"><strong>TAStudio open</strong></td><td class="desc">TAStudio opens by itself with a project, so this is usual. The tools that move the playback position, save branches or edit the movie go through TAStudio so you can see and undo them. See <a href="../tastudio/index.html">TAStudio Quickstart</a>.</td></tr>
 <tr><td class="nm"><strong>The server started</strong></td><td class="desc">Choose Tools, then MCP Server..., and press Start. It is stopped every time Chimera starts.</td></tr>
-<tr><td class="nm"><strong>Allow changes ticked, for editing only</strong></td><td class="desc">Looking needs nothing more. Editing and writing need the tick box in the same window. It is off every time the server starts.</td></tr>
+<tr><td class="nm"><strong>Allow changes ticked, for editing only</strong></td><td class="desc">Looking needs nothing more. Editing, writing, saving, closing and running Lua need the tick box in the same window. Chimera remembers the tick and applies it every time the server starts. It is off until you tick it the first time.</td></tr>
 </tbody></table></div>
 <p>You do not need an account, a network connection or an open port for Chimera itself. The agent program may need an account with its own provider. That is between you and that program.</p>
 <h2 id="connect">How the agent reaches Chimera</h2>
@@ -100,18 +102,18 @@
 <li>Open or create a project in Chimera. TAStudio opens with it.</li>
 <li>Open the Tools menu, choose MCP Server... and press Start. The window says the server is started and that no agent is connected. The title bar of the Chimera window begins with MCP server started, and the icon of the menu item carries a green dot. Both stay until you stop the server, so it cannot be left on without you noticing.</li>
 <li>Start your agent program and ask it to do something with Chimera. Its first call is usually <code>status</code>. When it connects, the window shows the name and version of the agent program.</li>
-<li>To let the agent make changes, tick Allow the agent to make changes. Leave it unticked when you only want it to look.</li>
+<li>To let the agent make changes, tick Allow the agent to make changes. Leave it unticked when you only want it to look. Chimera remembers the tick, so it is still ticked the next time you start the server.</li>
 <li>Watch the log in the window. Each call is one line. Press Save Log... if you want a copy as a text file.</li>
 <li>When you are done, press Stop. Stopping ends any call that is running with an error to the agent. Closing the window does not stop the server. Closing Chimera does.</li>
 </ol>
 <p>You can ask for things in plain words. For example, ask the agent to find the address that holds the number of lives, or to find the frame where the boss health first reaches zero, or to look at the first 600 frames and describe where time is lost.</p>
-<p>For runs where nobody clicks, Chimera accepts two launch options. <code>--mcp-server</code> starts the server at launch, as pressing Start does. <code>--mcp-allow-changes</code> next to it ticks the box. Nothing else starts the server or allows changes, and no setting in a config file can.</p>
+<p>For runs where nobody clicks, Chimera accepts two launch options. <code>--mcp-server</code> starts the server at launch, as pressing Start does. <code>--mcp-allow-changes</code> next to it allows changes for that run only and does not remember it. Nothing else starts the server, and only your own tick in the window is remembered.</p>
 <h2 id="window">The MCP Server window</h2>
 <p>It stays open beside the Chimera window and updates a few times a second.</p>
 <div class="tablewrap"><table><thead><tr><th>Part</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>State line</strong></td><td class="desc">Says Stopped, or Not started with the reason, or Started with no agent connected, or Started with the name and version of the connected agent program.</td></tr>
 <tr><td class="nm"><strong>Start / Stop</strong></td><td class="desc">Starts the server when it is stopped and stops it when it is started. The server is always stopped when Chimera starts. Its state is never remembered.</td></tr>
-<tr><td class="nm"><strong>Allow the agent to make changes</strong></td><td class="desc">A tick box that can be ticked only while the server is started. It is off at every start. While it is off, every tool that changes anything is refused.</td></tr>
+<tr><td class="nm"><strong>Allow the agent to make changes</strong></td><td class="desc">A tick box that Chimera remembers. It is applied every time the server starts. While the server is stopped, it shows what the next start will apply. While it is off, every tool that changes anything is refused.</td></tr>
 <tr><td class="nm"><strong>Set-up command and Copy</strong></td><td class="desc">The command that adds Chimera to Claude Code, with the true path of <code>chimera-mcp</code> on your computer.</td></tr>
 <tr><td class="nm"><strong>Log</strong></td><td class="desc">One line for each call, with the time, the tool, the inputs (shortened), the answer or the refusal (shortened) and how long it took. Other lines tell you when the server started or stopped, when an agent connected or left, and when changes were allowed or disallowed. Chimera keeps the last 5000 lines.</td></tr>
 <tr><td class="nm"><strong>Save Log...</strong></td><td class="desc">Writes the log as shown to a text file.</td></tr>
@@ -122,20 +124,24 @@
 <li><strong>Looking is the default.</strong> With the tick box off, every tool that changes the movie or the machine is refused. The refusal says which tick box allows it.</li>
 <li><strong>Your work is kept first.</strong> Before the agent's first change after the server starts, Chimera saves a branch of the movie as it is, with a note that says it was made before the agent's changes and gives the date and time. If the branch cannot be saved, nothing is changed. Every change is then refused until you stop and start the server again. The engine holds this rule, so no path through the window skips it.</li>
 <li><strong>Every edit is an ordinary TAStudio edit.</strong> It shows in the Piano Roll and is a step in the undo history, named for what the agent did, such as Agent, set input, frames 10 to 20. You can undo it as you undo your own edits.</li>
-<li><strong>The agent cannot save, open or close projects</strong> in the window, and it has no access to your files there. Saving stays your act.</li>
+<li><strong>Saving and closing are behind the tick box.</strong> With changes allowed, the agent can save the project to a file it names, close it and make a new one. Nothing asks. A file that is already there is replaced only if the agent says <code>overwrite</code>. Changes that are not saved are lost only if the agent says <code>discard_unsaved</code>. No branch is saved before these tools, because they change no input.</li>
+<li><strong>Running Lua needs the tick too.</strong> Lua can do anything a script can, so <code>run_lua</code> and <code>lua_script</code> are refused until you allow changes.</li>
 <li><strong>Memory writes are reported.</strong> A movie cannot reproduce a write to memory. From the first write on, the <code>status</code> tool says that memory was written and gives the frame, and the log shows it. This lasts until the server is stopped.</li>
 <li><strong>Calls run between frames.</strong> A call runs in the part of Chimera that runs the machine, after one frame and before the next, and never beside it. If a dialog is open in Chimera, the call waits. After 30 seconds the agent is told Chimera is busy and the call is not run. A call that waited more than 25 seconds is dropped, so a call the agent was told had failed is never run later. The log marks it as not run.</li>
 <li><strong>One agent at a time.</strong> The server serves one agent program, and one Chimera window.</li>
 </ul>
 <h2 id="can-do">What it can do</h2>
 <h3 id="with-chimera">With Chimera</h3>
-<p>The <code>status</code> tool is the agent's first look. It gives the project name, the project file, whether the project has unsaved changes and whether playback is paused. It also gives the core and the system, the frame the machine is on, the length of the movie, the size of the picture, the frame rate, whether the core has stopped, whether changes are allowed and whether memory was written.</p>
+<p>The <code>status</code> tool is the agent's first look. It gives the project name, the project file, whether the project has unsaved changes and whether playback is paused. It also gives the core and the system, the frame the machine is on, the length of the movie, the size of the picture, the frame rate, whether the core has stopped, whether changes are allowed and whether memory was written. It also gives the names of the controls plugged in. In the window it also gives how fast the machine runs, the files of the project with their paths, and each firmware file in use with its path and where it was found. That is the project's own copy, a file chosen for the core before, or the Firmware folder.</p>
 <ul>
 <li>It can take a picture of the current frame as a PNG, scaled down to the width it asks for.</li>
 <li>It can read memory and registers at the frame the machine is on, and write them when changes are allowed.</li>
 <li>It can read the movie input as text, and change it when changes are allowed.</li>
 <li>It can start a RAM search of its own, which is separate from the <a href="../chimera/ram-search.html">RAM Search</a> window.</li>
-<li>It cannot open, save or close projects in the window, load a core, change settings, press hotkeys, run Lua scripts, record sound or encode video. It cannot be used by more than one agent at once or from another computer.</li>
+<li>It can pause and resume the machine, make a project with <code>create_project</code>, save it and close it.</li>
+<li>It can take a series of pictures on a schedule of the machine's own frames, and press buttons on a schedule.</li>
+<li>It can run Lua in the Lua Console. See <a href="#with-lua">With Lua</a>.</li>
+<li>It cannot change the settings of Chimera itself, press hotkeys, record sound or encode video. It cannot be used by more than one agent at once or from another computer.</li>
 </ul>
 <h3 id="with-cores">With cores</h3>
 <p>No tool names a system, a control or a core. Every name comes from the core that is open, so the same tools work with every core on this site.</p>
@@ -156,7 +162,15 @@
 <tr><td class="nm"><strong>Markers</strong></td><td class="desc">List the markers and add one with a text. The three markers every movie has of its own are shown as not placed by a person. See <a href="../tastudio/markers.html">Markers</a>.</td></tr>
 <tr><td class="nm"><strong>Undo history</strong></td><td class="desc">Undo the last step, whoever made it. This is the same as Edit, then Undo in TAStudio.</td></tr>
 </tbody></table></div>
-<p>It cannot record new input by playing, use Lua, or change TAStudio settings. <code>advance_until</code> plays only the input the movie already has and never past its end, so it adds no frames.</p>
+<p>It cannot record new input by playing or change TAStudio settings. <code>advance_until</code> plays only the input the movie already has and never past its end, so it adds no frames.</p>
+<h3 id="with-lua">With Lua</h3>
+<p>Every Lua function of Chimera is open to the agent, in the window, where Lua runs. The windowless server has no Lua. The agent works in the <a href="../chimera/lua-console.html">Lua Console</a>, so you see what it runs and what it prints. The functions are listed on the <a href="../lua/lua-references.html">Lua References</a> page.</p>
+<ul>
+<li><code>lua_functions</code> lists the functions as the Lua Console documents them. The agent can keep one library, such as <code>emu</code> or <code>memory</code>, or search by words.</li>
+<li><code>run_lua</code> runs a piece of Lua the way a line typed into the console runs. It answers what the code returned and what it printed. A table comes back as a list or an object.</li>
+<li><code>lua_script</code> starts a script file in the console, as File, then Open Script does, and stops it again. It answers whether the script runs and what the console printed since the agent last asked.</li>
+</ul>
+<p><code>run_lua</code> runs as a script does, in a coroutine of its own. The functions that wait for a frame, such as <code>emu.frameadvance</code> and <code>emu.yield</code>, are refused there, as they are on the console's input line. A script file can use them, so use <code>lua_script</code> for that.</p>
 <h2 id="tools">The tools</h2>
 <p>The list is the same for every agent program. Each tool states whether it only reads. A program that follows MCP can use that to ask you less often. The limits below are the ones the server enforces. A call that goes past a limit is refused with a sentence that says what is allowed.</p>
 <h3 id="tools-look">Tools that look</h3>
@@ -164,7 +178,7 @@
 <tr><td class="nm"><strong><code>status</code></strong></td><td class="desc">The state of Chimera and the machine, as described above.</td></tr>
 <tr><td class="nm"><strong><code>controls</code></strong></td><td class="desc">The buttons and axes by name, the rest value of each axis, and the key that names the columns of a movie line.</td></tr>
 <tr><td class="nm"><strong><code>get_input</code></strong></td><td class="desc">The movie input for a range of frames, one line a frame, as the movie file holds it. In a line, groups are separated by a vertical bar, a dot is a button not pressed, a letter is a button pressed and an axis is a number. <strong>Limits.</strong> From frame 0 or more. Up to 1000 frames a call, 100 when left out.</td></tr>
-<tr><td class="nm"><strong><code>screenshot</code></strong></td><td class="desc">The picture of the current frame as a PNG, with the frame number and the picture size. A large picture is shrunk by a whole-number step so that it is no wider than the width asked for. <strong>Limits.</strong> Width 32 to 4096, 800 when left out.</td></tr>
+<tr><td class="nm"><strong><code>screenshot</code></strong></td><td class="desc">The picture of the current frame as a PNG, with the frame number and the picture size and whether the picture is blank. It gives the commonest colour and how much of the picture that colour covers. One colour over 99% or more counts as blank. A large picture is shrunk by a whole-number step so that it is no wider than the width asked for. <strong>Limits.</strong> Width 32 to 4096, 800 when left out.</td></tr>
 <tr><td class="nm"><strong><code>list_memory</code></strong></td><td class="desc">The domains and buses, each with its size and whether it can be written.</td></tr>
 <tr><td class="nm"><strong><code>read_memory</code></strong></td><td class="desc">Values at an address in a domain or bus, as 8, 16 or 32 bit numbers, signed or not, in little or big byte order. It also returns the raw bytes in hex. <strong>Limits.</strong> Up to 4096 bytes a call.</td></tr>
 <tr><td class="nm"><strong><code>registers</code></strong></td><td class="desc">The processor registers with their sizes and values, and the executed cycles when the core counts them. <strong>Limits.</strong> Only for a core that gives registers.</td></tr>
@@ -172,6 +186,11 @@
 <tr><td class="nm"><strong><code>get_property</code></strong></td><td class="desc">One named value as a person reads it.</td></tr>
 <tr><td class="nm"><strong><code>list_branches</code></strong></td><td class="desc">Each branch with its number, frame, time taken, note and whether it is the current one.</td></tr>
 <tr><td class="nm"><strong><code>list_markers</code></strong></td><td class="desc">Each marker with its frame and text and whether a person placed it.</td></tr>
+<tr><td class="nm"><strong><code>server_info</code></strong></td><td class="desc">This build of Chimera, the folder it runs from, and the folders for projects (Movies), cores, firmware and Lua scripts. Without a window it gives the build and the folders the server was started with.</td></tr>
+<tr><td class="nm"><strong><code>pause</code></strong></td><td class="desc">Pauses the machine, as System, then Pause does, and says the frame it is on. A machine that is already paused stays so. It needs no permission.</td></tr>
+<tr><td class="nm"><strong><code>lua_functions</code></strong></td><td class="desc">The Lua functions of Chimera as the Lua Console documents them, with parameters, what each returns and what it does. <strong>Limits.</strong> Window only. Up to 1000 a call, 200 when left out.</td></tr>
+<tr><td class="nm"><strong><code>list_cores</code></strong></td><td class="desc">The core packages in the cores folder, each with its file, its name, its version, the machines it is and the kinds of file it opens.</td></tr>
+<tr><td class="nm"><strong><code>describe_core</code></strong></td><td class="desc">What one core declares. That is its settings, the firmware it may ask for and the slots that hold files in a project.</td></tr>
 </tbody></table></div>
 <h3 id="tools-search">Tools that search memory</h3>
 <p>These run a RAM search that belongs to the agent. It is separate from the RAM Search window. They only read, so they need no permission. There is one search at a time. Starting a new one drops the old one. A search also ends when the project is closed or the server is stopped.</p>
@@ -185,7 +204,7 @@
 <h3 id="tools-watch">Watching values</h3>
 <p><code>watch</code> names up to 32 values to follow. A value is a place in memory, given by domain, address and type, or a game core's property. From then on the answers of <code>status</code>, <code>seek</code>, <code>advance_until</code> and <code>load_branch</code> carry a list called watches with the value of each. This saves one read call after every move. The list you give replaces the one before it. An empty list ends watching. The watch lasts until the server is stopped.</p>
 <h3 id="tools-change">Tools that change things</h3>
-<p>Every tool here is refused until the tick box is ticked. Before the first of them, a branch of your movie is saved.</p>
+<p>Every tool here is refused until the tick box is ticked. Before the first of them, a branch of your movie is saved. The exceptions are <code>save_project</code>, <code>close_tastudio</code> and <code>create_project</code>, which change no input.</p>
 <div class="tablewrap"><table><thead><tr><th>Tool</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong><code>seek</code></strong></td><td class="desc">Moves the playback position to a frame, back or forward. It answers when the machine is there. If something interrupts it, it says the position stopped on another frame. <strong>Limits.</strong> A frame from 0 to the movie length.</td></tr>
 <tr><td class="nm"><strong><code>advance_until</code></strong></td><td class="desc">Plays the movie forward from the current frame until a memory value or property meets a condition, then stops on that frame. The conditions are equal, not equal, greater, at least, less, at most, and changed, which means different from the value at the start. It says whether the condition was met, how many frames it played and what stopped it, which is the condition, the end of the movie, the frame limit or an interruption. <strong>Limits.</strong> Up to 100000 frames, 600 when left out. It cannot start at the end of the movie.</td></tr>
@@ -200,6 +219,14 @@
 <tr><td class="nm"><strong><code>write_memory</code></strong></td><td class="desc">Writes values to a domain or bus at the current frame. A movie cannot reproduce it, so it is for testing a guess. <strong>Limits.</strong> Up to 4096 bytes a call. The domain or bus must be writable.</td></tr>
 <tr><td class="nm"><strong><code>set_property</code></strong></td><td class="desc">Sets one named value of a game core from text. A movie cannot reproduce it. <strong>Limits.</strong> Game cores only.</td></tr>
 <tr><td class="nm"><strong><code>set_register</code></strong></td><td class="desc">Sets a processor register. A movie cannot reproduce it. <strong>Limits.</strong> Only for a core that allows it.</td></tr>
+<tr><td class="nm"><strong><code>press_buttons</code></strong></td><td class="desc">Presses buttons on a schedule. Each press names its buttons, the frame it starts on (or a number of frames after the frame the machine is on) and how many frames it is held. All of it is written into the input as one step in the undo history. Buttons it does not name keep what they had. Frames past the end of the movie are added. Then <code>resume</code>, <code>seek</code> or <code>capture_series</code> plays it. <strong>Limits.</strong> Up to 1000 presses a call. A hold of 1 to 10000 frames, 6 when left out.</td></tr>
+<tr><td class="nm"><strong><code>capture_series</code></strong></td><td class="desc">Plays the movie and takes a picture on each of <code>count</code> frames. The first picture is taken <code>first</code> frames after the frame the machine is on. When <code>first</code> is left out it is one <code>every</code>, and 0 takes the frame the machine is on. Then one is taken every <code>every</code>. Both count frames, or seconds of the machine's own time with <code>unit</code> set to <code>seconds</code>, so the timing does not depend on how fast anything runs. Frames past the end of the movie are added first, as one step in the undo history. Each picture says whether it is blank and gives its commonest colour. With <code>folder</code>, each picture is also written there as a PNG at its own size. A file that is already there stops the series before it starts. <strong>Limits.</strong> 1 to 50 pictures. The width in the answer is 32 to 4096, 320 when left out.</td></tr>
+<tr><td class="nm"><strong><code>resume</code></strong></td><td class="desc">Lets the machine run, as unpausing does. TAStudio plays the movie, and past its end every frame played is added to it, as when a person plays on. It answers at once with the frame it started from. <code>pause</code> stops it. <strong>Limits.</strong> Window only.</td></tr>
+<tr><td class="nm"><strong><code>save_project</code></strong></td><td class="desc">Saves the project where it was last saved or opened, or at <code>path</code> when one is given. A relative path is in the Movies folder. A file that is already there is replaced only with <code>overwrite</code>. Nothing asks. Without a window the path must be inside the work folder.</td></tr>
+<tr><td class="nm"><strong><code>create_project</code></strong></td><td class="desc">Makes a project and opens it, as finishing the New Project window does, and asks nothing. The agent gives the core, the machine, the files of the game (by slot, or each put in the slot for its kind of file), settings and firmware. The suggested settings of the core for the game are applied first, then the settings the agent gives. Firmware is looked for where the New Project window looks, which is the Firmware folder and the files chosen for the core before, and in <code>firmware_folder</code> if given. When some is missing, nothing is made and the answer lists each missing file, the files that would do, and where it looked. A project that is open is closed first, and one with changes that are not saved only with <code>discard_unsaved</code>. <strong>Limits.</strong> Window only. Without a window, use <code>open_game</code>.</td></tr>
+<tr><td class="nm"><strong><code>close_tastudio</code></strong></td><td class="desc">Closes the project, TAStudio and the machine, as closing TAStudio does. A project with changes that are not saved is closed only with <code>discard_unsaved</code>. <strong>Limits.</strong> Window only. Without a window, use <code>close</code>.</td></tr>
+<tr><td class="nm"><strong><code>run_lua</code></strong></td><td class="desc">Runs Lua in the Lua Console and answers what it returned and what it printed. <strong>Limits.</strong> Window only. The functions that wait for a frame are refused.</td></tr>
+<tr><td class="nm"><strong><code>lua_script</code></strong></td><td class="desc">Starts a script file in the Lua Console, or stops it with <code>stop</code>. It answers whether it runs and what the console printed since the agent last asked. <strong>Limits.</strong> Window only.</td></tr>
 </tbody></table></div>
 <p><code>write_memory</code>, <code>set_property</code> and <code>set_register</code> change the machine, not the movie. They are not steps of the undo history. If you want to remove their effect, load a branch or seek to an earlier frame.</p>
 <h2 id="examples">Examples of what to ask</h2>
@@ -228,6 +255,13 @@
 <li>It reads the input with <code>get_input</code> in blocks of up to 1000 frames, looks at pictures with <code>screenshot</code> and notes the markers with <code>list_markers</code>.</li>
 <li>It tells you what it found. Nothing is changed.</li>
 </ol>
+<h3 id="ex-job">Run a whole job with no clicking</h3>
+<ol>
+<li>Tick Allow the agent to make changes. Ask the agent to make a project for a game, press Start after 120 frames, take four pictures ten seconds apart, then save the project and close it.</li>
+<li>The agent calls <code>create_project</code> with the core and the game file. If firmware is missing, nothing is made and the answer lists each file that is missing, so the agent can ask you for it.</li>
+<li>It calls <code>press_buttons</code> and then <code>capture_series</code> with <code>unit</code> set to <code>seconds</code>. Each picture says whether it is blank, so the agent can tell you about a black screen.</li>
+<li>It calls <code>save_project</code> with a path, and then <code>close_tastudio</code>. A file that is already at the path is not replaced unless the agent says so.</li>
+</ol>
 <h2 id="windowless">Working without a window</h2>
 <p>An agent can also work with no Chimera window at all. When <code>chimera-mcp</code> is started with a cores folder, it reaches no window. It opens a machine of its own, inside its own program, and the agent has that machine to itself. Use it for batch jobs, for checking a movie, or for exploring a game while you are away.</p>
 <p><code>claude mcp add chimera-headless -- "/path/to/chimera/dll/chimera-mcp" --cores "/path/to/chimera/Cores" --work "/path/to/work" --files "/path/to/games"</code></p>
@@ -239,13 +273,10 @@
 <tr><td class="nm"><strong>--history</strong></td><td class="desc">The memory in MiB for the saved states that make going back cheap. 256 when left out.</td></tr>
 <tr><td class="nm"><strong>--tools</strong></td><td class="desc">Prints the tools one to a line, with their descriptions, and exits. It also marks the tools that change things and the tools that exist only without a window.</td></tr>
 </tbody></table></div>
-<p>The agent then calls these tools, along with every tool above.</p>
+<p>The agent then calls these tools, along with every tool above. <code>save_project</code> works here too, inside the work folder, and a project saved this way opens in the Chimera window like any other.</p>
 <div class="tablewrap"><table><thead><tr><th>Tool</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong><code>list_cores</code></strong></td><td class="desc">The packages in the cores folder, each with its file, its name, its version and the machines it is.</td></tr>
-<tr><td class="nm"><strong><code>describe_core</code></strong></td><td class="desc">What one core declares. That is its settings, the firmware it may ask for and the slots that hold files in a project.</td></tr>
 <tr><td class="nm"><strong><code>open_game</code></strong></td><td class="desc">Starts a project from a core and game files, with an empty movie. Files are given by slot, firmware by path and settings by key. A project open before is closed without being saved.</td></tr>
 <tr><td class="nm"><strong><code>open_project</code></strong></td><td class="desc">Opens a project file. Its files are looked for beside it and in the allowed folders, and must be the ones it records.</td></tr>
-<tr><td class="nm"><strong><code>save_project</code></strong></td><td class="desc">Saves the project with its input, branches and markers, inside the work folder. A project saved this way opens in the Chimera window like any other.</td></tr>
 <tr><td class="nm"><strong><code>export_movie</code></strong></td><td class="desc">Writes the input alone to a file inside the work folder, as the command-line program chimera-run plays it.</td></tr>
 <tr><td class="nm"><strong><code>close</code></strong></td><td class="desc">Closes the machine. What was not saved is lost.</td></tr>
 </tbody></table></div>
@@ -255,6 +286,8 @@
 <li>The engine holds the movie and its own undo history, which keeps the last 100 edits. There is no TAStudio, so there is no recording mode and no lag log.</li>
 <li>A branch keeps the input and the frame but not the state of the machine. Loading one plays its input up to its frame.</li>
 <li>Firmware is given by path, one file for each firmware id that <code>describe_core</code> lists. It does not look in Chimera's Firmware folder or its settings, because only the window knows those.</li>
+<li>A project is made with <code>open_game</code>, not <code>create_project</code>. It takes the files by slot and the firmware by path, and asks the core for no suggested settings.</li>
+<li>There is no Lua. <code>lua_functions</code>, <code>run_lua</code> and <code>lua_script</code> are for the window.</li>
 <li>One machine at a time. Opening another closes the first without saving it.</li>
 </ul>
 <h3 id="windowless-files">Which files it may touch</h3>
@@ -283,7 +316,7 @@
 </tbody></table></div>
 <h2 id="not-planned">What it does not do</h2>
 <ul>
-<li>Sound, video encoding, running Lua scripts and CPU traces.</li>
+<li>Sound, video encoding and CPU traces.</li>
 <li>More than one agent at once, or one agent on several Chimera windows.</li>
 <li>Any connection from another computer or over a network.</li>
 </ul>
