@@ -235,3 +235,26 @@ p.callout{border-left:4px solid var(--accent);background:var(--panel);border-rad
 figure.ctrlpic{margin:.4em 0 1.2em;padding:12px;background:#fff;border:1.5px solid var(--hair);border-radius:10px;text-align:center}
 figure.ctrlpic img{display:block;margin:0 auto;max-width:100%;height:auto;max-height:300px;width:auto}
 figure.ctrlpic figcaption{margin-top:.6em;color:#475569;font-size:.9rem;text-align:left}
+button.xp{font:inherit;font-size:.75rem;font-weight:700;line-height:1;padding:2px 6px;margin-left:4px;border:1.5px solid var(--hair);border-radius:6px;background:var(--panel);color:var(--ink);cursor:pointer}
+button.xp:hover,button.xp:focus-visible{border-color:var(--accent)}
+td .more div{margin-top:4px;word-break:break-all}
+td .more[hidden]{display:none}
+details.sect{margin:0 0 .6rem}
+details.sect>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5rem}
+details.sect>summary::-webkit-details-marker{display:none}
+details.sect>summary::before{content:"\25B8";font-size:1.1rem;color:var(--muted)}
+details.sect[open]>summary::before{content:"\25BE"}
+details.sect>summary h2{margin:.5rem 0}
+.ctrlmap{position:relative;display:inline-block;max-width:100%;line-height:0}
+figure.ctrlpic .ctrlmap img{margin:0}
+.ctrlmap .hot{position:absolute;padding:0;border:2px solid transparent;border-radius:50%;background:transparent;cursor:help;font:inherit;line-height:1.35}
+.ctrlmap .hot:hover,.ctrlmap .hot:focus-visible{border-color:var(--accent);background:rgba(34,197,94,.18);outline:none;z-index:5}
+.ctrlmap .tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);width:max-content;max-width:260px;padding:8px 10px;text-align:left;font-size:.8rem;color:var(--ink);background:var(--bg);border:2px solid var(--hairs);border-radius:8px;box-shadow:var(--shadow);pointer-events:none}
+.ctrlmap .tip>span{display:block}
+.ctrlmap .tip strong{display:block;font-size:.9rem;margin-bottom:2px}
+.ctrlmap .hot:hover .tip,.ctrlmap .hot:focus-visible .tip{display:block}
+.ctrlmap .hot.l .tip{left:0;transform:none}
+.ctrlmap .hot.r .tip{left:auto;right:0;transform:none}
+.ctrlnote{margin:.2em 0 .6em;font-size:.9rem;color:var(--muted)}
+.content pre{max-width:100%;overflow-x:auto}
+.content li,.content p{overflow-wrap:anywhere}

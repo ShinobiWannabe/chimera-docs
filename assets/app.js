@@ -51,6 +51,16 @@
       var fr=document.createDocumentFragment();rows.forEach(function(x){fr.appendChild(x.r)});tb2.appendChild(fr);
     })});
   });
+  // ---- firmware cells: the + button shows the other values ----
+  document.querySelectorAll('button.xp').forEach(function(b){
+    var more=b.nextElementSibling,n=b.textContent;
+    b.addEventListener('click',function(){var open=more.hidden;more.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');b.textContent=open?'\u2212':n});
+  });
+  // ---- Home sections: open the one that holds the link target or the text being filtered ----
+  function openSect(el){for(var d=el&&el.closest?el.closest('details.sect'):null;d;d=d.parentElement&&d.parentElement.closest('details.sect'))d.open=true}
+  document.querySelectorAll('details.sect .gfilter').forEach(function(f){f.addEventListener('input',function(){openSect(f)})});
+  function openHash(){var id=decodeURIComponent(location.hash.slice(1));if(id){var el=document.getElementById(id);openSect(el);if(el&&el.scrollIntoView)el.scrollIntoView()}}
+  openHash();addEventListener('hashchange',openHash);
   // ---- highlight hash target ----
   function hl(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var el=document.getElementById(id);
     if(el&&el.tagName==='TR'){el.classList.add('hit');el.scrollIntoView({block:'center'})}}
