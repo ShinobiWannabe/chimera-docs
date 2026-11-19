@@ -22,6 +22,7 @@
 .content td.mono{min-width:120px}
 .content details>summary{cursor:pointer;margin:.4em 0}
 </style>
+<style id="syspic-css">details.ctrlsect{margin:.5rem 0;border:2px solid var(--hairs);border-radius:10px;background:var(--bg)}details.ctrlsect>summary{cursor:pointer;font-weight:700;padding:.6rem .9rem;list-style:none}details.ctrlsect>summary::-webkit-details-marker{display:none}details.ctrlsect>summary::before{content:"\25B8";margin-right:.5rem;color:var(--muted)}details.ctrlsect[open]>summary::before{content:"\25BE"}details.ctrlsect>figure{margin:0 .9rem .9rem}.ctrlnote{margin:.2em 0 .6em;font-size:.9rem;color:var(--muted)}</style>
 </head>
 <body data-root="../">
 <a class="skip" href="#main">Skip to content</a>
@@ -64,11 +65,14 @@
 </ol>
 <p>You can also drag a game file onto the Chimera window. The wizard then opens with the core and the file already chosen.</p>
     <p>For more detail, see the <a href="full-guide.html">Full Guide</a>.</p>
+    <h2 id="picture">Picture</h2>
+    <figure class="ctrlpic"><img data-src="../assets/pictures/sys-snes-mod1-console-set.jpg" alt="Super Nintendo console and controller"><noscript><img src="../assets/pictures/sys-snes-mod1-console-set.jpg" alt="Super Nintendo console and controller"></noscript><figcaption>Super Nintendo console and controller. Photograph by Evan-Amos, public domain, from <a href="https://commons.wikimedia.org/wiki/File:SNES-Mod1-Console-Set.jpg">Wikimedia Commons</a>.</figcaption></figure><!-- /picture -->
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-snes9x">chimera-core-snes9x</a> @ <code>b1df21a</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

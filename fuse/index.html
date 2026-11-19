@@ -22,6 +22,7 @@
 .content td.mono{min-width:120px}
 .content details>summary{cursor:pointer;margin:.4em 0}
 </style>
+<style id="syspic-css">details.ctrlsect{margin:.5rem 0;border:2px solid var(--hairs);border-radius:10px;background:var(--bg)}details.ctrlsect>summary{cursor:pointer;font-weight:700;padding:.6rem .9rem;list-style:none}details.ctrlsect>summary::-webkit-details-marker{display:none}details.ctrlsect>summary::before{content:"\25B8";margin-right:.5rem;color:var(--muted)}details.ctrlsect[open]>summary::before{content:"\25BE"}details.ctrlsect>figure{margin:0 .9rem .9rem}.ctrlnote{margin:.2em 0 .6em;font-size:.9rem;color:var(--muted)}</style>
 </head>
 <body data-root="../">
 <a class="skip" href="#main">Skip to content</a>
@@ -65,11 +66,14 @@
 </ol>
 <p>You can also drag a game file onto the Chimera window. The wizard then opens with the core and the file already chosen.</p>
     <p>For more detail, see the <a href="full-guide.html">Full Guide</a>.</p>
+    <h2 id="picture">Picture</h2>
+    <figure class="ctrlpic"><img data-src="../assets/pictures/zx-spectrum-top.jpg" alt="Sinclair ZX Spectrum keyboard"><noscript><img src="../assets/pictures/zx-spectrum-top.jpg" alt="Sinclair ZX Spectrum keyboard"></noscript><figcaption>Sinclair ZX Spectrum keyboard. Photograph by the Bibliothèque nationale de France, public domain, from <a href="https://commons.wikimedia.org/wiki/File:Collection_Charles_Cros._Micro-ordinateurs_(m%C3%A9dia_-_multim%C3%A9dias)._Micro-ordinateurs_Sinclair_-_ZX_Spectrum._Micro-ordinateur_Sinclair_ZX_Spectrum,_n%C2%B0_de_s%C3%A9rie_022-007502_-_btv1b55013033m_(09_of_43).jpg">Wikimedia Commons</a>.</figcaption></figure><!-- /picture -->
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-fuse">chimera-core-fuse</a> @ <code>94a7374</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

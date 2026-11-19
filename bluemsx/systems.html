@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style.css">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style id="syspic-css">details.ctrlsect{margin:.5rem 0;border:2px solid var(--hairs);border-radius:10px;background:var(--bg)}details.ctrlsect>summary{cursor:pointer;font-weight:700;padding:.6rem .9rem;list-style:none}details.ctrlsect>summary::-webkit-details-marker{display:none}details.ctrlsect>summary::before{content:"\25B8";margin-right:.5rem;color:var(--muted)}details.ctrlsect[open]>summary::before{content:"\25BE"}details.ctrlsect>figure{margin:0 .9rem .9rem}.ctrlnote{margin:.2em 0 .6em;font-size:.9rem;color:var(--muted)}</style>
 </head>
 <body data-root="../">
 <a class="skip" href="#main">Skip to content</a>
@@ -43,6 +44,12 @@
     <p class="lead">The systems the blueMSX core supports. Click a column heading to sort. Click again to reverse.</p>
     <h2 id="about-data">About this data</h2>
     <p>4 systems, from the &#x27;machines&#x27; list. If a machine leaves out its controller, picture size or file types, the shared value is used. Buttons and Axes count the rows in the Inputs section.</p>
+    <h2 id="pictures">Pictures</h2>
+    <p>Open a system to see a picture of it.</p>
+    <details class="ctrlsect" id="pic-msx"><summary>MSX</summary><figure class="ctrlpic"><img data-src="../assets/pictures/sony-hitbit-hb-10p.jpg" alt="Sony HitBit HB-10P MSX computer"><noscript><img src="../assets/pictures/sony-hitbit-hb-10p.jpg" alt="Sony HitBit HB-10P MSX computer"></noscript><figcaption>Sony HitBit HB-10P MSX computer. Photograph by Doppelgangland, public domain, from <a href="https://commons.wikimedia.org/wiki/File:Sony_HitBit_HB-10P_(White_Background).jpg">Wikimedia Commons</a>.</figcaption></figure></details>
+    <details class="ctrlsect" id="pic-msx2"><summary>MSX2</summary><figure class="ctrlpic"><img data-src="../assets/pictures/daewoo-cpc-300e.jpg" alt="Daewoo CPC-300E MSX2 computer"><noscript><img src="../assets/pictures/daewoo-cpc-300e.jpg" alt="Daewoo CPC-300E MSX2 computer"></noscript><figcaption>Daewoo CPC-300E MSX2 computer. Photograph by Shiru, public domain, from <a href="https://commons.wikimedia.org/wiki/File:Daewoo_CPC-300E.png">Wikimedia Commons</a>.</figcaption></figure></details>
+    <details class="ctrlsect" id="pic-msx2"><summary>MSX2+</summary><figure class="ctrlpic"><img data-src="../assets/pictures/sys-panasonic-fs-a1wsx.jpg" alt="Panasonic FS-A1WSX MSX2+ computer"><noscript><img src="../assets/pictures/sys-panasonic-fs-a1wsx.jpg" alt="Panasonic FS-A1WSX MSX2+ computer"></noscript><figcaption>Panasonic FS-A1WSX MSX2+ computer. Photograph by an unnamed photographer, public domain, from <a href="https://commons.wikimedia.org/wiki/File:Panasonic_FS-A1WSX_20060731.jpg">Wikimedia Commons</a>.</figcaption></figure></details>
+    <p class="ctrlnote">No open picture was found for MSX turbo R.</p><!-- /pictures -->
     <h2 id="systems">Systems</h2>
     <div class="tools"><input class="gfilter" type="search" placeholder="Filter systems…" aria-label="Filter systems"><span class="count" aria-live="polite">4 of 4</span></div>
     <div class="tablewrap"><table class="sortable"><thead><tr><th scope="col" aria-sort="none" data-col="0"><button type="button">System ID<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="1"><button type="button">Machine value (machine setting)<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="2"><button type="button">Label<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="3"><button type="button">Full name (systemNames)<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="4"><button type="button">Input device<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="5"><button type="button">Buttons<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="6"><button type="button">Axes<span class="arr" aria-hidden="true"></span></button></th><th scope="col" aria-sort="none" data-col="7"><button type="button">File extensions<span class="arr" aria-hidden="true"></span></button></th></tr></thead><tbody>
@@ -58,5 +65,6 @@
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera-core-bluemsx">chimera-core-bluemsx</a> @ <code>72c20df</code></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>
