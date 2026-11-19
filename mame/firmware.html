@@ -44,7 +44,13 @@
     <h2 id="about-data">About this data</h2>
     <p>0 firmware entries, 0 rows. &#x27;Also required only when&#x27; holds the part of the rule that still depends on another setting or on a file slot. Label is the firmware&#x27;s own label and is empty when the config gives none. An empty rule means the file is always needed. Entries marked [Optional] can be skipped. A size of 0 means any size is fine.</p>
     <p>Rows are grouped by file name. When more than one hash, size or other value is accepted for a file name, the first one is shown and a button such as +3 shows the rest.</p>
-    <h2 id="firmware">Firmware</h2>
+    <!-- min-firmware -->
+    <h2 id="minimal-firmware">Minimal Required Firmware</h2>
+    <p>The fewest firmware files the core needs to start most games, with its default settings. Chimera worked this out from the core&#x27;s own rules, in the same way as its New Chimera Project window. A game can still ask for a file that is not here, for example a BIOS of its own region. Every file the core can use is in the Comprehensive Firmware List below.</p>
+    <p>MAME declares no firmware of its own. When you pick a game, the core asks for the other ROM sets that game reads, such as its board&#x27;s BIOS set (for example neogeo.zip).</p>
+    <p class="empty">This core needs no firmware.</p>
+    <!-- /min-firmware -->
+    <h2 id="firmware">Comprehensive Firmware List</h2>
 <p class="empty">No firmware for this core.</p>
 
   </main>

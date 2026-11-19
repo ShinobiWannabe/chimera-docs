@@ -258,3 +258,15 @@ figure.ctrlpic .ctrlmap img{margin:0}
 .ctrlnote{margin:.2em 0 .6em;font-size:.9rem;color:var(--muted)}
 .content pre{max-width:100%;overflow-x:auto}
 .content li,.content p{overflow-wrap:anywhere}
+
+/* Minimal Required Firmware grid (tools/min_firmware.py) */
+table.mingrid th .mfh{display:block;padding:12px;letter-spacing:.03em}
+tr.mfgroup td{background:var(--panel);font-size:.88rem}
+tr.mfgroup .mfg{display:inline-block;max-width:calc(100vw - 90px)}
+table.mingrid tr:not(.mfgroup) td:first-child{min-width:150px}
+table.mingrid tr:not(.mfgroup) td:nth-child(2){min-width:190px}
+tr.mfgroup:hover td{background:var(--panel)}
+.mfcount{color:var(--muted);font-weight:400}
+.mfalt{display:block;margin-top:.3em;font-size:.82rem;color:var(--muted)}
+.mfnone{color:var(--faint);font-family:Inter,system-ui,sans-serif}
+.mfver{font-size:.86rem;color:var(--muted)}
