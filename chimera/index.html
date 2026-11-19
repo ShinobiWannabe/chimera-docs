@@ -55,22 +55,30 @@
 <h2 id="quickstart">Quickstart</h2>
 <p>Chimera runs a game through a <strong>core</strong>. A core is a package that holds one emulator or one game. Chimera ships with no cores, so you download one and put it where Chimera can find it. Pick the method that matches your core.</p>
 <h3 id="system-core">Method 1. Load a system core</h3>
-<p>A system core is an emulator for a whole machine, such as a console or a computer. It can run many games.</p>
+<p>A system core is an emulator for a whole machine, such as a console or a computer. It can run many games. The pictures below load The Legend of Zelda for the NES with the Mesen core.</p>
 <ol>
 <li>Put the core file (it ends in .chimeraCore) in the cores folder beside Chimera. On a Mac the folder is ~/Library/Application Support/Chimera/cores.</li>
-<li>Open the File menu and choose New Chimera Project.</li>
-<li>Page 1. Set Kind to Emulator. Choose the core in the Core list and the machine in the System list, then press Next.</li>
-<li>Page 2. Press Add under the group that fits your game and pick your file. Press Next.</li>
-<li>Page 3. Change settings if you want to. The defaults work for most games. Press Next, or Create if that is what the button says.</li>
+<li>Open the File menu and choose New Chimera Project.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-file-menu.png" alt="The File menu of the Chimera main window with New Chimera Project highlighted" width="802" height="709"><noscript><img src="../assets/chimera-screenshots/quickstart-file-menu.png" alt="The File menu of the Chimera main window with New Chimera Project highlighted" width="802" height="709"></noscript><figcaption>The File menu in the main window before any project is open.</figcaption></figure></li>
+<li>Page 1. Set Kind to Emulators. Open the Core list and choose the core. Each line shows the core name, its build date, a short code that names the exact build, and the systems it runs.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-page1-core-list.png" alt="The open Core list on Page 1 of the New Chimera Project wizard with Mesen highlighted" width="622" height="512"><noscript><img src="../assets/chimera-screenshots/quickstart-page1-core-list.png" alt="The open Core list on Page 1 of the New Chimera Project wizard with Mesen highlighted" width="622" height="512"></noscript><figcaption>The Core list on Page 1. Mesen runs the NES and several other systems.</figcaption></figure></li>
+<li>Choose the machine in the System list, here NES / Famicom. Renderer is greyed out unless the core offers more than one way to draw the picture. Press Next.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-page1.png" alt="Page 1 of the wizard with Kind set to Emulators, Core set to Mesen and System set to NES / Famicom" width="622" height="512"><noscript><img src="../assets/chimera-screenshots/quickstart-page1.png" alt="Page 1 of the wizard with Kind set to Emulators, Core set to Mesen and System set to NES / Famicom" width="622" height="512"></noscript><figcaption>Page 1 with Mesen and NES / Famicom chosen.</figcaption></figure></li>
+<li>Page 2. Each box is a group of files the core takes. The heading says how many files the group needs, and the line under it lists the file types it accepts. Press Add under the group that fits your game and pick your file. Press Next.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-page2.png" alt="Page 2 of the wizard with the Zelda cartridge file in the Cartridge box and an empty Saved game box" width="622" height="512"><noscript><img src="../assets/chimera-screenshots/quickstart-page2.png" alt="Page 2 of the wizard with the Zelda cartridge file in the Cartridge box and an empty Saved game box" width="622" height="512"></noscript><figcaption>Page 2 with the Zelda cartridge file added. The saved game is optional.</figcaption></figure></li>
+<li>Page 3. Change settings if you want to. The defaults work for most games. The box at the top shows settings the core suggests for your game, if it has any. Click a setting to read what it does in the box at the bottom. Press Next, or Create if that is what the button says.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-page3.png" alt="Page 3 of the wizard listing Mesen settings such as Region and Console Model, with the Create button at the bottom" width="622" height="512"><noscript><img src="../assets/chimera-screenshots/quickstart-page3.png" alt="Page 3 of the wizard listing Mesen settings such as Region and Console Model, with the Create button at the bottom" width="622" height="512"></noscript><figcaption>Page 3 for Mesen. NES games need no firmware, so the button already says Create.</figcaption></figure></li>
 <li>Page 4 only appears when your choices need firmware files. Give each file in the list, then press Create.</li>
-<li>Chimera opens the new project in <a href="../tastudio/index.html">TAStudio</a> (its input editor) at the first frame.</li>
+<li>Chimera opens the new project in <a href="../tastudio/index.html">TAStudio</a> (its input editor) at the first frame.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-tastudio.png" alt="The TAStudio window for the new Zelda project, with an empty movie and the cursor on frame 0" width="722" height="632"><noscript><img src="../assets/chimera-screenshots/quickstart-tastudio.png" alt="The TAStudio window for the new Zelda project, with an empty movie and the cursor on frame 0" width="722" height="632"></noscript><figcaption>TAStudio right after Create. The movie is empty and the cursor is on frame 0.</figcaption></figure></li>
 </ol>
 <h3 id="game-core">Method 2. Load a game-specific core</h3>
 <p>A game-specific core runs one game, such as Prince of Persia. The game itself is built into the core, so you pick a version of the game and not a machine.</p>
 <ol>
 <li>Put the core file (it ends in .chimeraCore) in the cores folder beside Chimera. On a Mac the folder is ~/Library/Application Support/Chimera/cores.</li>
 <li>Open the File menu and choose New Chimera Project.</li>
-<li>Page 1. Set Kind to Game. Choose the core in the Core list and the game version in the System list, then press Next.</li>
+<li>Page 1. Set Kind to Games. Choose the core in the Core list and the game version in the System list, then press Next.
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-page1-games.png" alt="The open Core list on Page 1 with Kind set to Games, listing game cores such as DSDA-Doom and SDLPoP" width="622" height="512"><noscript><img src="../assets/chimera-screenshots/quickstart-page1-games.png" alt="The open Core list on Page 1 with Kind set to Games, listing game cores such as DSDA-Doom and SDLPoP" width="622" height="512"></noscript><figcaption>The Core list with Kind set to Games. Each game core names the game it runs.</figcaption></figure></li>
 <li>Page 2. Add the optional files the core offers, such as a custom level set or a savestate (a copy of the whole game at one moment). You can leave this page empty. Press Next.</li>
 <li>Page 3. Change settings if you want to. The defaults work for most games. Press Next, or Create if that is what the button says.</li>
 <li>Page 4 asks for the game data files. Give each file in the list, then press Create. They come from a copy of the game that you own.</li>
@@ -107,6 +115,7 @@
 <li>A project's settings cannot be changed once it exists, because a changed setting makes a different machine. To change one, choose New Chimera Project again. The wizard opens with your last answers filled in.</li>
 </ul>
 <h2 id="window">The main window</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/quickstart-main-window.png" alt="The Chimera main window showing the Zelda title screen, with the status bar at the bottom" width="588" height="561"><noscript><img src="../assets/chimera-screenshots/quickstart-main-window.png" alt="The Chimera main window showing the Zelda title screen, with the status bar at the bottom" width="588" height="561"></noscript><figcaption>The main window with the Zelda title screen. The status bar shows the pause icon and the core name, Mesen.</figcaption></figure>
 <p>The main window shows the game picture. Above it is the menu bar, described on <a href="../chimera/menu-options.html">Menu Options</a>. Below it is the status bar.</p>
 <div class="tablewrap"><table><thead><tr><th>Status bar item</th><th>What it shows</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Movie button</strong></td><td class="desc">Shows No movie is active, or the state of the active movie.</td></tr>
@@ -130,5 +139,6 @@
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>
