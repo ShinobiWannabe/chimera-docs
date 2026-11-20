@@ -63,30 +63,34 @@
 </ul>
 <h2 id="how">How to use it</h2>
 <ol>
-<li>Press the &gt; button to advance one frame. Hover over it to see its hotkey.</li>
-<li>Press the &gt; || button to pause or resume.</li>
-<li>Press the &lt; button to go back. The size of the step is set as Rewind step in the settings.</li>
+<li>Press &gt; to advance one frame. Hold it to keep advancing.</li>
+<li>Press &gt; || to pause or resume.</li>
+<li>Press &lt; to go back. Hold it to keep going back.</li>
 <li>Press &lt;&lt; or &gt;&gt; to seek to the previous or next marker.</li>
 <li>Tick the options you want, described below.</li>
 </ol>
-<p>A seek is a jump to a frame the game has to run to. A progress bar in the status bar shows it, and Cancel Seek in the right-click menu stops it.</p>
+<p>Hold the pointer over a button or option to see what it does and its hotkey.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-playback-tooltip.png" alt="The Playback box with a tooltip over the pause button reading Hotkey Middle Mouse Button or Pause, toggle pause" width="304" height="220"><noscript><img src="../assets/chimera-screenshots/tastudio-playback-tooltip.png" alt="The Playback box with a tooltip over the pause button reading Hotkey Middle Mouse Button or Pause, toggle pause" width="304" height="220"></noscript><figcaption>The tooltip of the &gt; || button names its hotkey.</figcaption></figure>
+<p>A <strong>seek</strong> is a jump to a frame the game has to run to. The status bar shows Seeking and a progress bar during a long one, and Cancel Seek in the right-click menu stops a seek that plays.</p>
 <h2 id="info">What it shows</h2>
 <div class="tablewrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>&gt;</strong></td><td class="desc">Frame advance. Moves one frame forward. The right mouse button with the wheel down does the same.</td></tr>
-<tr><td class="nm"><strong>&lt;</strong></td><td class="desc">Rewind. Goes back one step. The right mouse button with the wheel up goes back one frame per notch.</td></tr>
-<tr><td class="nm"><strong>&gt; ||</strong></td><td class="desc">Pause or resume. The middle mouse button does the same.</td></tr>
-<tr><td class="nm"><strong>&lt;&lt;, &gt;&gt;</strong></td><td class="desc">Seek to the previous or the next marker.</td></tr>
-<tr><td class="nm"><strong>Recording mode</strong></td><td class="desc">When ticked, the buttons you press while the game runs are written into the movie. When off, the movie is read only and your presses do not change it.</td></tr>
-<tr><td class="nm"><strong>Auto-restore last position</strong></td><td class="desc">When ticked and you edit a frame before the current frame, TAStudio seeks back to the frame you were on.</td></tr>
-<tr><td class="nm"><strong>Turbo seek</strong></td><td class="desc">When ticked, seeks run as fast as the computer can go.</td></tr>
-<tr><td class="nm"><strong>Follow cursor</strong></td><td class="desc">When ticked, the piano roll scrolls so the current frame stays in view.</td></tr>
+<tr><td class="nm"><strong>&lt;&lt;</strong></td><td class="desc">Seeks to the previous marker. Hotkey Shift+PageUp.</td></tr>
+<tr><td class="nm"><strong>&lt;</strong></td><td class="desc">Goes back one step. Rewind step in the Misc settings sets the size of a step. Hotkey Shift+R. Holding the right mouse button over the piano roll and turning the wheel up goes back one frame per notch.</td></tr>
+<tr><td class="nm"><strong>&gt; ||</strong></td><td class="desc">Pauses or resumes. Hotkey Pause. The tooltip also names the middle mouse button.</td></tr>
+<tr><td class="nm"><strong>&gt;</strong></td><td class="desc">Frame advance, one frame forward. Hotkey F. The right mouse button with the wheel down does the same.</td></tr>
+<tr><td class="nm"><strong>&gt;&gt;</strong></td><td class="desc">Seeks to the next marker. Hotkey Shift+PageDown.</td></tr>
+<tr><td class="nm"><strong>Follow cursor</strong></td><td class="desc">The piano roll scrolls to keep the current frame in view. Hotkey Shift+F.</td></tr>
+<tr><td class="nm"><strong>Turbo seek</strong></td><td class="desc">Seeks run as fast as the computer can go. Hotkey Shift+S.</td></tr>
+<tr><td class="nm"><strong>Auto-restore last position</strong></td><td class="desc">When you edit a frame before the current frame, TAStudio seeks back to the frame you were on. Hotkey Alt+R.</td></tr>
+<tr><td class="nm"><strong>Recording mode</strong></td><td class="desc">The buttons you press while the game runs or while you frame advance are written into the movie. When it is off, the movie is read only. Hotkey Q (Toggle read-only).</td></tr>
 </tbody></table></div>
-<p>Each of these has a hotkey on the TAStudio tab or the General tab of the <a href="../chimera/hotkeys.html">Hotkeys</a> page. Hover over a control to see the key.</p>
+<p>The hotkeys are on the TAStudio, General and Movie tabs of the <a href="../chimera/hotkeys.html">Hotkeys</a> page. Seek To Green Arrow (R) goes back to the frame the green arrow in the piano roll marks.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

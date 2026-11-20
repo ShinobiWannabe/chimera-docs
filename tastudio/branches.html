@@ -53,44 +53,47 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Branches</h1>
 <h2 id="what">What it is</h2>
-<p>A <strong>branch</strong> is a saved copy of your movie input up to a chosen frame, with the game state at that frame. You can make several branches, try a different idea, and load any branch to go back.</p>
+<p>A branch is a saved copy of the whole movie, with the frame the game was on and its state at that frame. You can make several branches, try a different idea, and load any branch to go back. The Zelda project in the pictures has four branches, including one before and one after Link takes the money in a secret cave.</p>
 <h2 id="used-for">What it is used for</h2>
 <ul>
 <li>Trying two ways through a hard part and keeping the better one.</li>
 <li>Keeping a safe copy before a risky edit.</li>
-<li>Bouncing quickly between a few attempts using the number keys.</li>
+<li>Switching quickly between a few attempts using the F keys.</li>
 </ul>
 <h2 id="how">How to use it</h2>
 <ol>
 <li>Move the game to the frame where you want a branch.</li>
-<li>Press the Add button, or press Alt+Insert. A message on the screen says Added branch and its number.</li>
-<li>Press Add with Text to give the branch a name.</li>
-<li>To return to a branch, select it and press Load, or press the F key with its number. F1 loads branch 1, and so on up to F10.</li>
-<li>To replace a branch with your current work, select it and press Update, or press Shift with the F key of its number.</li>
-<li>To go to the branch's frame without loading it, press Jump To.</li>
-<li>To delete a branch, select it and press Remove, or press Alt+Delete.</li>
-<li>If you load, update, rename or remove a branch by mistake, press Undo. The button changes its name to say what it will undo.</li>
+<li>Press Add (the green plus) or Alt+Insert. The branch gets the next number.</li>
+<li>Press Add with Text to give the branch a name. Left empty, it is named Branch and its number.</li>
+<li>To return to a branch, select it and press Load, or press F1 to F10 for branches 1 to 10. If the movie had inputs or markers the branch does not have, the message after the load says so.</li>
+<li>To put your current work into a branch, select it and press Update, or press Shift with its F key.</li>
+<li>To move the game to the branch's frame without loading its movie, press Jump To.</li>
+<li>To delete a branch, select it and choose Remove in the right-click menu, or press Alt+Delete. Several branches selected in the list are removed at once.</li>
+<li>If you load, update, rename or remove a branch by mistake, press Undo. Its name says what it will undo, such as Undo Branch Load.</li>
 </ol>
-<p>You can also right-click a branch to use these items. If the Load branch by double clicking option is on in the settings, a double click loads a branch. A right click on the row the game is on, in the piano roll, offers Branch to add one.</p>
+<p>Hold the pointer over a branch's row to see the picture of the game at its frame. Drag a branch by its number onto another to swap their places. If Load branch by double clicking is on in the Misc settings, a double click loads a branch. In the piano roll, right-clicking the row of the frame the game is on offers Branch, which adds one.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-branch-menu.png" alt="The Branches box with a picture of the game beside it and the right-click menu Add, Add with Text, Load, Update, Update with Text, Edit Text, Jump To, Undo Branch Load and Remove" width="544" height="603"><noscript><img src="../assets/chimera-screenshots/tastudio-branch-menu.png" alt="The Branches box with a picture of the game beside it and the right-click menu Add, Add with Text, Load, Update, Update with Text, Edit Text, Jump To, Undo Branch Load and Remove" width="544" height="603"></noscript><figcaption>The right-click menu on a branch, with the branch's picture shown beside the list.</figcaption></figure>
 <h2 id="info">What it shows</h2>
-<div class="tablewrap"><table><thead><tr><th>Column or control</th><th>What it shows</th></tr></thead><tbody>
-<tr><td class="nm"><strong>#</strong></td><td class="desc">The number of the branch. It matches the F key.</td></tr>
-<tr><td class="nm"><strong>Frame</strong></td><td class="desc">The frame the branch was saved at.</td></tr>
-<tr><td class="nm"><strong>UserText</strong></td><td class="desc">The name you gave it.</td></tr>
-<tr><td class="nm"><strong>Add, Add with Text</strong></td><td class="desc">Save a new branch at the current frame.</td></tr>
-<tr><td class="nm"><strong>Load</strong></td><td class="desc">Replaces your current input with the branch.</td></tr>
-<tr><td class="nm"><strong>Update, Update with Text</strong></td><td class="desc">Overwrites the branch with your current work.</td></tr>
-<tr><td class="nm"><strong>Jump To</strong></td><td class="desc">Moves to the branch's frame.</td></tr>
-<tr><td class="nm"><strong>Edit Text</strong></td><td class="desc">Changes the name.</td></tr>
-<tr><td class="nm"><strong>Undo</strong></td><td class="desc">Undoes the last branch load, update, text change or removal.</td></tr>
-<tr><td class="nm"><strong>Remove</strong></td><td class="desc">Deletes the branch.</td></tr>
+<div class="tablewrap"><table><thead><tr><th>Column, button or item</th><th>What it does</th></tr></thead><tbody>
+<tr><td class="nm"><strong>#</strong></td><td class="desc">The number of the branch. It matches the F key that loads it.</td></tr>
+<tr><td class="nm"><strong>Frame</strong></td><td class="desc">The frame the game was on when the branch was made.</td></tr>
+<tr><td class="nm"><strong>UserText</strong></td><td class="desc">The branch's name.</td></tr>
+<tr><td class="nm"><strong>Add, Add with Text</strong></td><td class="desc">Make a new branch from the movie and the current frame.</td></tr>
+<tr><td class="nm"><strong>Load</strong></td><td class="desc">Puts the branch's movie back and the game on its frame.</td></tr>
+<tr><td class="nm"><strong>Update, Update with Text</strong></td><td class="desc">Puts your current work into the branch, over what it held. Update with Text also asks for a new name.</td></tr>
+<tr><td class="nm"><strong>Edit Text</strong></td><td class="desc">Changes the name. Right-click menu only.</td></tr>
+<tr><td class="nm"><strong>Jump To</strong></td><td class="desc">Moves the game to the branch's frame and leaves the movie as it is.</td></tr>
+<tr><td class="nm"><strong>Undo</strong></td><td class="desc">Takes back the last branch load, update, name change or removal.</td></tr>
+<tr><td class="nm"><strong>Remove</strong></td><td class="desc">Deletes the branches selected. Right-click menu only.</td></tr>
 </tbody></table></div>
-<p>The branch keys are listed on the TAStudio tab of the <a href="../chimera/hotkeys.html">Hotkeys</a> page. The settings have an option, Old control scheme for branches, that uses the older way of working with them.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-branch-text.png" alt="The Branch text prompt with the hint Branch 5 if empty and OK and Cancel" width="430" height="150"><noscript><img src="../assets/chimera-screenshots/tastudio-branch-text.png" alt="The Branch text prompt with the hint Branch 5 if empty and OK and Cancel" width="430" height="150"></noscript><figcaption>Add with Text asks for a name. Left empty, the branch is named Branch 5 here.</figcaption></figure>
+<p>The row of the branch that is loaded has the current frame's colour. The others have the colour of their frame in the greenzone. The branch keys are on the TAStudio tab of the <a href="../chimera/hotkeys.html">Hotkeys</a> page. In the Misc settings, Old control scheme for branches makes Load only move the game to the branch's frame, and Branch screenshot size sets the size of the picture. See <a href="menu-options.html">Menu Options</a>.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

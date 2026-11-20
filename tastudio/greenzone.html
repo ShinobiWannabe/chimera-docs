@@ -53,7 +53,7 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Greenzone</h1>
 <h2 id="what">What it is</h2>
-<p>The <strong>greenzone</strong> is the part of the movie that TAStudio has already played, together with the saved states that let it jump back there quickly. A <strong>state</strong> is a copy of the whole game at one moment. To reach a frame, TAStudio loads the nearest earlier state and runs forward from it.</p>
+<p>The greenzone is the part of the movie that TAStudio has already played, together with the saved states that let it jump back there quickly. A <strong>state</strong> is a copy of the whole game at one moment. To reach a frame, TAStudio loads the nearest earlier state and runs forward from it. Rows in the greenzone are green in the piano roll.</p>
 <p>When you change input at a frame, the states after that frame no longer match. TAStudio drops them. Playing forward builds the greenzone again.</p>
 <h2 id="used-for">What it is used for</h2>
 <ul>
@@ -61,26 +61,28 @@
 <li>Keeping memory use under control on long movies.</li>
 </ul>
 <h2 id="how">How to use it</h2>
-<ol>
-<li>Find the Greenzone box in the TAStudio window.</li>
-<li>Choose Every frame to save a state on each frame it can afford. This gives the fastest jumps and uses the most memory.</li>
-<li>Choose Every and type a number from 2 to 999 to save one state in that many frames. It runs faster, but reaching a frame in between costs a replay from the state before it.</li>
-<li>Choose Off to stop saving new states. States already saved stay. This helps on parts that need no editing, or when you only use branches. When you turn it on again, TAStudio saves a state at the current frame.</li>
-</ol>
-<p>The Cycle Greenzone hotkey steps through the three choices. It has no default key. Edit, Clear Greenzone throws away every saved state, and Edit, State History Integrity Check replays the movie and compares it with the saved states.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-window.png" alt="The TAStudio window with the Greenzone box set to Every frame and the status bar reading States 21892" width="1084" height="851"><noscript><img src="../assets/chimera-screenshots/tastudio-window.png" alt="The TAStudio window with the Greenzone box set to Every frame and the status bar reading States 21892" width="1084" height="851"></noscript><figcaption>The Greenzone box is set to Every frame. The status bar says the greenzone holds 21892 states.</figcaption></figure>
+<ul>
+<li>Choose <strong>Every frame</strong> to save a state on every frame, as far as the memory budget allows. This gives the fastest jumps and uses the most memory.</li>
+<li>Choose <strong>Every</strong> and type a number from 2 to 999 to save one state in that many frames. Reaching a frame in between costs a replay from the state before it.</li>
+<li>Choose <strong>Off</strong> to stop saving new states. States already saved stay. When you turn it on again, TAStudio saves a state at the frame the game is on.</li>
+</ul>
+<p>The Cycle Greenzone hotkey steps through the three choices. It has no default key. Edit, Clear Greenzone throws away every saved state, and Edit, State History Integrity Check checks that the saved states put the game back exactly.</p>
 <p>How much memory the greenzone may use is set in the Cache Manager. See Greenzone budgets on <a href="../chimera/cache-manager.html">Cache Manager</a>.</p>
 <h2 id="info">What it shows</h2>
-<div class="tablewrap"><table><thead><tr><th>Control</th><th>What it shows</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Every frame</strong></td><td class="desc">A state is saved for every frame that fits in the memory budget.</td></tr>
 <tr><td class="nm"><strong>Every N frames</strong></td><td class="desc">One state in N frames, with N from 2 to 999.</td></tr>
 <tr><td class="nm"><strong>Off</strong></td><td class="desc">No new states are saved.</td></tr>
+<tr><td class="nm"><strong>States in the status bar</strong></td><td class="desc">How many states the greenzone holds now.</td></tr>
 </tbody></table></div>
-<p>Rows that have a saved state can be colored or marked with an icon in the piano roll. The Appearance tab of the settings controls this. The Savestates tab of the settings sets how TAStudio decides which states to keep, and Markers keep states by default keeps one at each marker. See <a href="../tastudio/menu-options.html">Menu Options</a>.</p>
+<p>Frames that have a saved state can be coloured or marked with an icon in the piano roll. The Appearance tab of the settings controls this. In the Misc tab, Markers keep states by default and Keep every marker's frame in the greenzone keep the states at markers. See <a href="menu-options.html">Menu Options</a>.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

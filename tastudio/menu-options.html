@@ -53,122 +53,139 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Menu Options</h1>
 <h2 id="what">What it is</h2>
-<p>The TAStudio menu bar has five menus and a Hide button. Saving and closing a project are done in the Chimera File menu, not here. This page also describes the right-click menu of the piano roll and the TAStudio settings window.</p>
+<p>The TAStudio menu bar has three menus, Edit, Settings and Window, and a &lt;&lt; Hide button. Saving and closing a project are done in the Chimera File menu, not here. This page also describes the right-click menu of the piano roll, the Settings window, the Undo History window and the Go to Frame window. The pictures on these pages come from a project of The Legend of Zelda (NES) on the Mesen core.</p>
 <h2 id="how">How to use it</h2>
-<p>Click a menu name to open it. Many Edit items work on the rows you have selected, so select rows in the piano roll first. Items that do not apply right now are greyed out. The hotkeys for these items are listed on the TAStudio tab of the <a href="../chimera/hotkeys.html">Hotkeys</a> page.</p>
+<p>Click a menu name to open it. Many Edit items work on the selected rows, so select rows in the piano roll first by clicking their frame numbers. Items that do not apply right now are grey. Where an item works on "the first selected frame", it uses the frame the game is on when nothing is selected. The keys below are the default hotkeys. Change them on the TAStudio tab of the <a href="../chimera/hotkeys.html">Hotkeys</a> page.</p>
 <h2 id="edit">Edit menu</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-edit-menu.png" alt="The TAStudio Edit menu from Undo to Recent Macros, with items that need a selection greyed out" width="448" height="859"><noscript><img src="../assets/chimera-screenshots/tastudio-edit-menu.png" alt="The TAStudio Edit menu from Undo to Recent Macros, with items that need a selection greyed out" width="448" height="859"></noscript><figcaption>The Edit menu with no rows selected. Items that need a selection are grey.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Item</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Undo, Redo</strong></td><td class="desc">Go back or forward through your edits.</td></tr>
-<tr><td class="nm"><strong>Show Undo History</strong></td><td class="desc">Opens a window that lists your edits.</td></tr>
-<tr><td class="nm"><strong>Selection Undo, Selection Redo</strong></td><td class="desc">Go back or forward through changes to which rows are selected.</td></tr>
+<tr><td class="nm"><strong>Undo (Ctrl+Z), Redo (Ctrl+Y)</strong></td><td class="desc">Go back or forward through your edits of the movie.</td></tr>
+<tr><td class="nm"><strong>Show Undo History</strong></td><td class="desc">Opens the Undo History window, described below.</td></tr>
+<tr><td class="nm"><strong>Selection Undo, Selection Redo</strong></td><td class="desc">Always grey. They are kept for the same layout as other TAS tools and do nothing yet.</td></tr>
 <tr><td class="nm"><strong>Deselect</strong></td><td class="desc">Clears the selection.</td></tr>
-<tr><td class="nm"><strong>Select between Markers</strong></td><td class="desc">Selects every row between the two markers around the selection.</td></tr>
-<tr><td class="nm"><strong>Select All</strong></td><td class="desc">Selects every row.</td></tr>
-<tr><td class="nm"><strong>Reselect Clipboard</strong></td><td class="desc">Selects the rows that were last copied.</td></tr>
-<tr><td class="nm"><strong>Go to Frame...</strong></td><td class="desc">Asks for a frame number and seeks to it.</td></tr>
-<tr><td class="nm"><strong>Copy, Cut</strong></td><td class="desc">Copy or cut the input of the selected rows to the clipboard.</td></tr>
-<tr><td class="nm"><strong>Paste</strong></td><td class="desc">Writes copied input over the rows from the first selected row.</td></tr>
-<tr><td class="nm"><strong>Paste Insert</strong></td><td class="desc">Inserts copied input at the first selected row and moves the later rows down.</td></tr>
-<tr><td class="nm"><strong>Clear</strong></td><td class="desc">Removes the pressed buttons from the selected rows. The rows stay.</td></tr>
-<tr><td class="nm"><strong>Delete</strong></td><td class="desc">Removes the selected rows from the movie.</td></tr>
-<tr><td class="nm"><strong>Insert</strong></td><td class="desc">Inserts empty rows at the selection, as many as are selected.</td></tr>
-<tr><td class="nm"><strong>Insert # of Frames</strong></td><td class="desc">Asks how many empty rows to insert.</td></tr>
-<tr><td class="nm"><strong>Clone</strong></td><td class="desc">Repeats the selected rows once right after the selection.</td></tr>
-<tr><td class="nm"><strong>Clone # Times</strong></td><td class="desc">Asks how many times to repeat the selected rows.</td></tr>
-<tr><td class="nm"><strong>Truncate Movie</strong></td><td class="desc">Cuts off the movie after the last selected row.</td></tr>
-<tr><td class="nm"><strong>Clear Greenzone</strong></td><td class="desc">Throws away the saved states. See <a href="../tastudio/greenzone.html">Greenzone</a>.</td></tr>
-<tr><td class="nm"><strong>State History Integrity Check</strong></td><td class="desc">Replays the movie and checks that it matches the saved states. It reports Integrity Check passed, or tells you which frames are bad and offers to save the state.</td></tr>
-<tr><td class="nm"><strong>Save Selection to Macro</strong></td><td class="desc">Saves the selected input as a macro file.</td></tr>
-<tr><td class="nm"><strong>Place Macro at Selection</strong></td><td class="desc">Puts a macro file into the movie at the selection.</td></tr>
-<tr><td class="nm"><strong>Recent Macros</strong></td><td class="desc">Lists macro files you used lately.</td></tr>
-</tbody></table></div>
-<h2 id="metadata">Metadata menu</h2>
-<div class="tablewrap"><table><thead><tr><th>Item</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Header...</strong></td><td class="desc">Opens the movie header, which holds details such as the author and the core.</td></tr>
-<tr><td class="nm"><strong>Comments...</strong></td><td class="desc">Opens a window for free text notes saved with the movie.</td></tr>
-<tr><td class="nm"><strong>Subtitles...</strong></td><td class="desc">Opens a window for text that shows over the picture at chosen frames.</td></tr>
+<tr><td class="nm"><strong>Select between Markers (Ctrl+A)</strong></td><td class="desc">Selects the frames from the marker at or before the frame the game is on up to the frame before the next marker.</td></tr>
+<tr><td class="nm"><strong>Select All (Ctrl+Shift+A)</strong></td><td class="desc">Selects every frame of the movie.</td></tr>
+<tr><td class="nm"><strong>Reselect Clipboard (Ctrl+B)</strong></td><td class="desc">Selects again the frames last copied or cut, where they were.</td></tr>
+<tr><td class="nm"><strong>Go to Frame...</strong></td><td class="desc">Pauses the game and asks for a frame number, then goes there. No default key.</td></tr>
+<tr><td class="nm"><strong>Copy (Ctrl+C), Cut (Ctrl+X)</strong></td><td class="desc">Put the input of the selected frames on the system clipboard as text. Cut also removes the frames.</td></tr>
+<tr><td class="nm"><strong>Paste (Ctrl+V)</strong></td><td class="desc">Writes the input on the clipboard over the frames from the first selected frame on.</td></tr>
+<tr><td class="nm"><strong>Paste Insert (Ctrl+Shift+V)</strong></td><td class="desc">Puts the input on the clipboard in at the first selected frame and moves the later frames down.</td></tr>
+<tr><td class="nm"><strong>Clear (Delete)</strong></td><td class="desc">Releases every button on the selected frames and puts analog controls at rest. The frames stay.</td></tr>
+<tr><td class="nm"><strong>Delete (Ctrl+Delete)</strong></td><td class="desc">Removes the selected frames. Later frames move up.</td></tr>
+<tr><td class="nm"><strong>Insert (Insert)</strong></td><td class="desc">Puts one empty frame in at the first selected frame.</td></tr>
+<tr><td class="nm"><strong>Insert # of Frames (Shift+Insert)</strong></td><td class="desc">Asks how many empty frames to put in at the first selected frame.</td></tr>
+<tr><td class="nm"><strong>Clone (Ctrl+Insert)</strong></td><td class="desc">Puts a copy of the selected frames in right after them.</td></tr>
+<tr><td class="nm"><strong>Clone # Times (Ctrl+Shift+Insert)</strong></td><td class="desc">Asks how many copies to put in after the selected frames.</td></tr>
+<tr><td class="nm"><strong>Truncate Movie</strong></td><td class="desc">Removes every frame from the first selected frame to the end of the movie.</td></tr>
+<tr><td class="nm"><strong>Clear Greenzone</strong></td><td class="desc">Throws away the saved states. See <a href="greenzone.html">Greenzone</a>.</td></tr>
+<tr><td class="nm"><strong>State History Integrity Check</strong></td><td class="desc">Checks that every state the greenzone holds puts the game back exactly. The result is shown in the status bar. If a state is wrong, the two states of the first bad one are saved to a folder so the problem can be reported.</td></tr>
+<tr><td class="nm"><strong>Save Selection to Macro</strong></td><td class="desc">Saves the selected frames as a .chimeraMacro file, in the Macros folder set in Paths.</td></tr>
+<tr><td class="nm"><strong>Place Macro at Selection</strong></td><td class="desc">Writes the frames of a .chimeraMacro file into the movie from the first selected frame.</td></tr>
+<tr><td class="nm"><strong>Recent Macros</strong></td><td class="desc">The macro files used lately. Click one to place it at the selection.</td></tr>
 </tbody></table></div>
 <h2 id="settings">Settings menu</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-menu.png" alt="The TAStudio Settings menu with Open settings and Columns (Config, Controllers)" width="518" height="129"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-menu.png" alt="The TAStudio Settings menu with Open settings and Columns (Config, Controllers)" width="518" height="129"></noscript><figcaption>The Settings menu.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Item</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Open settings...</strong></td><td class="desc">Opens the TAStudio settings window, described below.</td></tr>
+<tr><td class="nm"><strong>Open settings...</strong></td><td class="desc">Opens the TAStudio Settings window, described below.</td></tr>
+<tr><td class="nm"><strong>Columns (Config &gt; Controllers)...</strong></td><td class="desc">Opens the controller configuration window. A ticked box beside a control makes it a column in the piano roll. See <a href="split-input-rolls.html">Split Input Rolls</a>.</td></tr>
 </tbody></table></div>
-<h2 id="columns">Columns menu</h2>
-<p>The Columns menu lists every button column with a tick for each column that is shown. Tick or untick to show or hide a column in the active roll. If you have more than one roll, the top line says which roll is current. See <a href="../tastudio/split-input-rolls.html">Split Input Rolls</a>.</p>
 <h2 id="window">Window menu</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-window-menu.png" alt="The TAStudio Window menu with Move with Main Window, Save Window Position, Stay on Top, Float From Main Window and Restore Defaults" width="518" height="219"><noscript><img src="../assets/chimera-screenshots/tastudio-window-menu.png" alt="The TAStudio Window menu with Move with Main Window, Save Window Position, Stay on Top, Float From Main Window and Restore Defaults" width="518" height="219"></noscript><figcaption>The Window menu.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Item</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Move with Main Window</strong></td><td class="desc">When ticked, dragging the Chimera window moves TAStudio along and keeps its place beside it. Dragging TAStudio moves only TAStudio. Hold Shift to move the main window without TAStudio.</td></tr>
+<tr><td class="nm"><strong>Move with Main Window</strong></td><td class="desc">When ticked, dragging the Chimera window moves TAStudio along and keeps its place beside it. Dragging TAStudio moves only TAStudio. Hold Shift while dragging the Chimera window to move it alone.</td></tr>
+<tr><td class="nm"><strong>Save Window Position</strong></td><td class="desc">Opens TAStudio at the size it had last time.</td></tr>
+<tr><td class="nm"><strong>Stay on Top</strong></td><td class="desc">Keeps TAStudio above other windows. Shown only where the system allows it.</td></tr>
+<tr><td class="nm"><strong>Float From Main Window</strong></td><td class="desc">Makes TAStudio a window of its own. When it is off, TAStudio belongs to the Chimera window, stays above it and is minimized with it.</td></tr>
+<tr><td class="nm"><strong>Restore Defaults</strong></td><td class="desc">Shows every column again, puts the side boxes back to their first sizes, and resets the window settings above. Columns you hid on purpose, such as unused keyboard keys, are shown again too.</td></tr>
 </tbody></table></div>
 <h2 id="hide">&lt;&lt; Hide</h2>
-<p>The Hide button at the right end of the menu bar hides the TAStudio window. Press Show TAStudio &gt;&gt; in the Chimera menu bar to bring it back.</p>
+<p>The &lt;&lt; Hide button at the right end of the menu bar hides the TAStudio window. The project stays open. Press Show TAStudio &gt;&gt; in the Chimera menu bar to bring it back.</p>
 <h2 id="right-click">Piano roll right-click menu</h2>
-<p>A right click on a row opens this menu.</p>
+<p>Select one or more frames by their frame numbers, then right-click the piano roll. With nothing selected, no menu opens.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-row-menu.png" alt="The piano roll right-click menu on seven selected frames, from Set Markers to Truncate Movie" width="718" height="660"><noscript><img src="../assets/chimera-screenshots/tastudio-row-menu.png" alt="The piano roll right-click menu on seven selected frames, from Set Markers to Truncate Movie" width="718" height="660"></noscript><figcaption>The right-click menu on frames 21867 to 21873. Remove Markers is grey because no marker is among them, and Cancel Seek because no seek is running.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Item</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Set Markers</strong></td><td class="desc">Puts a marker on each selected row. TAStudio asks first if you select more than 50 rows.</td></tr>
-<tr><td class="nm"><strong>Set Marker with Text</strong></td><td class="desc">Puts a marker on the row and asks for a name.</td></tr>
-<tr><td class="nm"><strong>Remove Markers</strong></td><td class="desc">Removes the markers on the selected rows.</td></tr>
-<tr><td class="nm"><strong>Deselect, Select between Markers</strong></td><td class="desc">Same as in the Edit menu.</td></tr>
+<tr><td class="nm"><strong>Set Markers</strong></td><td class="desc">Puts an unnamed marker on each selected frame. TAStudio asks first if more than 50 frames are selected.</td></tr>
+<tr><td class="nm"><strong>Set Marker with Text</strong></td><td class="desc">Asks for a name and puts a marker on the first selected frame.</td></tr>
+<tr><td class="nm"><strong>Remove Markers</strong></td><td class="desc">Removes the markers on the selected frames. Grey when there are none.</td></tr>
+<tr><td class="nm"><strong>Deselect, Select between Markers</strong></td><td class="desc">The same as in the Edit menu.</td></tr>
 <tr><td class="nm"><strong>Clear Greenzone</strong></td><td class="desc">Throws away the saved states.</td></tr>
-<tr><td class="nm"><strong>Cancel Seek</strong></td><td class="desc">Stops a seek that is in progress.</td></tr>
-<tr><td class="nm"><strong>Copy, Paste, Paste Insert, Cut, Clear, Delete</strong></td><td class="desc">Same as in the Edit menu.</td></tr>
-<tr><td class="nm"><strong>Insert, Insert # of Frames, Clone, Clone # Times, Truncate Movie</strong></td><td class="desc">Same as in the Edit menu.</td></tr>
-<tr><td class="nm"><strong>Branch</strong></td><td class="desc">Adds a branch at the current frame. It shows only when you right-click the row the game is on.</td></tr>
+<tr><td class="nm"><strong>Cancel Seek</strong></td><td class="desc">Stops a seek that is playing to a frame. Grey when no seek runs.</td></tr>
+<tr><td class="nm"><strong>Copy, Paste, Paste Insert, Cut</strong></td><td class="desc">The same as in the Edit menu, from the first selected frame.</td></tr>
+<tr><td class="nm"><strong>Clear, Delete, Insert, Insert # of Frames, Clone, Clone # Times</strong></td><td class="desc">The same as in the Edit menu.</td></tr>
+<tr><td class="nm"><strong>Truncate Movie</strong></td><td class="desc">Removes every frame from the first selected frame to the end.</td></tr>
+<tr><td class="nm"><strong>Branch</strong></td><td class="desc">Adds a branch. Shown only when you right-click the row of the frame the game is on.</td></tr>
 </tbody></table></div>
-<p>Right-clicking a column header opens a different menu. See <a href="../tastudio/split-input-rolls.html">Split Input Rolls</a>.</p>
+<p>Right-clicking a column heading opens a different menu. See <a href="split-input-rolls.html">Split Input Rolls</a>.</p>
 <h2 id="settings-window">Settings window</h2>
-<p>The settings window has six tabs. Some options are saved with the movie and some with your config.</p>
+<p>Settings, Open settings... opens this window. It has five tabs. Apply keeps the changes and Cancel closes the window without them.</p>
 <h3 id="appearance">Appearance tab</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-appearance.png" alt="The Appearance tab with Set Font, Set Colors, four Denote options, and the Movie settings Rotate input roll, Lag frames to hide and Hide was lag frames" width="440" height="570"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-appearance.png" alt="The Appearance tab with Set Font, Set Colors, four Denote options, and the Movie settings Rotate input roll, Lag frames to hide and Hide was lag frames" width="440" height="570"></noscript><figcaption>The Appearance tab.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Lag frames to hide</strong></td><td class="desc">How many lag frames in a row to hide from the piano roll. A lag frame is a frame in which the game did not read the controls.</td></tr>
-<tr><td class="nm"><strong>Hide "was lag" frames</strong></td><td class="desc">Hides frames that were lag frames.</td></tr>
-<tr><td class="nm"><strong>Rotate input roll</strong></td><td class="desc">Turns the piano roll on its side, with frames across and buttons down.</td></tr>
-<tr><td class="nm"><strong>Set Font, Set Colors</strong></td><td class="desc">Change the font and the colors of the piano roll.</td></tr>
-<tr><td class="nm"><strong>Denote markers with color or icons</strong></td><td class="desc">Marks marker rows with a color on the frame column, with an icon, or both.</td></tr>
-<tr><td class="nm"><strong>Denote states with background color or icons</strong></td><td class="desc">Marks rows that have a saved state with a background color, with an icon, or both.</td></tr>
+<tr><td class="nm"><strong>Set Font, Set Colors</strong></td><td class="desc">Change the piano roll's font, and its colours for the cursor, the frame column, input, states, invalidated frames, lag frames and markers.</td></tr>
+<tr><td class="nm"><strong>Denote states with icons, with background color</strong></td><td class="desc">Marks frames whose state the greenzone holds with an icon in the frame column, with a colour, or both.</td></tr>
+<tr><td class="nm"><strong>Denote markers with icons, with color on frame column</strong></td><td class="desc">Marks marker frames with an icon, with a colour on the frame number, or both.</td></tr>
+<tr><td class="nm"><strong>Rotate input roll</strong></td><td class="desc">Turns the piano roll on its side, with frames across and buttons down. Saved with the movie.</td></tr>
+<tr><td class="nm"><strong>Lag frames to hide</strong></td><td class="desc">How many lag frames in a row to hide, from 0 to 10. A lag frame is a frame in which the game did not read the controls.</td></tr>
+<tr><td class="nm"><strong>Hide "was lag" frames</strong></td><td class="desc">Also hides frames that were lag frames before an edit.</td></tr>
 </tbody></table></div>
 <h3 id="autosave">Autosave tab</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-autosave.png" alt="The Autosave tab with Autosave frequency 1,800 seconds and two backup options" width="440" height="570"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-autosave.png" alt="The Autosave tab with Autosave frequency 1,800 seconds and two backup options" width="440" height="570"></noscript><figcaption>The Autosave tab.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Autosave frequency</strong></td><td class="desc">Seconds between automatic saves. 0 turns autosave off.</td></tr>
-<tr><td class="nm"><strong>When manually saving, also save .backup</strong></td><td class="desc">Makes a backup file each time you save.</td></tr>
-<tr><td class="nm"><strong>Save as .backup (no greenzone)</strong></td><td class="desc">Autosave writes a backup file without the greenzone, so it is quick.</td></tr>
-</tbody></table></div>
-<h3 id="savestates">Savestates tab</h3>
-<div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Management strategy</strong></td><td class="desc">Chooses how TAStudio decides which states to keep. Each movie holds its own settings.</td></tr>
-<tr><td class="nm"><strong>Use these settings as default</strong></td><td class="desc">Makes the current settings the default for new movies.</td></tr>
-<tr><td class="nm"><strong>Use default settings</strong></td><td class="desc">Loads the default settings into this movie.</td></tr>
+<tr><td class="nm"><strong>Autosave frequency</strong></td><td class="desc">Seconds between automatic saves of a project with changes. 0 turns autosave off.</td></tr>
+<tr><td class="nm"><strong>Save as .backup (no greenzone)</strong></td><td class="desc">The autosave writes a backup file without the greenzone instead of the project's own file.</td></tr>
+<tr><td class="nm"><strong>When manually saving, also save .backup</strong></td><td class="desc">Each save you make also writes a backup.</td></tr>
 </tbody></table></div>
 <h3 id="paint">Paint Patterns tab</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-paint-patterns.png" alt="The Paint Patterns tab with Use pattern for painting, Choose pattern and the custom pattern editor showing Power with 0 On and 1 Off" width="440" height="570"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-paint-patterns.png" alt="The Paint Patterns tab with Use pattern for painting, Choose pattern and the custom pattern editor showing Power with 0 On and 1 Off" width="440" height="570"></noscript><figcaption>The Paint Patterns tab, with the custom pattern of the Power button shown.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Choose pattern</strong></td><td class="desc">Hold keeps the button pressed. Auto-Fire presses and releases it over and over. Custom uses a pattern you write.</td></tr>
-<tr><td class="nm"><strong>Use pattern for painting</strong></td><td class="desc">Always, Auto-Fire columns only, or Never. It decides when dragging in the piano roll follows the pattern.</td></tr>
-<tr><td class="nm"><strong>Custom patterns (per movie)</strong></td><td class="desc">A list of Count and Value pairs for each button. Insert and Delete edit the list. Account for lag frames makes the pattern skip lag frames.</td></tr>
-</tbody></table></div>
-<h3 id="misc">Misc tab</h3>
-<div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Old control scheme for branches</strong></td><td class="desc">Uses the older way of working with branches.</td></tr>
-<tr><td class="nm"><strong>Load branch by double clicking</strong></td><td class="desc">A double click on a branch loads it.</td></tr>
-<tr><td class="nm"><strong>Rewind step, Fast rewind step</strong></td><td class="desc">How many frames one rewind and one fast rewind go back.</td></tr>
-<tr><td class="nm"><strong>Bind markers to input</strong></td><td class="desc">Markers move with the rows when you insert or delete rows.</td></tr>
-<tr><td class="nm"><strong>Include frame numbers when copying input</strong></td><td class="desc">Copied text carries the frame numbers.</td></tr>
-<tr><td class="nm"><strong>Max Undo Count</strong></td><td class="desc">How many edits can be undone.</td></tr>
-<tr><td class="nm"><strong>Automatically pause at end of movie</strong></td><td class="desc">Pauses when playback reaches the last frame.</td></tr>
-<tr><td class="nm"><strong>Markers keep states by default</strong></td><td class="desc">Keeps a saved state at each marker.</td></tr>
+<tr><td class="nm"><strong>Use pattern for painting</strong></td><td class="desc">When a drag in the piano roll paints a pattern instead of one state. Always, Auto-Fire columns only (columns with Auto-hold on), or Never. Holding Alt while you drag always paints the pattern.</td></tr>
+<tr><td class="nm"><strong>Choose pattern</strong></td><td class="desc">What a column with Auto-hold on does. Hold keeps the button pressed, Auto-Fire presses and releases it, Custom follows the pattern below.</td></tr>
+<tr><td class="nm"><strong>Set custom patterns (per movie)</strong></td><td class="desc">Pick a control in the list. Each line is a run, a value and how many frames it lasts. The last line, Loop to, is the line the pattern starts again from. Value and Count change the line picked. Insert adds a line and Delete removes one.</td></tr>
+<tr><td class="nm"><strong>Account for lag frames</strong></td><td class="desc">The pattern skips lag frames, so a lag frame does not use up a step.</td></tr>
 </tbody></table></div>
 <h3 id="input-roll">Input Roll tab</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-input-roll.png" alt="The Input Roll tab with scroll options, Wheel scroll speed 6, Sync scroll across all input rolls and Allow editing hidden columns" width="440" height="570"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-input-roll.png" alt="The Input Roll tab with scroll options, Wheel scroll speed 6, Sync scroll across all input rolls and Allow editing hidden columns" width="440" height="570"></noscript><figcaption>The Input Roll tab.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Scroll to cursor method</strong></td><td class="desc">Where the current row goes when the view follows it. Choose center, bottom, top or view.</td></tr>
-<tr><td class="nm"><strong>When following cursor, scroll at every frame</strong></td><td class="desc">Scrolls on every frame and not only when the row leaves the view.</td></tr>
-<tr><td class="nm"><strong>Wheel scroll speed</strong></td><td class="desc">How many frames one notch of the mouse wheel moves.</td></tr>
-<tr><td class="nm"><strong>Allow editing hidden columns</strong></td><td class="desc">Lets Clear, record and paste change columns that are hidden.</td></tr>
+<tr><td class="nm"><strong>When following cursor, scroll at every frame</strong></td><td class="desc">With Follow cursor on, scrolls on every frame, not only when the frame leaves the view.</td></tr>
+<tr><td class="nm"><strong>Scroll to cursor method</strong></td><td class="desc">Where the current frame goes when the roll follows it. Scroll to view, top, bottom or center.</td></tr>
+<tr><td class="nm"><strong>Wheel scroll speed</strong></td><td class="desc">How many frames one notch of the mouse wheel scrolls.</td></tr>
+<tr><td class="nm"><strong>Sync scroll across all input rolls</strong></td><td class="desc">Several input rolls scroll together. See <a href="split-input-rolls.html">Split Input Rolls</a>.</td></tr>
+<tr><td class="nm"><strong>Allow editing hidden columns</strong></td><td class="desc">Clear, recording, paste and other edits also change columns that are hidden. Off, they change only the columns shown.</td></tr>
 </tbody></table></div>
-<p>Apply saves the changes and keeps the window open. Cancel closes it without saving.</p>
-<h2 id="info">What it shows</h2>
-<p>The menus show only the items above. Hotkeys appear beside many items. The status bar at the bottom of the window shows messages about saving, seeking and the current state.</p>
+<h3 id="misc">Misc tab</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-settings-misc.png" alt="The Misc tab with Rewind step, Fast rewind step, Max Undo Count and seven options, plus Branch screenshot size 320" width="440" height="570"><noscript><img src="../assets/chimera-screenshots/tastudio-settings-misc.png" alt="The Misc tab with Rewind step, Fast rewind step, Max Undo Count and seven options, plus Branch screenshot size 320" width="440" height="570"></noscript><figcaption>The Misc tab.</figcaption></figure>
+<div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
+<tr><td class="nm"><strong>Rewind step, Fast rewind step</strong></td><td class="desc">How many frames one rewind goes back, and one rewind while fast forwarding.</td></tr>
+<tr><td class="nm"><strong>Max Undo Count</strong></td><td class="desc">How many edits can be undone.</td></tr>
+<tr><td class="nm"><strong>Ask before a seek longer than</strong></td><td class="desc">A seek that would take longer than this many seconds asks first, then shows its progress with a Cancel that goes back. 0 never asks. This option is in Chimera builds from 15 November 2026 on, and the picture is from an older build without it.</td></tr>
+<tr><td class="nm"><strong>Bind markers to input</strong></td><td class="desc">Markers move with the frames when frames are put in or taken out.</td></tr>
+<tr><td class="nm"><strong>Include frame numbers when copying input</strong></td><td class="desc">Copy puts each frame's number before its line.</td></tr>
+<tr><td class="nm"><strong>Automatically pause at end of movie</strong></td><td class="desc">Pauses on the frame where the movie runs out.</td></tr>
+<tr><td class="nm"><strong>Load branch by double clicking</strong></td><td class="desc">A double click on a branch loads it.</td></tr>
+<tr><td class="nm"><strong>Old control scheme for branches</strong></td><td class="desc">Loading a branch only moves the game to the branch's frame and leaves the movie as it is.</td></tr>
+<tr><td class="nm"><strong>Markers keep states by default</strong></td><td class="desc">A new marker keeps the state of its frame in the greenzone.</td></tr>
+<tr><td class="nm"><strong>Keep every marker's frame in the greenzone</strong></td><td class="desc">Every marker's frame keeps its state, whatever the greenzone's period, unless the greenzone is Off.</td></tr>
+<tr><td class="nm"><strong>Branch screenshot size (pixels)</strong></td><td class="desc">The longest side of the picture shown when the pointer is over a branch. A larger picture is shrunk to it.</td></tr>
+</tbody></table></div>
+<h2 id="undo-history">Undo History window</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-undo-history.png" alt="The Undo History window with ID and Undo Step columns and Undo, Redo, Auto Scroll, Max and Clear controls" width="460" height="330"><noscript><img src="../assets/chimera-screenshots/tastudio-undo-history.png" alt="The Undo History window with ID and Undo Step columns and Undo, Redo, Auto Scroll, Max and Clear controls" width="460" height="330"></noscript><figcaption>The Undo History window. The list is empty because nothing was edited yet.</figcaption></figure>
+<div class="tablewrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
+<tr><td class="nm"><strong>List</strong></td><td class="desc">Each edit with its number and what it did. Double-click an edit to undo back to it.</td></tr>
+<tr><td class="nm"><strong>Right-click menu</strong></td><td class="desc">Undo To Selection, Redo To Selection, and Clear History To Selection, which forgets the edits up to the one picked.</td></tr>
+<tr><td class="nm"><strong>Undo, Redo</strong></td><td class="desc">Take one edit back or do it again.</td></tr>
+<tr><td class="nm"><strong>Auto Scroll</strong></td><td class="desc">Keeps the newest edit in view.</td></tr>
+<tr><td class="nm"><strong>Max</strong></td><td class="desc">How many edits are kept.</td></tr>
+<tr><td class="nm"><strong>Clear</strong></td><td class="desc">Forgets the whole history. The movie is not changed.</td></tr>
+</tbody></table></div>
+<h2 id="go-to-frame">Go to Frame window</h2>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-go-to-frame.png" alt="The Go to Frame window asking Jump/Seek to frame index with OK and Cancel" width="260" height="140"><noscript><img src="../assets/chimera-screenshots/tastudio-go-to-frame.png" alt="The Go to Frame window asking Jump/Seek to frame index with OK and Cancel" width="260" height="140"></noscript><figcaption>Edit, Go to Frame...</figcaption></figure>
+<p>Type a frame number and press OK or Enter. TAStudio pauses the game when the window opens.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

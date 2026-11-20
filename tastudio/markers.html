@@ -53,41 +53,47 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Markers</h1>
 <h2 id="what">What it is</h2>
-<p>A <strong>marker</strong> is a named point at one frame of the movie. The Markers box lists every marker with its frame number and its name.</p>
+<p>A marker is a named point at one frame of the movie. The Markers box lists every marker with its frame number and its name.</p>
 <h2 id="used-for">What it is used for</h2>
 <ul>
-<li>Labeling places in a run, such as the start of a level.</li>
+<li>Labelling places in a run, such as the start of a level.</li>
 <li>Jumping quickly to a place.</li>
-<li>Selecting all the rows between two markers.</li>
+<li>Selecting the frames between two markers.</li>
 <li>Choosing the first and last frame when you encode a video. See <a href="../chimera/encoding.html">Encoding</a>.</li>
 </ul>
 <h2 id="how">How to use it</h2>
-<ol>
-<li>To add a marker at the frame the game is on, press the Add button or the hotkey (M by default).</li>
+<ul>
+<li>To add a marker at the frame the game is on, press Add (the green plus) or the hotkey M.</li>
 <li>To add a marker with a name, press Add with Text and type the name.</li>
-<li>To add markers on other rows, select the rows and choose Set Markers in the right-click menu.</li>
-<li>To remove a marker, select it in the list and press Remove, or press Ctrl+M on its row.</li>
+<li>To add markers on other frames, select the frames and choose Set Markers in the piano roll's right-click menu, or double-click a frame number.</li>
+<li>To remove a marker, select it in the list and press Remove, or press Ctrl+M with the game on its frame. Several markers selected in the list are removed at once.</li>
 <li>To rename a marker, press Edit Text.</li>
-<li>To move a marker, press Edit Frame and type a frame number, or hold Alt and drag the marker.</li>
-<li>To go to a marker, select it and press Jump To. Scroll To moves the piano roll to the marker without moving the game.</li>
-</ol>
-<p>Shift+PageUp and Shift+PageDown seek to the previous and next marker. Ctrl+A selects the rows between markers.</p>
+<li>To move a marker, press Edit Frame and type a frame number, or hold Alt and drag its frame number in the piano roll.</li>
+<li>To go to a marker, double-click it or press Jump To. Scroll To moves the piano roll to the marker without moving the game.</li>
+<li>Shift+PageUp and Shift+PageDown seek to the previous and next marker. Ctrl+A selects the frames between markers.</li>
+</ul>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-marker-text.png" alt="The Marker on frame 21891 prompt with the text box What happens here and OK and Cancel" width="430" height="150"><noscript><img src="../assets/chimera-screenshots/tastudio-marker-text.png" alt="The Marker on frame 21891 prompt with the text box What happens here and OK and Cancel" width="430" height="150"></noscript><figcaption>Add with Text asks for the marker's name.</figcaption></figure>
 <h2 id="info">What it shows</h2>
-<div class="tablewrap"><table><thead><tr><th>Column or control</th><th>What it shows</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Frame</strong></td><td class="desc">The frame of the marker.</td></tr>
-<tr><td class="nm"><strong>Name</strong></td><td class="desc">The marker's text.</td></tr>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-marker-menu.png" alt="The Markers box with its right-click menu, Jump To, Scroll To, Edit Text, Edit Frame (Alt + Drag), Add and Remove" width="224" height="603"><noscript><img src="../assets/chimera-screenshots/tastudio-marker-menu.png" alt="The Markers box with its right-click menu, Jump To, Scroll To, Edit Text, Edit Frame (Alt + Drag), Add and Remove" width="224" height="603"></noscript><figcaption>The right-click menu on the Last input marker. Edit Text, Edit Frame and Remove are grey because the run's own markers cannot be changed.</figcaption></figure>
+<div class="tablewrap"><table><thead><tr><th>Button or menu item</th><th>What it does</th></tr></thead><tbody>
+<tr><td class="nm"><strong>Frame, Name</strong></td><td class="desc">The two columns of the list, the marker's frame and its text.</td></tr>
+<tr><td class="nm"><strong>Add (plus)</strong></td><td class="desc">Puts a marker on the frame the game is on.</td></tr>
+<tr><td class="nm"><strong>Add with Text</strong></td><td class="desc">The same, asking for a name first.</td></tr>
 <tr><td class="nm"><strong>Jump To</strong></td><td class="desc">Moves the game to the marker's frame.</td></tr>
 <tr><td class="nm"><strong>Scroll To</strong></td><td class="desc">Scrolls the piano roll to the marker's frame.</td></tr>
-<tr><td class="nm"><strong>Edit Text, Edit Frame</strong></td><td class="desc">Change the name or the frame.</td></tr>
-<tr><td class="nm"><strong>Add, Add with Text, Remove</strong></td><td class="desc">Add or remove a marker.</td></tr>
+<tr><td class="nm"><strong>Edit Text (pencil)</strong></td><td class="desc">Changes the marker's name.</td></tr>
+<tr><td class="nm"><strong>Edit Frame (Alt + Drag) (clock)</strong></td><td class="desc">Moves the marker to another frame. A frame that already has a marker cannot take another.</td></tr>
+<tr><td class="nm"><strong>Remove</strong></td><td class="desc">Removes the markers selected in the list.</td></tr>
 </tbody></table></div>
-<p>Every movie has three permanent markers. Run start is the first frame, Run end is the last frame, and Last input is the frame of the final button press. They follow your edits.</p>
-<p>In the settings, Bind markers to input makes markers move with the rows when you insert or delete rows. Markers can be shown with a color or an icon in the piano roll. See <a href="../tastudio/menu-options.html">Menu Options</a>.</p>
+<p>The same items are in the list's right-click menu. Hold the pointer over a button to see its hotkey.</p>
+<p>Every movie has three markers of its own. <strong>Run start</strong> is frame 0, <strong>Last input</strong> is the frame of the last button press, and <strong>Run end</strong> is the last frame. They follow your edits and cannot be renamed, moved or removed. In the list, the marker the game is at or past has the current frame's colour, and the others the colour of their frame in the greenzone.</p>
+<p>In the Misc settings, Bind markers to input makes markers move with the frames when frames are put in or taken out, Markers keep states by default keeps a new marker's state, and Keep every marker's frame in the greenzone keeps every marker's state. Markers can be shown with a colour or an icon in the piano roll. See <a href="menu-options.html">Menu Options</a>.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

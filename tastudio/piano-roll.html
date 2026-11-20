@@ -53,55 +53,69 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Piano Roll</h1>
 <h2 id="what">What it is</h2>
-<p>The piano roll is the main table in TAStudio. Each row is one <strong>frame</strong>, which is one picture the game draws. Each column is one button of the controller. A mark in a cell means the button is pressed on that frame. The name comes from piano roll music, where each note is a mark on a grid.</p>
+<p>The piano roll is the main table in TAStudio. Each row is one frame, and each column is one control, such as a button of a controller. A mark in a cell means the button is pressed on that frame. The name comes from piano roll music, where each note is a mark on a grid. The pictures on these pages come from a project of The Legend of Zelda (NES) on the Mesen core. The Zelda project shows four controllers, two Zapper columns (T and F) and mat columns, among others.</p>
 <h2 id="used-for">What it is used for</h2>
 <ul>
 <li>Pressing and releasing buttons frame by frame.</li>
 <li>Selecting a stretch of frames to copy, paste, clear, delete, insert or clone.</li>
 <li>Moving the game to any frame.</li>
-<li>Entering analog values for sticks and similar controls.</li>
+<li>Entering values for analog controls such as sticks.</li>
 </ul>
 <h2 id="how">How to use it</h2>
 <h3 id="move">Move around</h3>
 <ul>
-<li>Click the first column of a row to move the game to that frame. This first column is the cursor column.</li>
-<li>Hold the right mouse button and turn the wheel to step frames forward or back. A middle click pauses or resumes.</li>
-<li>Edit, Go to Frame asks for a frame number and seeks to it.</li>
+<li>Click the narrow first column, the <strong>cursor column</strong>, to move the game to that frame. Keep the button held and drag to make the game follow the pointer.</li>
+<li>Turn the mouse wheel to scroll. Wheel scroll speed in the settings sets how many frames one notch moves.</li>
+<li>Hold the right mouse button and turn the wheel to step the game back or forward one frame per notch.</li>
+<li>Edit, Go to Frame asks for a frame number and goes there.</li>
 </ul>
 <h3 id="buttons">Press and release buttons</h3>
 <ul>
 <li>Click a button cell to press the button on that frame. Click again to release it.</li>
-<li>Drag up or down a column to press or release the button over many frames. The first click decides which one.</li>
-<li>Select a row, then Shift+click a cell in the column. Every row between them is pressed, or released if they were all pressed.</li>
-<li>Hold Alt while you click and drag to paint with the pattern from the Paint Patterns settings.</li>
-<li>Right-click a column header for more choices. See <a href="../tastudio/split-input-rolls.html">Split Input Rolls</a>.</li>
+<li>Drag up or down from a cell. Every cell you pass gets the state of the cell you started on. The drag stays in its column.</li>
+<li>Hold Alt while you click and drag to paint with the column's pattern from the Paint Patterns settings.</li>
+<li>Hold the pointer over a column heading to see the control's full name and, when the core knows it, what the game calls it.</li>
+<li>Right-click a column heading for Auto-hold and the column choices. See <a href="split-input-rolls.html">Split Input Rolls</a>.</li>
 </ul>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-column-tooltip.png" alt="The piano roll headings with the pointer over a B column and a tooltip reading P3 B" width="450" height="145"><noscript><img src="../assets/chimera-screenshots/tastudio-column-tooltip.png" alt="The piano roll headings with the pointer over a B column and a tooltip reading P3 B" width="450" height="145"></noscript><figcaption>Holding the pointer over a heading shows the control's full name, here the B button of controller 3.</figcaption></figure>
 <h3 id="analog">Enter analog values</h3>
 <ul>
-<li>Click and drag in an analog column to set values by mouse.</li>
-<li>Double-click an analog cell to enter axis editing. Up and Down then raise or lower the value by one, or by 10 with Shift. Left sets the lowest value and Right sets the highest.</li>
+<li>Click an analog cell to pick it. A bar opens under the roll with the control's name, the frame, a value box, Set and Done. Type a value and press Set or Enter. Done closes the bar.</li>
+<li>Drag from an analog cell to give the cells you pass the same value.</li>
+<li>While a cell is picked, the hotkeys Up and Down raise or lower the value by one, Shift+Up and Shift+Down by 10, and Left and Right set the lowest and the highest value.</li>
 </ul>
-<h3 id="select">Select and edit rows</h3>
+<h3 id="select">Select and edit frames</h3>
 <ul>
-<li>Click a frame number to select that row. Drag to select many. Hold Ctrl or Shift to add rows.</li>
-<li>Use the Edit menu or its hotkeys to copy, paste, clear, delete, insert and clone the selected rows. See <a href="../tastudio/menu-options.html">Menu Options</a>.</li>
-<li>Right-click a row for markers, the greenzone and the same edit items.</li>
+<li>Click a frame number to select that frame. Drag down the frame numbers, or Shift+click another one, to select a run of frames. A selection is always one run of frames in a row.</li>
+<li>Use the Edit menu or its hotkeys to copy, paste, clear, delete, insert and clone the selected frames. See <a href="menu-options.html">Menu Options</a>.</li>
+<li>Right-click the selection for markers, the greenzone and the same edit items.</li>
+<li>Double-click a frame number to put a marker there. On a frame that already has your marker, it asks for the marker's text.</li>
+<li>Hold Alt and drag a marker's frame number to move the marker to another frame.</li>
 </ul>
-<p>When you edit a row before the frame the game is on, the saved states after that row no longer match. TAStudio drops them. If Auto-restore is on in the <a href="../tastudio/playback.html">Playback</a> box, it then seeks back to the frame you were on.</p>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-selected-rows.png" alt="Seven selected frames, 21867 to 21873, highlighted across every column of the piano roll" width="718" height="220"><noscript><img src="../assets/chimera-screenshots/tastudio-selected-rows.png" alt="Seven selected frames, 21867 to 21873, highlighted across every column of the piano roll" width="718" height="220"></noscript><figcaption>Frames 21867 to 21873 selected by clicking 21867 and Shift+clicking 21873.</figcaption></figure>
+<h3 id="right-drag">Right-button drags on the frame numbers</h3>
+<p>Press the right mouse button on a frame number with a key held, then drag. One drag is one step of undo.</p>
+<div class="tablewrap"><table><thead><tr><th>Key held</th><th>What the drag does</th></tr></thead><tbody>
+<tr><td class="nm"><strong>Shift</strong></td><td class="desc">Stretches the input of the selected frames over the frames you pass.</td></tr>
+<tr><td class="nm"><strong>Ctrl</strong></td><td class="desc">Puts a copy of the selected frames where you let go.</td></tr>
+<tr><td class="nm"><strong>Ctrl+Shift</strong></td><td class="desc">Puts in copies of the selected frames over the frames you pass.</td></tr>
+<tr><td class="nm"><strong>Alt</strong></td><td class="desc">Moves the selected frames to where you let go.</td></tr>
+</tbody></table></div>
+<p>When you edit a frame before the frame the game is on, the saved states after it no longer match and TAStudio drops them. If Auto-restore last position is on in the Playback box, TAStudio then seeks back to the frame you were on.</p>
 <h2 id="info">What it shows</h2>
 <div class="tablewrap"><table><thead><tr><th>Part</th><th>What it shows</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Cursor column</strong></td><td class="desc">The first column. It shows an arrow at the frame the game is on.</td></tr>
-<tr><td class="nm"><strong>Frame column</strong></td><td class="desc">The frame number of each row. Marker rows and rows with a saved state can be colored or marked with an icon.</td></tr>
-<tr><td class="nm"><strong>Button columns</strong></td><td class="desc">One column for each button. A mark means the button is pressed. Analog columns show a number.</td></tr>
-<tr><td class="nm"><strong>Row colors</strong></td><td class="desc">Colors and icons show which frames have a saved state, which are markers and which were lag frames. You choose them in the Appearance tab of the settings.</td></tr>
-<tr><td class="nm"><strong>Header tooltip</strong></td><td class="desc">Hover over a column header to see the full button name and, when the core knows it, what the game calls the button.</td></tr>
+<tr><td class="nm"><strong>Cursor column</strong></td><td class="desc">The first, narrow column. A blue arrow marks the frame the game is on. A number marks a branch's frame, the number of the branch.</td></tr>
+<tr><td class="nm"><strong>Frame column</strong></td><td class="desc">The frame number of each row. Marker frames and frames with a saved state can be coloured or marked with an icon.</td></tr>
+<tr><td class="nm"><strong>Button columns</strong></td><td class="desc">One column for each control. A letter means the button is pressed. Analog columns show a number.</td></tr>
+<tr><td class="nm"><strong>Row colours</strong></td><td class="desc">Green rows are in the greenzone. Lag frames, the current frame, the selection and invalidated frames have colours of their own. Change them with Set Colors in the Appearance tab.</td></tr>
 </tbody></table></div>
-<p>You can rotate the piano roll so frames run across and buttons run down. You can also hide lag frames. Both options are in the Appearance tab. A frame in which the game did not read the controls is a lag frame.</p>
+<p>You can rotate the piano roll so frames run across and buttons run down, and hide lag frames. Both options are in the Appearance tab of the settings. See <a href="menu-options.html">Menu Options</a>.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>

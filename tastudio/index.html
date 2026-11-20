@@ -53,39 +53,42 @@
   <main id="main" class="content">
     <div class="eyebrow">TAStudio</div><h1>Quickstart</h1>
 <h2 id="quickstart">Quickstart</h2>
-<p><strong>TAStudio</strong> is the window where you edit a movie one frame at a time. A <strong>movie</strong> is a recording of the buttons you press, and a <strong>frame</strong> is one picture the game draws. TAStudio opens by itself when a project opens, so you start by creating or opening a project in the Chimera window.</p>
+<p>TAStudio is the window where you edit a movie one frame at a time. A <strong>movie</strong> is a recording of the buttons pressed on each frame, and a <strong>frame</strong> is one picture the game draws. TAStudio opens by itself beside the Chimera window when a project opens, so you start by creating or opening a project in the Chimera window. The pictures on these pages come from a project of The Legend of Zelda (NES) on the Mesen core.</p>
 <p>To create a project, follow the <a href="../chimera/index.html">Chimera Quickstart</a>. It works the same for every core, and TAStudio opens with the movie at the first frame.</p>
-<h3 id="reopen">Open TAStudio again</h3>
+<figure class="shot"><img data-src="../assets/chimera-screenshots/tastudio-window.png" alt="The TAStudio window for The Legend of Zelda with the piano roll on the left and the Playback, Greenzone, Branches and Markers boxes on the right" width="1084" height="851"><noscript><img src="../assets/chimera-screenshots/tastudio-window.png" alt="The TAStudio window for The Legend of Zelda with the piano roll on the left and the Playback, Greenzone, Branches and Markers boxes on the right" width="1084" height="851"></noscript><figcaption>TAStudio with the Zelda project. The arrow at the left of frame 21891 is the frame the game is on.</figcaption></figure>
+<h3 id="reopen">Hide and show TAStudio</h3>
 <ul>
-<li>Press Show TAStudio &gt;&gt; at the right end of the Chimera menu bar to bring the window back.</li>
-<li>Press &lt;&lt; Hide in the TAStudio menu bar to hide it.</li>
-<li>Open Project in the Chimera File menu opens a saved project, and TAStudio opens with it.</li>
-<li>Save and close from the Chimera File menu. TAStudio has no File menu of its own.</li>
+<li>Press <strong>&lt;&lt; Hide</strong> at the right end of the TAStudio menu bar to hide the window. The project stays open.</li>
+<li>Press <strong>Show TAStudio &gt;&gt;</strong> at the right end of the Chimera menu bar to bring it back.</li>
+<li>Closing the TAStudio window with its X closes the project. If the project has unsaved changes, Chimera asks first, and Cancel keeps both open.</li>
+<li>Open, save and close projects from the Chimera File menu. TAStudio has no File menu of its own.</li>
 </ul>
 <h2 id="first-edit">A first edit</h2>
 <ol>
-<li>Click the first column of any row to move the game to that frame.</li>
-<li>Click a button cell in a row to press that button on that frame. Click it again to release it.</li>
-<li>Hold the mouse button and drag down a column to press or release the button over many frames.</li>
+<li>Click the narrow first column of a row, the <strong>cursor column</strong>, to move the game to that frame. Hold the button and drag to follow the pointer.</li>
+<li>Click a button cell to press that button on that frame. Click it again to release it.</li>
+<li>Hold the mouse button and drag down a column to give every cell you pass the same state.</li>
 <li>Press the frame advance key (F by default) to run one frame at a time.</li>
+<li>Click a frame number to select that row, and drag or Shift+click to select more rows. Right-click the selection for the row menu.</li>
 <li>Save with Save Project in the Chimera File menu.</li>
 </ol>
 <h2 id="layout">The TAStudio window</h2>
 <div class="tablewrap"><table><thead><tr><th>Part</th><th>What it is</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Menu bar</strong></td><td class="desc">Edit, Metadata, Settings, Columns and Window. See <a href="../tastudio/menu-options.html">Menu Options</a>.</td></tr>
-<tr><td class="nm"><strong>Piano roll</strong></td><td class="desc">The big table with one row per frame and one column per button. See <a href="../tastudio/piano-roll.html">Piano Roll</a>.</td></tr>
-<tr><td class="nm"><strong>Playback box</strong></td><td class="desc">Buttons and options for moving through the movie. See <a href="../tastudio/playback.html">Playback</a>.</td></tr>
-<tr><td class="nm"><strong>Greenzone box</strong></td><td class="desc">Controls how much of your progress is saved for fast jumps. See <a href="../tastudio/greenzone.html">Greenzone</a>.</td></tr>
-<tr><td class="nm"><strong>Markers</strong></td><td class="desc">Named points in the movie. See <a href="../tastudio/markers.html">Markers</a>.</td></tr>
-<tr><td class="nm"><strong>Branches</strong></td><td class="desc">Saved copies of your work to return to. See <a href="../tastudio/branches.html">Branches</a>.</td></tr>
-<tr><td class="nm"><strong>Status bar</strong></td><td class="desc">Shows messages such as TAStudio engaged, Saving and File saved, and a progress bar while TAStudio seeks to a frame.</td></tr>
+<tr><td class="nm"><strong>Menu bar</strong></td><td class="desc">Edit, Settings and Window, with &lt;&lt; Hide at the right. See <a href="menu-options.html">Menu Options</a>.</td></tr>
+<tr><td class="nm"><strong>Piano roll</strong></td><td class="desc">The big table with one row per frame and one column per button. See <a href="piano-roll.html">Piano Roll</a>.</td></tr>
+<tr><td class="nm"><strong>Playback box</strong></td><td class="desc">Buttons and options for moving through the movie. See <a href="playback.html">Playback</a>.</td></tr>
+<tr><td class="nm"><strong>Greenzone box</strong></td><td class="desc">How often TAStudio saves the game's state for fast jumps. See <a href="greenzone.html">Greenzone</a>.</td></tr>
+<tr><td class="nm"><strong>Branches box</strong></td><td class="desc">Saved copies of the movie to return to. See <a href="branches.html">Branches</a>.</td></tr>
+<tr><td class="nm"><strong>Markers box</strong></td><td class="desc">Named frames in the movie. See <a href="markers.html">Markers</a>.</td></tr>
+<tr><td class="nm"><strong>Status bar</strong></td><td class="desc">On the left, the last message, such as TAStudio engaged or the result of a branch load, and Seeking with a progress bar during a long seek. On the right, how many frames are selected, how many states the greenzone holds, and how many frames are on the clipboard.</td></tr>
 </tbody></table></div>
-<p>To show several tables of buttons side by side, see <a href="../tastudio/split-input-rolls.html">Split Input Rolls</a>.</p>
+<p>To show the buttons in several tables side by side, see <a href="split-input-rolls.html">Split Input Rolls</a>.</p>
   </main>
   <aside class="toc" id="toc" aria-label="Table of contents" hidden><div class="sidelabel">Table of contents</div><ul></ul></aside>
 </div>
 <footer class="foot">Chimera-docs · <a href="https://github.com/ToolAssisted-run/chimera">chimera</a></footer>
 <script src="../assets/search-index.js"></script>
 <script src="../assets/app.js"></script>
+<script id="lazypic-js">(function(){var q=[].slice.call(document.querySelectorAll('img[data-src]'));function go(i){if(i.dataset.src){i.src=i.dataset.src;i.removeAttribute('data-src')}}if(!('IntersectionObserver' in window)){q.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:'300px'});q.forEach(function(i){io.observe(i)})})();</script>
 </body>
 </html>
