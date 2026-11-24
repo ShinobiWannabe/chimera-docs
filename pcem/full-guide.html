@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">PCem</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> IBM PC compatible</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest PCem core from the <a href="https://github.com/ToolAssisted-run/chimera-core-pcem/tags" target="_blank" rel="noopener">PCem core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. PCem is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,7 +67,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. PCem shows 5 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Floppy disks (drive A)</strong></td><td>Any number</td><td class="mono">.img, .ima, .dsk, .fdi, .86f, .td0, .imd</td><td class="desc">Disk images for drive A. The first is in the drive when the machine starts, and the order here is the order they are swapped in. The drive itself is chosen with the Floppy Drive A setting. Its default is Auto, which chooses the drive that fits the image you give here. If you choose a drive yourself, make sure it matches. PCem does not refuse a disk that the drive cannot read completely. It stops the head at the drive's last track, and the machine gets read errors.</td></tr>
@@ -76,7 +76,7 @@
 <tr><td class="nm"><strong>Hard disk (C)</strong></td><td>At most one</td><td class="mono">.img, .hdd, .vhd, .hdi</td><td class="desc">A hard disk image, used as drive C. Your file is never changed. The machine works on a copy of it that can be written to. What is written stays for the session, is part of savestates, and can be exported as save data. An exported image can be given here to continue from it. The disk's geometry is worked out from the file unless the Hard Disk settings say otherwise.</td></tr>
 <tr><td class="nm"><strong>Second hard disk (D)</strong></td><td>At most one</td><td class="mono">.img, .hdd, .vhd, .hdi</td><td class="desc">A second hard disk. It works the same way.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -90,10 +90,10 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. PCem claims .86f, .cue, .dsk, .fdi, .hdd, .hdi, .ima, .imd, .img, .iso, .td0, .vhd.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-preset">Preset</h3>
 <p>A <strong>preset</strong> is a ready-made group of setting values. Pick one in the Preset box and press Apply. Apply writes the preset's values into the grid below, and you can change any of them afterwards. The project stores the values and not the preset name. A message at the bottom says how many settings were applied.</p>
@@ -107,7 +107,7 @@
 <p>A setting a preset does not list keeps its current value.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. PCem has 56 settings in the grid. 17 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>AWE32 EMU8000 Address</strong></td><td class="mono">Card default, 0x620, 0x640, 0x660, 0x680</td><td class="mono">Card default</td><td class="desc">The I/O port address of the EMU8000 wavetable chip on the Sound Blaster AWE32. Only the AWE32 has one.</td></tr>
 <tr><td class="nm"><strong>AWE32 Onboard RAM</strong></td><td class="mono">Card default, None, 512 KB, 2 MB, 8 MB, 28 MB</td><td class="mono">Card default</td><td class="desc">How much sample memory the Sound Blaster AWE32 has. Only the AWE32 has any.</td></tr>
 <tr><td class="nm"><strong>CD-ROM Channel</strong></td><td class="mono">0 to 3</td><td class="mono">2</td><td class="desc"><em>Shown when not (CD-ROM Drive is None).</em><br>Which IDE position the CD-ROM drive has - 0 is primary master, 1 primary slave, 2 secondary master and 3 secondary slave. PCs of the time had it at 2. The TASVideos late-1990s configuration uses 3, so that both hard disks can have the primary channel to themselves.</td></tr>
@@ -166,9 +166,9 @@
 <tr><td class="nm"><strong>Voodoo Type</strong></td><td class="mono">Card default, Voodoo Graphics, Obsidian SB50 + Amethyst (2 TMUs), Voodoo 2</td><td class="mono">Card default</td><td class="desc"><em>Shown when Voodoo Graphics is True.</em><br>Which 3dfx card the Voodoo Graphics setting above adds.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -178,10 +178,10 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>PCem can ask for up to 217 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <details><summary>Show all 217 files</summary>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>[Socket 7] Shuttle HOT-557 ROM (55xwuq0e.bin) (430vx/55xwuq0e.bin)</strong></td><td class="mono">55xwuq0e.bin</td><td class="mono sha">CE8D8BBAED71AB1C1C40443BCC43770B3DDAF08D</td><td class="desc"><em>Asked for when Machine (BIOS) is 430vx - [Socket 7] Shuttle HOT-557.</em><br>A ROM of the [Socket 7] Shuttle HOT-557, which you supply. PCem ships no ROMs.</td></tr>
 <tr><td class="nm"><strong>Cirrus Logic CL-GD5429 video BIOS (5429.vbi) (5429.vbi)</strong></td><td class="mono">5429.vbi</td><td class="mono sha">8060CD4B49052572BB5EC929F8AD21E2ADDCE237</td><td class="desc"><em>Asked for when Video Card is cl_gd5429 - Cirrus Logic CL-GD5429.</em><br>The video BIOS of the Cirrus Logic CL-GD5429, which you supply.</td></tr>
 <tr><td class="nm"><strong>[ESDI] Western Digital WD1007V-SE1 ROM (62-000279-061.bin) (62-000279-061.bin)</strong></td><td class="mono">62-000279-061.bin</td><td class="mono sha">9C56661D0F83F256D6EFD611C7AD380DA6D7069F</td><td class="desc"><em>Asked for when Hard Disk Controller is wd1007vse1 - [ESDI] Western Digital WD1007V-SE1.</em><br>The ROM of the [ESDI] Western Digital WD1007V-SE1, which you supply.</td></tr>
@@ -402,7 +402,7 @@
 </tbody></table></div>
 </details>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. PCem does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

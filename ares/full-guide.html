@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">ares</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Nintendo 64 · Nintendo 64DD · Nintendo Entertainment System · Mega Drive / Genesis · Master System · Game Gear · SG-1000 · Atari 2600 · MyVision · Game Boy · Game Boy Color · WonderSwan · WonderSwan Color · ZX Spectrum · Game Boy Advance · ColecoVision · MSX · PlayStation · Atari 5200 · Neo Geo Pocket · Neo Geo Pocket Color · Neo Geo AES · Super Famicom / SNES · Mega Drive 32X · MSX2 · Mega CD / Sega CD · PC Engine / TurboGrafx-16 · SuperGrafx · Mega CD 32X / Sega CD 32X · PC Engine CD</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest ares core from the <a href="https://github.com/ToolAssisted-run/chimera-core-ares/tags" target="_blank" rel="noopener">ares core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. ares is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,8 +65,8 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. ares offers 30 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn. The choices are Software (Native), Hardware (Vulkan). The default is Hardware (Vulkan). The choices can change with the System. A Hardware choice uses your graphics card. It is fast, but the picture is drawn outside the savestate, so video can differ on another computer. A warning appears under the box when you pick one.</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Nintendo 64</strong></td><td class="mono">.n64, .v64, .z64</td></tr>
 <tr><td class="nm"><strong>Nintendo 64DD</strong></td><td class="mono">.d64, .n64dd, .ndd</td></tr>
 <tr><td class="nm"><strong>Famicom / NES</strong></td><td class="mono">.fc, .nes, .unf, .unif</td></tr>
@@ -100,14 +100,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. ares shows 3 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Cartridge, disc or tape</strong></td><td>At most one</td><td class="mono">.n64, .v64, .z64, .ndd, .d64, .n64dd, .fc, .nes, .unf, .unif, .md, .gen, .smd, .bin, .sms, .gg, .sg, .sg1000, .a26, .myvision, .gb, .gbc, .ws, .wsc, .z80, .tap, .tzx, .gba, .cv, .col, .msx, .rom, .cas, .wav, .tsx, .cue, .exe, .ps-exe, .a52, .ngp, .ngc, .ngpc, .zip, .sfc, .smc, .swc, .fig, .32x, .msx2, .mx2, .chd, .pce, .sgx</td><td class="desc">The game the machine loads. For most machines this is a cartridge. The PlayStation takes a .cue file, the ZX Spectrum a .tzx or .tape file and the Neo Geo a .zip romset. Only the kinds that fit the chosen machine are offered. A Nintendo 64 cartridge can be in any of its three byte orders (.z64, .n64 or .v64) and the core works out which one it is. A PlayStation and an MSX can start with nothing here. The PlayStation then shows its BIOS menu and the MSX starts its BASIC. Every other machine needs a game and says so when there is none. Some machines also need their console BIOS, which is asked for on another page. The Nintendo 64 needs none.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.sav, .srm, .eep, .eeprom, .fla, .flash, .ram</td><td class="desc">The saved game that a cartridge with a battery starts with. This is the file that Emulator &gt; Export Save Data... writes (EEPROM, SRAM or Flash, whichever the cartridge has, named save.eeprom, save.ram or save.flash as ares names them. A .eep, .fla, .sav or .srm of the same bytes is taken too). Put it here to continue a run from where another one stopped. It must be the size of the cartridge's save chip, and is in the byte order ares writes its own save files in (as Export Save Data writes it). The file is never changed. The project and the movie record exactly which file it was, so a movie that starts from a saved game can be played back by anyone who has the same file. Only the Nintendo 64 exports and loads its saves this way so far. A Nintendo 64DD game saves on its disk instead - Export Save Data hands out the disk it wrote to, and that disk goes in the game slot of a new project. The other machines keep their saves inside the savestate. A cartridge with no save memory keeps nothing, and the project says so. Leave this empty to start with a fresh cartridge.</td></tr>
 <tr><td class="nm"><strong>Cartridge in the cartridge</strong></td><td>0 to 2</td><td class="mono">.bs, .st, .gb, .gbc</td><td class="desc"><em>Shown when System is Super Famicom / SNES.</em><br>Some Super Famicom cartridges have a slot of their own, and this is the cartridge that goes into it. A Satellaview memory pack (.bs) goes into the BS-X cartridge. Choose the BS-X as the game above and the pack here. A Sufami Turbo minicart (.st) goes into the Sufami Turbo cartridge (a second one goes into its slot B, for the games that link two), and a Game Boy cartridge goes into a Super Game Boy. The core finds the right slot from the file itself. Leave this empty for an ordinary cartridge, which is almost every game. A game that has no such slot reports an error when a file is given here.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -122,15 +122,15 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. ares claims 53 extensions. The File types column above shows them.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. ares has 57 settings in the grid. 56 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari 2600 - Phosphor</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when System is Atari 2600.</em><br>Mixes each frame with the one before it, the way a television tube kept its picture for a moment.</td></tr>
 <tr><td class="nm"><strong>Bob Deinterlacing</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when System is Nintendo 64.</em><br>How an interlaced picture is turned into full frames. On, each field is stretched into a frame of its own (bob). Off, two fields are combined into one frame (weave). It changes the picture only.</td></tr>
 <tr><td class="nm"><strong>Controller Port 1</strong></td><td class="mono">default, none, arcadeStick, controlPad, controller, digitalGamepad, ePSM, gamepad, japanese, memoryCard, mouse, original</td><td class="mono">default</td><td class="desc"><em>Shown when System is one of Nintendo 64, Nintendo 64DD, Famicom / NES, Mega Drive / Genesis, Master System, Game Gear, SG-1000, Atari 2600, ZX Spectrum, ColecoVision, MSX, PlayStation, Atari 5200, Neo Geo AES, Super Famicom / SNES, Mega Drive 32X, MSX2, Mega CD / Sega CD, PC Engine / TurboGrafx-16, SuperGrafx, Mega CD 32X / Sega CD 32X, PC Engine CD / TurboDuo.</em><br>What is plugged into the first controller port. 'default' is the device this machine normally has there, and 'none' leaves the port empty. Each of the other choices exists on certain machines only, and choosing one on a machine that does not have it is refused. They are arcadeStick (Neo Geo), controlPad (Mega Drive), controller (Atari 5200), digitalGamepad (PlayStation), ePSM (NES), gamepad (Nintendo 64, NES, Master System, Game Gear, SG-1000, Atari 2600, ColecoVision, MSX), memoryCard (PlayStation, Neo Geo) and mouse (Nintendo 64). The keyboard of an MSX or a ZX Spectrum is part of the machine and is not chosen here.</td></tr>
@@ -190,9 +190,9 @@
 <tr><td class="nm"><strong>WonderSwan - Show Icons</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc"><em>Shown when System is WonderSwan.</em><br>Draws the handheld's status icons around the picture.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -202,9 +202,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>ares can ask for up to 29 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Nintendo 64DD IPL ROM</strong></td><td class="mono">64DD_IPL.bin</td><td class="mono sha">BF861922DCB78C316360E3E742F4F70FF63C9BC3</td><td class="desc"><em>Asked for when System is Nintendo 64DD.</em><br>The 64DD disk drive's own boot ROM (4 MB). The console starts from it when no cartridge is in, and it reads the disk. It is Nintendo's and you have to supply it. The Japanese IPL is the one the Japanese disks, which are almost all of them, were made for.</td></tr>
 <tr><td class="nm"><strong>Game Boy boot ROM</strong></td><td class="mono">dmg_boot.bin</td><td class="mono sha">4ED31EC6B0B175BB109C0EB5FD3D193DA823339F</td><td class="desc"><em>Asked for when System is Game Boy.</em><br>The Game Boy's boot ROM (256 bytes). It scrolls the logo and checks the cartridge. The core runs it and the game starts from the state it leaves, so it is required. It is Nintendo's and you have to supply it. The boot ROM of any original Game Boy revision works. DMG-CPU A is the one ares expects for a plain Game Boy.</td></tr>
 <tr><td class="nm"><strong>Game Boy Color boot ROM</strong></td><td class="mono">cgb_boot.bin</td><td class="mono sha">6F4115B7E55849472D1BD134289EAB937D001246</td><td class="desc"><em>Asked for when System is Game Boy Color.</em><br>The Game Boy Color's boot ROM (2 KB). It is larger than the Game Boy's because it also chooses the colours an original Game Boy cartridge is shown in.</td></tr>
@@ -236,7 +236,7 @@
 <tr><td class="nm"><strong>PC Engine System Card</strong></td><td class="mono">gecard.pce</td><td class="mono sha">014881A959E045E00F4DB8F52955200865D40280</td><td class="desc"><em>Asked for when System is PC Engine CD / TurboDuo and Which System Card is games-express.</em><br>The card that goes in the card slot of a CD-ROM2 or a TurboDuo. Without it the machine cannot read a disc. It is NEC's and you have to supply it. A Super CD-ROM2 game needs System Card 3.0 of its region (the Japanese card for a Japanese disc, the American card for a US disc). An early CD-ROM2 game works with any card. A Games Express disc needs the Games Express card. The card shows its name when the machine starts. A disc that stops at PUSH RUN BUTTON usually needs a newer card.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. ares does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">SDLPoP</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Prince of Persia</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest SDLPoP core from the <a href="https://github.com/ToolAssisted-run/chimera-core-sdlpop/tags" target="_blank" rel="noopener">SDLPoP core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. SDLPoP is a game core, which runs one game. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,7 +65,7 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the game version to run. SDLPoP offers 4 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. SDLPoP draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
+<h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Prince of Persia 1.0 (1990)</strong></td></tr>
 <tr><td class="nm"><strong>Prince of Persia 1.1 (IBM PC)</strong></td></tr>
@@ -74,13 +74,13 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. SDLPoP shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Custom levels</strong></td><td>At most one</td><td class="mono">.dat</td><td class="desc">A LEVELS.DAT file with a custom level set (from a level editor or a mod). It is played in place of the original levels. The rest of the game still comes from the release's original data. Leave it empty for the original game.</td></tr>
 <tr><td class="nm"><strong>Savestate</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc">An SDLPoP quicksave (QUICKSAVE.SAV, saved with F6 in SDLPoP 1.16 or later). The run starts from it on the first tick, and not at the title. It holds the whole level as it was, the prince, the guard, the time and the random seed.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -93,11 +93,11 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
 
-<h2 id="page-3">Page 3 - Set up the game</h2>
+<h2 id="page-3">Page 3 - Set Up the Game</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. SDLPoP has 58 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Copy protection</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">The original game's copy protection. After level 1 comes the potions level, where the prince must drink the potion whose letter the manual gives. It is on in 1.0. SDLPoP turns it off by default.</td></tr>
 <tr><td class="nm"><strong>Crouch after climbing</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Pressing down and forward together right after climbing up makes the prince crouch. In the original he always climbs back down.</td></tr>
 <tr><td class="nm"><strong>Enable Cheats</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Starts the game with its cheat word, as the DOS game was started from the command line (megahit, or improved for 1.3 and 1.4). The cheat buttons exist only when this is on. It also lets Next Level (Shift+L) skip any level without cutting the time to 15 minutes.</td></tr>
@@ -158,9 +158,9 @@
 <tr><td class="nm"><strong>Super high jump</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">During feather fall (after the green potion) the prince can jump two floors up.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. SDLPoP always asks for at least one, so this page always appears. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -170,9 +170,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>SDLPoP can ask for up to 35 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Prince of Persia 1.0/1.1 PRINCE.DAT</strong></td><td class="mono">PRINCE.DAT</td><td class="mono sha">A0CD3C9699ACF510A2EBE2D0D675B837D2CE73C8</td><td class="desc"><em>Asked for when System is one of Prince of Persia 1.0 (1990), Prince of Persia 1.1 (IBM PC).</em><br>PRINCE.DAT of the original Prince of Persia 1.0/1.1 (DOS) - the pictures that all levels share (the sword, the flames, the potions) and the palettes. In 1.3 and 1.4 it also holds the level colours. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
 <tr><td class="nm"><strong>Prince of Persia 1.3/1.4 PRINCE.DAT</strong></td><td class="mono">PRINCE.DAT</td><td class="mono sha">57FEDE2FBF1BB4A211066393353B6A2E0060B9BD</td><td class="desc"><em>Asked for when System is one of Prince of Persia 1.3 (1992), Prince of Persia 1.4 (Collection CD).</em><br>PRINCE.DAT of the original Prince of Persia 1.3/1.4 (DOS) - the pictures that all levels share (the sword, the flames, the potions) and the palettes. In 1.3 and 1.4 it also holds the level colours. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
 <tr><td class="nm"><strong>Prince of Persia 1.0/1.1/1.3/1.4 KID.DAT</strong></td><td class="mono">KID.DAT</td><td class="mono sha">C7E841443C247BF65FF94C13A4B01FDACA767DCA</td><td class="desc"><em>Asked for when System is one of Prince of Persia 1.0 (1990), Prince of Persia 1.1 (IBM PC), Prince of Persia 1.3 (1992), Prince of Persia 1.4 (Collection CD).</em><br>KID.DAT of the original Prince of Persia 1.0/1.1/1.3/1.4 (DOS) - the prince. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
@@ -210,7 +210,7 @@
 <tr><td class="nm"><strong>Prince of Persia 1.4 PRINCE.EXE</strong></td><td class="mono">PRINCE.EXE</td><td class="mono sha">4D257E60684DAFFA4D0BF78DE876113CDC34064E</td><td class="desc"><em>Asked for when System is Prince of Persia 1.4 (Collection CD).</em><br>PRINCE.EXE of the original Prince of Persia 1.4 (DOS) - the release's program. It is only checked and never run, because SDLPoP is the program. It is the file that tells 1.0 from 1.1 and 1.3 from 1.4, whose data files are the same. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. SDLPoP does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

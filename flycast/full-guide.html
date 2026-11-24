@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Flycast</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Dreamcast · Sega NAOMI · Sega NAOMI 2 · Sammy Atomiswave</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Flycast core from the <a href="https://github.com/ToolAssisted-run/chimera-core-flycast/tags" target="_blank" rel="noopener">Flycast core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Flycast is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,8 +65,8 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Flycast offers 4 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn. The choices are Software (Native), Software (OpenGL), Hardware (OpenGL), Hardware (Vulkan). The default is Software (Native). A Hardware choice uses your graphics card. It is fast, but the picture is drawn outside the savestate, so video can differ on another computer. A warning appears under the box when you pick one.</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Dreamcast</strong></td><td class="mono">.cdi, .chd, .cue, .elf, .gdi</td></tr>
 <tr><td class="nm"><strong>Sega NAOMI</strong></td><td class="mono">.dat, .lst, .zip</td></tr>
 <tr><td class="nm"><strong>Sega NAOMI 2</strong></td><td class="mono">Any</td></tr>
@@ -74,7 +74,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Flycast shows 4 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Disc</strong></td><td>1 to 8</td><td class="mono">.gdi, .cdi, .chd, .cue, .elf</td><td class="desc"><em>Shown when System is Dreamcast.</em><br>The GD-ROM image. It can be a .gdi file (with its track files next to it), a .cdi, a .chd or a .cue. A plain .elf program is also accepted, and the 'hle' BIOS starts it directly from memory, which is how homebrew is usually tested. A game on several discs takes all of them, in order. The first disc starts the machine, and the drive's inputs change discs as opening the lid does on the console. Previous Disc and Next Disc move a selection through the list and wrap around at both ends. Disc Swap opens and closes the lid, and the selected disc is in the drive when it closes. Which disc is in the drive is part of the machine, so a movie records each swap.</td></tr>
@@ -82,7 +82,7 @@
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 4</td><td class="mono">.bin</td><td class="desc"><em>Shown when System is Dreamcast.</em><br>What is already saved on the machine's memory cards at the start. These are the files that Emulator &gt; Export Save Data... writes. Put them back under the same names, vmu_A1.bin to vmu_D1.bin, one card in the first slot of each connected controller. The files are never changed. The project and the movie record exactly which files they were, so a movie that starts from a saved game can be played back by anyone who has the same files. Leave this empty and the machine starts with freshly formatted cards. File names. a memory card is identified by its file name - vmu_A1.bin to vmu_D1.bin for the first card of each connected controller, vmu_A2 to vmu_D2 for the second. These are the names Export Save Data writes. Rename the file to the card it should be.</td></tr>
 <tr><td class="nm"><strong>Board memory</strong></td><td>0 to 4</td><td class="mono">.eeprom, .nvmem, .bin</td><td class="desc"><em>Shown when System is one of Sega NAOMI, Sega NAOMI 2, Sammy Atomiswave.</em><br>What the arcade board's memory holds at the start. There are three kinds of file. &lt;rom set&gt;.eeprom is the settings memory of the input board (coin settings and the game's own options). &lt;rom set&gt;.nvmem is the BIOS's battery-backed memory (bookkeeping and backup data). vmu_B1.bin and vmu_C1.bin are the two memory cards a NAOMI control panel can hold, which a few games save to. These are the files that Emulator &gt; Export Save Data... writes. Put back under the same names, they set the board up as it was, so a movie that starts from a cabinet configured in its test menu can be played back by anyone who has the same files. Leave this empty and the board starts as Flycast starts it - the game's default settings, empty cards, and free play or coins according to the Coin Setting. File names. the board's memory files are identified by name - &lt;rom set&gt;.eeprom, &lt;rom set&gt;.nvmem, and the cards vmu_B1.bin and vmu_C1.bin. These are the names Export Save Data writes.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -97,14 +97,14 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Flycast claims .cdi, .chd, .cue, .dat, .elf, .gdi, .lst, .zip.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Flycast has 16 settings in the grid. 10 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Boot ROM</strong></td><td class="mono">hle, real</td><td class="mono">hle</td><td class="desc"><em>Shown when System is Dreamcast.</em><br>Which BIOS the machine runs. 'hle' is Flycast's own replacement. It starts most discs and needs no files. It is not the BIOS Sega shipped, so anything the real BIOS shows (the start-up animation, the settings screens) is only correct with the real one. 'real' asks the project for dc_boot.bin and dc_flash.bin. The two are DIFFERENT MACHINES and cannot share movies.</td></tr>
 <tr><td class="nm"><strong>Coin Setting</strong></td><td class="mono">freePlay, coins</td><td class="mono">freePlay</td><td class="desc"><em>Shown when System is one of Sega NAOMI, Sega NAOMI 2, Sammy Atomiswave.</em><br>How the cabinet charges for a game. Flycast writes this into the game's settings memory when it sets the machine up. 'freePlay' is Flycast's default and what most people have seen - Start begins a game and the Coin button is not needed. 'coins' is the board as an arcade operator received it - each Coin press gives a credit, and a game needs as many credits as its own settings ask for. It is part of the machine, so a movie made with one choice does not play back with the other.</td></tr>
 <tr><td class="nm"><strong>Controller 1 Type</strong></td><td class="mono">none, gamepad, arcadeStick, twinStick, xl, mouse, lightGun</td><td class="mono">gamepad</td><td class="desc"><em>Shown when System is Dreamcast.</em><br>What is plugged into port 1. 'gamepad' is the standard Dreamcast controller. 'arcadeStick' is the arcade stick, which has the same buttons and nothing analog. 'twinStick' is the pair of sticks made for Virtual On. It reports a second direction pad (P1 Up2 to Right2) and nothing analog. 'xl' is the PantherDC controller, which reports everything - the C, D and Z buttons, both direction pads and a second analog stick. 'mouse' and 'lightGun' are different kinds of device with their own axes. The mouse reports movement and the gun reports a position on the screen.
@@ -135,9 +135,9 @@ Only the OpenGL and Vulkan renderers have this choice. The 'software' renderer d
 <tr><td class="nm"><strong>Vertical Games</strong></td><td class="mono">cabinet, none</td><td class="mono">cabinet</td><td class="desc"><em>Shown when System is one of Sega NAOMI, Sega NAOMI 2, Sammy Atomiswave.</em><br>What to do with a game made for a monitor turned on its side, such as the vertical shooting games. Flycast knows which games these are. 'cabinet' turns the picture as the cabinet did, so it is 480 wide and 640 tall and appears upright. 'none' leaves the machine's own 640x480 picture as it is, sideways. The game runs the same either way. Only the picture differs.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -147,9 +147,9 @@ Only the OpenGL and Vulkan renderers have this choice. The 'software' renderer d
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Flycast can ask for up to 9 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Dreamcast Boot ROM</strong></td><td class="mono">dc_boot.bin</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Dreamcast and Boot ROM is real.</em><br>The console's BIOS (2 MB). The id is the usual file name of the dump.</td></tr>
 <tr><td class="nm"><strong>Dreamcast Flash</strong></td><td class="mono">dc_flash.bin</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Dreamcast and Boot ROM is real.</em><br>The console's flash memory (128 KB). It holds the region, language, date and console ID. With a real BIOS the machine reads its settings from this file and not from values the core makes up.</td></tr>
 <tr><td class="nm"><strong>NAOMI Bios Set</strong></td><td class="mono">naomi.zip</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Sega NAOMI and NAOMI Bios Board is naomi.</em><br>The NAOMI BIOS set, in the file MAME calls naomi.zip, with the revisions epr-21576, 21577 and 21578 inside. It is a MAME set. The whole zip is given to the core, which uses the ROM in it that matches the Region setting. No size or hash is required, because MAME sets differ between versions and dumps. The core checks the ROMs it takes from the set by their own checksums.</td></tr>
@@ -161,7 +161,7 @@ Only the OpenGL and Vulkan renderers have this choice. The 'software' renderer d
 <tr><td class="nm"><strong>Atomiswave Bios Set</strong></td><td class="mono">awbios.zip</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Sammy Atomiswave.</em><br>The Atomiswave BIOS set (awbios.zip), which holds one 64 KB ROM (bios0.ic23). It is a MAME set. The whole zip is given to the core, which uses the ROM in it that matches the Region setting. No size or hash is required, because MAME sets differ between versions and dumps. The core checks the ROMs it takes from the set by their own checksums.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Flycast does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

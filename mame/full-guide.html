@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">MAME</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Arcade</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest MAME core from the <a href="https://github.com/ToolAssisted-run/chimera-core-mame/tags" target="_blank" rel="noopener">MAME core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. MAME is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,14 +67,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. MAME shows 3 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Rom set</strong></td><td>Exactly one</td><td class="mono">.zip, .7z</td><td class="desc">The game's ROM set, with the file name MAME uses (for example ssf2t.zip). The name is how the core knows which game it is. The other sets the game reads from - its board's BIOS set (neogeo.zip), its parent's set if it is a clone, the sets of the devices it uses (qsound_hle.zip) - are asked for on the Firmware page, where Chimera remembers them for the next game. The settings page names every file that is missing.</td></tr>
 <tr><td class="nm"><strong>Disc images</strong></td><td>0 to 8</td><td class="mono">.chd</td><td class="desc">The CHD images of a game that has a hard disk, a CD or a laserdisc, with the file names MAME uses (for example 420uaa04.chd). The settings page names an image that is missing.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 32</td><td class="mono">.nv</td><td class="desc">What the machine keeps when the power is off, in the files Export Save Data wrote - its settings, its high scores, its EEPROM. Each file is put back into the device it came from before the first frame. With none, the machine starts as it left the factory.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -88,15 +88,15 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. MAME has 0 settings in the grid. All of them are always shown.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. MAME does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

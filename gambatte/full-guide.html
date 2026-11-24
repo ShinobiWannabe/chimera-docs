@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Gambatte</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Game Boy · Game Boy Color · Super Game Boy · Game Boy Link</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Gambatte core from the <a href="https://github.com/ToolAssisted-run/chimera-core-gambatte/tags" target="_blank" rel="noopener">Gambatte core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Gambatte is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,8 +65,8 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Gambatte offers 7 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Gambatte draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game Boy</strong></td><td class="mono">.gb</td></tr>
 <tr><td class="nm"><strong>Game Boy Color</strong></td><td class="mono">.gbc</td></tr>
 <tr><td class="nm"><strong>Game Boy Advance (Game Boy Color games)</strong></td><td class="mono">Any</td></tr>
@@ -77,7 +77,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Gambatte shows 8 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.gb, .gbc, .sgb</td><td class="desc">The Game Boy or Game Boy Color game - the cartridge's contents, a .gb or .gbc file (.sgb for a Super Game Boy one). In a Game Boy Link machine, the game of P1's Game Boy.</td></tr>
@@ -89,7 +89,7 @@
 <tr><td class="nm"><strong>P3's saved data</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Shown when System is one of Game Boy Link (three), Game Boy Link (four).</em><br>The battery-backed memory of P3's cartridge at the start, in a Game Boy Link machine, as for P1's saved data - a file Export Save Data writes ("P3 &lt;game&gt;.sav") or a .sav file of Gambatte's or another emulator's. The file is never changed. Leave this empty to start with the cartridge's memory empty. File names. a saved-data file is identified by its extension, .sav.</td></tr>
 <tr><td class="nm"><strong>P4's saved data</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Shown when System is Game Boy Link (four).</em><br>The battery-backed memory of P4's cartridge at the start, in a Game Boy Link machine, as for P1's saved data - a file Export Save Data writes ("P4 &lt;game&gt;.sav") or a .sav file of Gambatte's or another emulator's. The file is never changed. Leave this empty to start with the cartridge's memory empty. File names. a saved-data file is identified by its extension, .sav.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -102,15 +102,15 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Gambatte claims .gb, .gbc, .sgb.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Gambatte has 5 settings in the grid. 4 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Boot ROM</strong></td><td class="mono">on, off</td><td class="mono">on</td><td class="desc">'on' starts the console with its own start-up program, the boot ROM, which shows the logo before the game starts. You have to supply it for the console you chose. 'off' starts the game at once, in the state the boot ROM would have left the console in, as Gambatte works it out. The game then starts sooner and some timings differ from a real console. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>P1 Game Boy</strong></td><td class="mono">GB, GBC, GBA</td><td class="mono">GB</td><td class="desc"><em>Shown when System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four).</em><br>Which console the Game Boy of P1 is, in a Game Boy Link machine - GB, GBC or GBA, as for Model. The New Project window chooses the Game Boy Color when the game is a .gbc file. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>P2 Game Boy</strong></td><td class="mono">GB, GBC, GBA</td><td class="mono">GB</td><td class="desc"><em>Shown when System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four).</em><br>Which console the Game Boy of P2 is, in a Game Boy Link machine - GB, GBC or GBA, as for Model. The New Project window chooses the Game Boy Color when the game is a .gbc file. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -118,9 +118,9 @@
 <tr><td class="nm"><strong>P4 Game Boy</strong></td><td class="mono">GB, GBC, GBA</td><td class="mono">GB</td><td class="desc"><em>Shown when System is Game Boy Link (four).</em><br>Which console the Game Boy of P4 is, in a Game Boy Link machine - GB, GBC or GBA, as for Model. The New Project window chooses the Game Boy Color when the game is a .gbc file. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -130,16 +130,16 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Gambatte can ask for up to 4 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game Boy boot ROM</strong></td><td class="mono">dmg_boot.bin</td><td class="mono sha">4ED31EC6B0B175BB109C0EB5FD3D193DA823339F</td><td class="desc"><em>Asked for when Boot ROM is on and (System is Game Boy or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P1 Game Boy is GB) or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P2 Game Boy is GB) or (System is one of Game Boy Link (three), Game Boy Link (four) and P3 Game Boy is GB) or (System is Game Boy Link (four) and P4 Game Boy is GB)).</em><br>The Game Boy's boot ROM (DMG), 256 bytes. It is Nintendo's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>Game Boy Color boot ROM</strong></td><td class="mono">cgb_boot.bin</td><td class="mono sha">1293D68BF9643BC4F36954C1E80E38F39864528D</td><td class="desc"><em>Asked for when Boot ROM is on and (System is Game Boy Color or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P1 Game Boy is GBC) or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P2 Game Boy is GBC) or (System is one of Game Boy Link (three), Game Boy Link (four) and P3 Game Boy is GBC) or (System is Game Boy Link (four) and P4 Game Boy is GBC)).</em><br>The Game Boy Color's boot ROM (CGB), 2,304 bytes. It is Nintendo's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>Game Boy Advance boot ROM (Game Boy Color mode)</strong></td><td class="mono">agb_boot.bin</td><td class="mono sha">FA5287E24B0FA533B3B5EF2B28A81245346C1A0F</td><td class="desc"><em>Asked for when Boot ROM is on and (System is Game Boy Advance (Game Boy Color games) or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P1 Game Boy is GBA) or (System is one of Game Boy Link (two), Game Boy Link (three), Game Boy Link (four) and P2 Game Boy is GBA) or (System is one of Game Boy Link (three), Game Boy Link (four) and P3 Game Boy is GBA) or (System is Game Boy Link (four) and P4 Game Boy is GBA)).</em><br>The Game Boy Advance's boot ROM for Game Boy Color games (AGB), 2,304 bytes. It is Nintendo's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>Super Game Boy 2 boot ROM</strong></td><td class="mono">sgb2_boot.bin</td><td class="mono sha">93407EA10D2F30AB96A314D8ECA44FE160AEA734</td><td class="desc"><em>Asked for when Boot ROM is on and (System is Super Game Boy 2).</em><br>The Super Game Boy 2's boot ROM, 256 bytes. It is Nintendo's and you have to supply it.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Gambatte does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">VICE</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Commodore 64</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest VICE core from the <a href="https://github.com/ToolAssisted-run/chimera-core-vice/tags" target="_blank" rel="noopener">VICE core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. VICE is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,12 +67,12 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. VICE shows 1 group of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>1 to 20</td><td class="mono">.d64, .g64, .x64, .d71, .d81, .t64, .tap, .crt, .prg, .p00</td><td class="desc">The game's files - disk images (.d64, .g64, .x64, .d71, .d81), tape images (.t64, .tap), a cartridge (.crt) or a program (.prg, .p00). The first is the one autostarted. The others wait their turn in drive 8, for the games that ask for another disk (Previous Disk, Next Disk, Eject Disk). Your files are never changed - the C64 writes to copies of them in its memory, and Export Save Data writes out the ones it changed.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -85,14 +85,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. VICE claims .crt, .d64, .d71, .d81, .g64, .p00, .prg, .t64, .tap, .x64.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. VICE has 5 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Autostart</strong></td><td class="mono">enabled, disabled</td><td class="mono">enabled</td><td class="desc">'enabled' loads and runs the game when the C64 is switched on, as VICE does it - it types LOAD and RUN for a disk or a tape (pressing the tape's PLAY), or puts a program straight in memory. 'disabled' leaves the C64 at its READY prompt with the game's disk in the drive or tape in the datasette. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>P1 Port</strong></td><td class="mono">2, 1</td><td class="mono">2</td><td class="desc">Which control port P1's joystick is in, P2's is in the other. Most games read the joystick in port 2. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>SID Model</strong></td><td class="mono">default, 6581, 8580, 8580RD</td><td class="mono">default</td><td class="desc">The sound chip - 'default' is the Model's own (the 6581 in the C64, the 8580 in the C64C), 8580RD is an 8580 with the digi boost. It changes the sound and what a program reads from the SID. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -100,7 +100,7 @@
 <tr><td class="nm"><strong>True Drive Emulation</strong></td><td class="mono">enabled, disabled</td><td class="mono">enabled</td><td class="desc">'enabled' runs the 1541 drive's own processor and its DOS, cycle by cycle, as the hardware does - fast loaders and copy protections work. 'disabled' answers the C64's disk commands directly, much faster, and many games do not load. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. VICE does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

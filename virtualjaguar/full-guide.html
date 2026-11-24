@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Virtual Jaguar</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Atari Jaguar · Atari Jaguar CD</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Virtual Jaguar core from the <a href="https://github.com/ToolAssisted-run/chimera-core-virtualjaguar/tags" target="_blank" rel="noopener">Virtual Jaguar core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Virtual Jaguar is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,21 +65,21 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Virtual Jaguar offers 2 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Virtual Jaguar draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari Jaguar</strong></td><td class="mono">.abs, .cof, .j64, .jag, .rom</td></tr>
 <tr><td class="nm"><strong>Atari Jaguar CD</strong></td><td class="mono">.cdi</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Virtual Jaguar shows 3 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.j64, .jag, .rom, .abs, .cof, .bin</td><td class="desc"><em>Shown when System is Atari Jaguar.</em><br>The game's cartridge - a .j64 or .rom file (or .jag, .abs, .cof, .bin for homebrew).</td></tr>
 <tr><td class="nm"><strong>Disc</strong></td><td>Exactly one</td><td class="mono">.cue, .chd, .cdi</td><td class="desc"><em>Shown when System is Atari Jaguar CD.</em><br>The game's Jaguar CD - a .cue file with the track files it names beside it, a .chd file, or a .cdi file.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.eeprom, .memtrack, .srm, .sav</td><td class="desc">What the machine's save memory holds at the start, for a project that begins from a saved game - a file as Emulator &gt; Export Save Data... writes it (jaguar.eeprom for a cartridge, jaguarcd.memtrack for the CD, which holds the Memory Track's saves), or a RetroArch .srm. The file is never changed. Leave this empty to start with an empty save memory. File names. a save file is identified by its extension, .eeprom, .memtrack, .srm or .sav.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -93,14 +93,14 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Virtual Jaguar claims .abs, .cdi, .cof, .j64, .jag, .rom.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Virtual Jaguar has 13 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Boot</strong></td><td class="mono">disabled, enabled</td><td class="mono">disabled</td><td class="desc">'disabled' starts the cartridge at once, through Virtual Jaguar's own replacement for the console's start-up (most games run so). 'enabled' runs the console's real boot ROM first, with its spinning cube, as the console does. The boot ROMs are built into the core. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Boot ROM</strong></td><td class="mono">k, m</td><td class="mono">k</td><td class="desc">Which of the console's boot ROMs, when Boot is 'enabled' - 'k' is the Series K (the usual one), 'm' the Model M. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>CD BIOS</strong></td><td class="mono">retail, dev</td><td class="mono">retail</td><td class="desc">Which CD BIOS, when CD Boot is 'bios' - 'retail', the one the console was sold with, or 'dev', the developers' one (it starts developers' discs only). Only for the Jaguar CD. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -116,7 +116,7 @@
 <tr><td class="nm"><strong>Widescreen</strong></td><td class="mono">disabled, enabled</td><td class="mono">disabled</td><td class="desc">'enabled' stretches the picture to 16 to 9. It changes the picture only.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Virtual Jaguar does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

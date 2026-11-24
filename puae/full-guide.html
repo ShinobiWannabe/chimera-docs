@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">PUAE</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Commodore Amiga · Amiga CD32 · Commodore CDTV</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest PUAE core from the <a href="https://github.com/ToolAssisted-run/chimera-core-puae/tags" target="_blank" rel="noopener">PUAE core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. PUAE is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,22 +65,22 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. PUAE offers 3 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. PUAE draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Commodore Amiga</strong></td><td class="mono">.adf, .adz, .dms, .fdi, .ipf</td></tr>
 <tr><td class="nm"><strong>Amiga CD32</strong></td><td class="mono">.cue, .iso</td></tr>
 <tr><td class="nm"><strong>Commodore CDTV</strong></td><td class="mono">.cue, .iso</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. PUAE shows 3 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Disks</strong></td><td>1 to 20</td><td class="mono">.adf, .adz, .dms, .fdi, .ipf</td><td class="desc"><em>Shown when not (System is one of Amiga CD32, Commodore CDTV).</em><br>The game's floppy disks - .adf files (or .adz and .dms, which are packed ones, or .fdi, or .ipf, the format that keeps a disk's copy protection). The first is in the drive when the Amiga is switched on. The others wait their turn, for the games that ask for another disk. Your files are never changed - the Amiga writes to copies of them in its memory.</td></tr>
 <tr><td class="nm"><strong>Disc</strong></td><td>Exactly one</td><td class="mono">.cue, .iso</td><td class="desc"><em>Shown when System is one of Amiga CD32, Commodore CDTV.</em><br>The game's CD - a .cue sheet with its track files (.bin), or an .iso of a disc that has only data. It is read as it is and never changed.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.nvr</td><td class="desc"><em>Shown when System is one of Amiga CD32, Commodore CDTV.</em><br>The save memory of the CD32 (1 KB, where its games keep their saves) or of the CDTV (its battery-backed memory, kept as a file of 32 KB), as Export Save Data writes it - cd32.nvr or cdtv.nvr. Without one the machine starts with its save memory empty.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -95,14 +95,14 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. PUAE claims .adf, .adz, .cue, .dms, .fdi, .ipf, .iso.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. PUAE has 6 settings in the grid. 2 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kickstart</strong></td><td class="mono">auto, aros</td><td class="mono">auto</td><td class="desc">'auto' is the Kickstart ROM of the Model, which you supply as firmware. 'aros' is AROS's free replacement Kickstart that PUAE carries - nothing has to be supplied, and some games run with it. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Port 1</strong></td><td class="mono">mouse, joystick, none</td><td class="mono">mouse</td><td class="desc">What is plugged into the Amiga's port 1, the mouse port - a mouse, a joystick (P2's controls, for the games two play with joysticks), or nothing. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Port 2</strong></td><td class="mono">joystick, cd32pad, none</td><td class="mono">joystick</td><td class="desc"><em>Shown when System is one of Commodore Amiga, Commodore CDTV and not (System is Amiga CD32).</em><br>What is plugged into the Amiga's port 2, the joystick port - a joystick (P1's controls), the CD32's pad (P1's controls and its five more buttons), or nothing. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -111,9 +111,9 @@
 <tr><td class="nm"><strong>Video Standard</strong></td><td class="mono">PAL, NTSC</td><td class="mono">PAL</td><td class="desc">PAL (50 frames a second, as the European machines) or NTSC (60, as the American ones). Most games were made for PAL. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -123,9 +123,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>PUAE can ask for up to 8 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kickstart 1.3 (34.5)</strong></td><td class="mono">amiga-os-130.rom</td><td class="mono sha">891E9A547772FE0C6C19B610BAF8BC4EA7FCB785</td><td class="desc"><em>Asked for when Kickstart is auto and System is one of Commodore Amiga, Commodore CDTV.</em><br>Commodore's Kickstart 1.3 (34.5), 512 KB (256 KB for 1.3), for the A500, A500OG, A2000OG and CDTV. Amiga Forever names it amiga-os-130.rom. It is also found as kick34005.A500. It is Commodore's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>Kickstart 2.04 (37.175)</strong></td><td class="mono">amiga-os-204.rom</td><td class="mono sha">C5839F5CB98A7A8947065C3ED2F14F5F42E334A1</td><td class="desc"><em>Asked for when Kickstart is auto and System is Commodore Amiga.</em><br>Commodore's Kickstart 2.04 (37.175), 512 KB (256 KB for 1.3), for the A500PLUS. Amiga Forever names it amiga-os-204.rom. It is also found as kick37175.A500. It is Commodore's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>Kickstart 3.1 (40.63) for the A500, A600 and A2000</strong></td><td class="mono">amiga-os-310-a600.rom</td><td class="mono sha">3B7F1493B27E212830F989F26CA76C02049F09CA</td><td class="desc"><em>Asked for when Kickstart is auto and System is Commodore Amiga.</em><br>Commodore's Kickstart 3.1 (40.63) for the A500, A600 and A2000, 512 KB (256 KB for 1.3), for the A600, A2000. Amiga Forever names it amiga-os-310-a600.rom. It is also found as kick40063.A600. It is Commodore's and you have to supply it.</td></tr>
@@ -136,7 +136,7 @@
 <tr><td class="nm"><strong>CDTV extended ROM</strong></td><td class="mono">amiga-os-130-cdtv-ext.rom</td><td class="mono sha">5BC114BBA29F60A614A311745B3E2464BFA06846</td><td class="desc"><em>Asked for when System is Commodore CDTV.</em><br>The CDTV's extended ROM, 256 KB - its start-up screen, its CD player and the CD's file system, for the CDTV, beside Kickstart 1.3. Amiga Forever names it amiga-os-130-cdtv-ext.rom. It is also found as kick34005.CDTV. The SHA-1 is version 2.7's, the one tried, version 1.0 and 2.30 are taken too, as files Chimera does not recognise. It is Commodore's and you have to supply it.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. PUAE does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

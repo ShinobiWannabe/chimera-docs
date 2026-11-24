@@ -305,3 +305,15 @@ body.qs-hide-nav.qs-hide-toc .shell{grid-template-columns:minmax(0,1fr)}
   body.qs-hide-nav .sidebar.open{display:block!important}
   .qs-bar{display:none}
 }
+/* Inputs and Firmware pages: page controls under a long table */
+.content tr.pg-off{display:none}
+.tpager{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:.6em 0 1.4em;font-size:.85rem;color:var(--muted)}
+.tpager button{font:inherit;color:var(--ink);background:var(--bg);border:2.5px solid var(--hair);border-radius:999px;padding:3px 12px;cursor:pointer}
+.tpager button:hover:not(:disabled),.tpager button:focus-visible{border-color:var(--accent)}
+.tpager .pseg{display:inline-flex;border:2.5px solid var(--hair);border-radius:999px;overflow:hidden}
+.tpager .pseg button{border:0;border-radius:0;padding:3px 12px}
+.tpager .pseg button+button{border-left:2.5px solid var(--hair)}
+.tpager .pseg button:hover,.tpager .pseg button:focus-visible{background:var(--panel);outline:none}
+.tpager .pseg button.on{background:var(--accent);color:#0f172a;font-weight:700}
+.tpager button:disabled{opacity:.45;cursor:default}
+.tpager .pinfo{font-family:ui-monospace,monospace;font-size:.78rem;color:var(--faint)}

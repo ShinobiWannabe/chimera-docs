@@ -42,7 +42,7 @@
   <main id="main" class="content">
     <div class="eyebrow">ScummVM</div><h1>Memory Domains</h1>
     <p class="lead">ScummVM gives no Memory Domains. It gives one bus, called Heap.</p>
-    <h2 id="about-data">About this data</h2>
+    <h2 id="about-data">About This Data</h2>
     <p>The list was read from the ScummVM source at the upstream version the core builds, and from the core's own code. It was not taken by running the core.</p>
     <p>The core reports no Memory Domains. A ScummVM engine keeps the state of a game in objects on the heap and not in the RAM of a machine, so there is no memory to name.</p>
     <p>The memory tools use a bus called Heap instead. A bus is a window on an address space, and this one is the heap of the core. It covers the heap from its start up to the program break, where the allocator keeps everything below about 224 KiB. Larger buffers are held elsewhere and are not part of it. An address holds a value for as long as the object lives. Addresses are the same in every run of one build of the core and move with another build, so a project should keep its build.</p>

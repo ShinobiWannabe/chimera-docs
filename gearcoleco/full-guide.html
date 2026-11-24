@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Gearcoleco</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> ColecoVision · Coleco ADAM</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Gearcoleco core from the <a href="https://github.com/ToolAssisted-run/chimera-core-gearcoleco/tags" target="_blank" rel="noopener">Gearcoleco core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Gearcoleco is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,14 +65,14 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Gearcoleco offers 2 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Gearcoleco draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>ColecoVision</strong></td><td class="mono">.col, .cv</td></tr>
 <tr><td class="nm"><strong>Coleco ADAM</strong></td><td class="mono">.ddp, .dsk</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Gearcoleco shows 7 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Cartridge</strong></td><td>Exactly one</td><td class="mono">.col, .cv, .rom, .bin, .zip</td><td class="desc"><em>Shown when System is ColecoVision.</em><br>The ColecoVision cartridge ROM (.col, .cv, .rom, .bin, or a .zip holding one).</td></tr>
@@ -83,7 +83,7 @@
 <tr><td class="nm"><strong>Data Pack 2</strong></td><td>At most one</td><td class="mono">.ddp, .zip</td><td class="desc"><em>Shown when System is Coleco ADAM.</em><br>A digital data pack image (.ddp, 256 KB) for this drive. What the computer writes to it stays in the machine and comes out with Export Save Data.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc">The memory a cartridge with a battery or an EEPROM keeps (battery.sav, as Export Save Data writes it). The game starts with it.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -96,14 +96,14 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Gearcoleco claims .col, .cv, .ddp, .dsk.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Gearcoleco has 5 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Border</strong></td><td class="mono">none, topBottom, full284, full320</td><td class="mono">none</td><td class="desc">How much of the border around the picture is shown. It changes the picture only.</td></tr>
 <tr><td class="nm"><strong>Cartridge Board</strong></td><td class="mono">auto, standard, megacart, activision, ocm</td><td class="mono">auto</td><td class="desc">The kind of circuit board in the cartridge, which decides how a large game switches between its banks. Automatic tells it from the game. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>No Sprite Limit</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Draw every sprite on a line, not only the first four as the video chip does. The game still sees the real chip. It changes the picture only.</td></tr>
@@ -111,9 +111,9 @@
 <tr><td class="nm"><strong>Video Chip</strong></td><td class="mono">auto, tms9918a, f18a</td><td class="mono">auto</td><td class="desc">The console's TMS9918A, or the F18A, a modern replacement chip that some new games need. Automatic picks the F18A for the games Gearcoleco knows need it. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. Gearcoleco always asks for at least one, so this page always appears. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -123,15 +123,15 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Gearcoleco can ask for up to 3 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>ColecoVision BIOS (OS-7)</strong></td><td class="mono">colecovision.rom</td><td class="mono sha">45BEDC4CBDEAC66C7DF59E9E599195C778D86A92</td><td class="desc"><em>Asked for when System is one of ColecoVision, Coleco ADAM.</em><br>The ColecoVision's boot ROM (8 KB), often named colecovision.rom or coleco.rom. The ADAM needs it too.</td></tr>
 <tr><td class="nm"><strong>ADAM EOS ROM</strong></td><td class="mono">eos.rom</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Coleco ADAM.</em><br>The ADAM's operating system ROM (8 KB), often named eos.rom.</td></tr>
 <tr><td class="nm"><strong>ADAM SmartWriter ROM</strong></td><td class="mono">writer.rom</td><td class="mono sha">D4AEC4EFE1431E56FE52D83BAF9118542C525255</td><td class="desc"><em>Asked for when System is Coleco ADAM.</em><br>The ADAM's SmartWriter word processor ROM (32 KB), often named writer.rom or wp.rom. The ADAM runs it when it starts as a computer, and it boots the disks and data packs.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Gearcoleco does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

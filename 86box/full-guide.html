@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">86Box</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> IBM PC compatible</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest 86Box core from the <a href="https://github.com/ToolAssisted-run/chimera-core-86box/tags" target="_blank" rel="noopener">86Box core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. 86Box is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,7 +67,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. 86Box shows 4 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Floppy disks (drive A)</strong></td><td>Any number</td><td class="mono">.img, .ima, .dsk, .vfd, .fdi, .86f, .td0, .imd, .mfm</td><td class="desc">Disk images for drive A. The first is in the drive when the machine starts. Your files are never changed - what the machine writes stays in its memory and in its states.</td></tr>
@@ -75,7 +75,7 @@
 <tr><td class="nm"><strong>CD-ROM</strong></td><td>At most one</td><td class="mono">.iso, .cue</td><td class="desc">A CD image - an ISO, or a cue sheet with its tracks (data and audio). The drive is the second drive on the hard disk controller, so a controller must be chosen in the Hard disk controller setting. Your file is never changed.</td></tr>
 <tr><td class="nm"><strong>Hard disk</strong></td><td>At most one</td><td class="mono">.img, .ima, .hdd</td><td class="desc">A hard disk image (a raw image), on the controller chosen in the Hard disk controller setting. Your file is never changed - what the machine writes stays in its memory and in its states. The disk's cylinders, heads and sectors are worked out from the file's size.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -89,14 +89,14 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. 86Box claims .86f, .dsk, .fdi, .ima, .imd, .img, .mfm, .td0, .vfd.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. 86Box has 16 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>BIOS</strong></td><td class="mono"><details><summary>13 choices</summary>auto - the machine's default BIOS, ibm5150_5700671 - 5700671 (10/19/81), ibm5150_5700051 - 5700051 (04/24/81), glabios_040_8088 - GLaBIOS 0.4.0 (8088), glabios_040_v20 - GLaBIOS 0.4.0 (V20), ibm5150_1501476 - 1501476 (10/27/82), ibm5150_5000024 - 5000024 (08/16/82), ibm5160_1501512_5000027 - 1501512 (11/08/82), ibm5160_5000026_5000027 - 5000026 (08/16/82), ibm5170_111585 - 62X082x (11/15/85), ibm5170_111585_alt - 61X9266 (11/15/85) (Alt), ibm5170_061085 - 648009x (06/10/85), ibm5170_011084 - 618102x (01/10/84)</details></td><td class="mono">auto - the machine's default BIOS</td><td class="desc">Which BIOS the machine starts with, for a machine that offers more than one. 'auto' is the machine's usual one. A BIOS the machine does not offer is refused when the project loads, with the list of those it offers. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Cassette BASIC from IBM</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">The BASIC in ROM of the IBM PC and the IBM XT, which starts when there is no disk. On the IBM PC it is one more ROM file, which the project asks for while this is on. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Clock at start</strong></td><td class="mono">0 to 7258118400</td><td class="mono">946684800</td><td class="desc">The date and time (UTC) on the machine's clock when it is switched on. It never comes from your computer. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -115,12 +115,12 @@
 <tr><td class="nm"><strong>Video card</strong></td><td class="mono">cga - IBM CGA, mda - IBM MDA, hercules - Hercules, ega - IBM EGA, vga - IBM VGA</td><td class="mono">cga - IBM CGA</td><td class="desc">The graphics card. CGA, MDA and Hercules draw text with the IBM character ROM, EGA and VGA have a BIOS of their own. Each needs its ROM file. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h3 id="not-offered">Not offered</h3>
+<h3 id="not-offered">Not Offered</h3>
     <p>The core offers processors up to the Pentium MMX and video cards up to VGA. Pentium II and later processors are not offered, and neither are 3dfx Voodoo cards. 86Box runs the Voodoo card's drawing on separate threads, which are parallel workers, and this core does not allow threads. The Voodoo cards stay out until they can run in one thread.</p>
 
-    <h2 id="page-4">Page 4 - Provide firmware</h2>
+    <h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -130,9 +130,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>86Box can ask for up to 28 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>[i420TX] ASUS PCI/I-486SP3 ROM - awsi2737.bin (roms/machines/486sp3/awsi2737.bin)</strong></td><td class="mono">awsi2737.bin</td><td class="mono sha">6c68c23cc5e8ae66261e9fe931f2ce07efe767b6</td><td class="desc"><em>Asked for when Machine is 486sp3 - [i420TX] ASUS PCI/I-486SP3.</em><br>A ROM of the [i420TX] ASUS PCI/I-486SP3. It is the file roms/machines/486sp3/awsi2737.bin in the ROM set of 86Box, which you supply.</td></tr>
 <tr><td class="nm"><strong>[8088] IBM PC (1982) ROM - GLABIOS_0.4.0_8P.ROM (roms/machines/glabios/GLABIOS_0.4.0_8P.ROM)</strong></td><td class="mono">GLABIOS_0.4.0_8P.ROM</td><td class="mono sha">fd023bbf445ed64e42ec0cf4ff10e907ccff4017</td><td class="desc"><em>Asked for when (Machine is ibmpc - [8088] IBM PC (1981) and BIOS is glabios_040_8088 - GLaBIOS 0.4.0 (8088)) or (Machine is ibmpc82 - [8088] IBM PC (1982) and BIOS is glabios_040_8088 - GLaBIOS 0.4.0 (8088)).</em><br>A ROM of the [8088] IBM PC (1982). It is the file roms/machines/glabios/GLABIOS_0.4.0_8P.ROM in the ROM set of 86Box, which you supply.</td></tr>
 <tr><td class="nm"><strong>[8088] IBM XT (1982) ROM - GLABIOS_0.4.0_8X.ROM (roms/machines/glabios/GLABIOS_0.4.0_8X.ROM)</strong></td><td class="mono">GLABIOS_0.4.0_8X.ROM</td><td class="mono sha">84ba11ffdf4b6177a9fc84ce0fc7ab7849baf258</td><td class="desc"><em>Asked for when Machine is ibmxt - [8088] IBM XT (1982) and BIOS is glabios_040_8088 - GLaBIOS 0.4.0 (8088).</em><br>A ROM of the [8088] IBM XT (1982). It is the file roms/machines/glabios/GLABIOS_0.4.0_8X.ROM in the ROM set of 86Box, which you supply.</td></tr>
@@ -163,7 +163,7 @@
 <tr><td class="nm"><strong>IBM VGA ROM - ibm_vga.bin (roms/video/vga/ibm_vga.bin)</strong></td><td class="mono">ibm_vga.bin</td><td class="mono sha">7b8b0e22ecd002d43d5ed1bb9f9a63d9b9948032</td><td class="desc"><em>Asked for when Video card is vga - IBM VGA.</em><br>The ROM of the IBM VGA video card. It is the file roms/video/vga/ibm_vga.bin in the ROM set of 86Box, which you supply.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. 86Box does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

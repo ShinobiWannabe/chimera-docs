@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">rawgl</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Another World</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest rawgl core from the <a href="https://github.com/ToolAssisted-run/chimera-core-rawgl/tags" target="_blank" rel="noopener">rawgl core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. rawgl is a game core, which runs one game. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,7 +65,7 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the game version to run. rawgl offers 10 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. rawgl draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
+<h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Another World (DOS)</strong></td></tr>
 <tr><td class="nm"><strong>Another World (Amiga, English)</strong></td></tr>
@@ -80,11 +80,11 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Set up the game</h2>
+<h2 id="page-2">Page 2 - Set Up the Game</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-2-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. rawgl has 6 settings in the grid. 5 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Difficulty (20th Anniversary)</strong></td><td class="mono">easy, normal, hard</td><td class="mono">normal</td><td class="desc"><em>Shown when System is Another World 20th Anniversary Edition.</em><br>The difficulty of the 20th Anniversary Edition (rawgl's --difficulty option). The game's script reads it (variable 0xBF). The other releases have no difficulty setting.</td></tr>
 <tr><td class="nm"><strong>Language</strong></td><td class="mono">us, fr, de, es, it</td><td class="mono">us</td><td class="desc"><em>Shown when System is one of Another World (DOS), Another World (Amiga, English), Another World (Amiga, French), Another World (Atari ST), Another World 15th Anniversary Edition, Another World 20th Anniversary Edition, Out of This World (DOS demo), Another World (Atari ST rolling demo).</em><br>The language rawgl uses (its --language option). It selects the game's texts. For the DOS, Amiga and Atari ST releases these are rawgl's own tables (French for 'fr', English otherwise). The anniversary editions and the Windows 3.1 release use their own text files. It also selects the DOS release's title screen, which says "Another World" in French and "Out of This World" otherwise. It changes what the game draws, so a movie records it.</td></tr>
 <tr><td class="nm"><strong>MT-32 Sound Effects (DOS)</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when System is one of Another World (DOS), Out of This World (DOS demo).</em><br>Plays the DOS release's sound effects on a Roland CM-32L (rawgl's --mt32 option). rawgl has a note for 41 of the effects and sends those to the CM-32L's rhythm part, in place of the game's own samples. The CM-32L is emulated by Munt with the ROMs the project supplies as firmware (CM32L_CONTROL.ROM and CM32L_PCM.ROM). The music stays the game's own. It changes the sound only. The other releases ignore it.</td></tr>
@@ -93,9 +93,9 @@
 <tr><td class="nm"><strong>SoundFont Music (Windows 3.1)</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when System is Out of This World (Windows 3.1).</em><br>Plays the Windows 3.1 release's music. The music is two General MIDI files, which the original played on the PC's MIDI synthesizer. Here TinySoundFont plays them with a General MIDI SoundFont that the project supplies as firmware (soundfont.sf2, any .sf2 file of your choice, and the project records which one). With this off the music is silent, as in rawgl without a MIDI synthesizer. It changes the sound only. The game and its timing are the same either way. The other releases ignore it.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-3">Page 3 - Provide firmware</h2>
+<h2 id="page-3">Page 3 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. rawgl always asks for at least one, so this page always appears. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-3-list">The list</h3>
+<h3 id="page-3-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-3-buttons">Buttons</h3>
@@ -105,9 +105,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-3-which">Which files can be asked for</h3>
+<h3 id="page-3-which">Which Files Can Be Asked For</h3>
 <p>rawgl can ask for up to 24 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Another World DOS disk</strong></td><td class="mono">disk1.img</td><td class="mono sha">31556FDA8C25D39D2C29CBA54F9E8D49E33355D6</td><td class="desc"><em>Asked for when System is Another World (DOS).</em><br>The floppy disk image of the DOS release (.img or .ima), or a zip of the files on it (MEMLIST.BIN and the BANK files). The copy that was checked is GoodOldDays' Out of This World, one 1.2 MB disk. You have to supply it, because this package includes none of the game's files. A file of your own can be used in its place, and the project then records its hash.</td></tr>
 <tr><td class="nm"><strong>Another World Amiga disk 1 (English)</strong></td><td class="mono">Another World_Disk1.adf</td><td class="mono sha">AE5EA991F00D5F5AB4DEF626BDD36ADC23046833</td><td class="desc"><em>Asked for when System is Another World (Amiga, English).</em><br>The first disk of the English Amiga release (.adf, or a zip holding it, as TOSEC distributes them). It holds the program and bank01, 02, 06, 09, 0B, 0C and 0D. You have to supply it, because this package includes none of the game's files. A file of your own can be used in its place, and the project then records its hash.</td></tr>
 <tr><td class="nm"><strong>Another World Amiga disk 2 (English)</strong></td><td class="mono">Another World_Disk2.adf</td><td class="mono sha">240FDAB554FCD83811C486414BD4B7EBDF86CC9F</td><td class="desc"><em>Asked for when System is Another World (Amiga, English).</em><br>The second disk of the English Amiga release (.adf, or a zip holding it). It holds bank03, 04, 06, 07, 08, 09, 0A and 0C. You have to supply it, because this package includes none of the game's files. A file of your own can be used in its place, and the project then records its hash.</td></tr>
@@ -134,7 +134,7 @@
 <tr><td class="nm"><strong>General MIDI SoundFont</strong></td><td class="mono">soundfont.sf2</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when SoundFont Music (Windows 3.1) is True and System is Out of This World (Windows 3.1).</em><br>soundfont.sf2 is not one of the game's files. It is a General MIDI SoundFont (.sf2) of your choice, for example FluidR3 GM, GeneralUser GS or one sampled from a Roland Sound Canvas. It is used for the Windows 3.1 release's music (the SoundFont Music setting). No particular file is required. The project records the hash of the one you chose. Another SoundFont gives another sound, and the game stays the same.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard shows the reason. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. rawgl does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

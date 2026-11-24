@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">MAME Home Systems</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Atari 7800 · Intellivision · Vectrex · Odyssey 2 / Videopac · Channel F · Amstrad CPC · TI-83 · BBC Micro</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest MAME Home Systems core from the <a href="https://github.com/ToolAssisted-run/chimera-core-mamehome/tags" target="_blank" rel="noopener">MAME Home Systems core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. MAME Home Systems is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,8 +65,8 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. MAME Home Systems offers 30 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. MAME Home Systems draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari 7800 (NTSC)</strong></td><td class="mono">.a78</td></tr>
 <tr><td class="nm"><strong>Atari 7800 (PAL)</strong></td><td class="mono">Any</td></tr>
 <tr><td class="nm"><strong>Intellivision</strong></td><td class="mono">.int, .itv</td></tr>
@@ -100,13 +100,13 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. MAME Home Systems shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>1 to 20</td><td class="mono">.a78, .bin, .int, .itv, .rom, .vec, .gam, .chf, .cpr, .dsk, .ipf, .cdt, .wav, .sna, .ssd, .dsd, .uef, .83p, .83g</td><td class="desc">The game - a cartridge (.a78 for the Atari 7800, .int, .itv, .bin or .rom for the Intellivision, .vec, .gam or .bin for the Vectrex, .bin or .rom for the Odyssey 2, .chf or .bin for the Channel F, .cpr for the GX4000 and the CPC+), or for an Amstrad CPC a disk (.dsk), a tape (.cdt, .wav) or a snapshot (.sna), or for the TI-83 a program or a group of variables (.83p, .83g), which the core sends over the link cable a few seconds after power-on. Each file goes into the first of the machine's slots or drives that takes its kind. A CPC's disks are one list for its first drive, which starts with the first of them, Next Disk and Previous Disk put another in, and Eject Disk leaves the drive empty. Your files are never changed - Export Save Data writes out each disk the machine wrote to, under its own name, and a new project can take it as its game. The Machine setting says which machine it is.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 16</td><td class="mono">.nv</td><td class="desc">What the machine keeps when the power is off, in the files Export Save Data wrote. Each file is put back into the device it came from before the first frame. With none, the machine starts as it left the factory.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -119,15 +119,15 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. MAME Home Systems claims .83g, .83p, .a78, .cdt, .chf, .cpr, .dsk, .gam, .int, .itv, .sna, .vec.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. MAME Home Systems has 30 settings in the grid. 30 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>3D Imager</strong></td><td class="mono">Off, On</td><td class="mono">Off</td><td class="desc"><em>Shown when System is Vectrex.</em><br>A part of the machine's set-up, as MAME names it - '3D Imager'. The machine reads it, so a movie needs the same value to play back. The default is MAME's.</td></tr>
 <tr><td class="nm"><strong>Battery Status</strong></td><td class="mono">Normal, Low Battery</td><td class="mono">Normal</td><td class="desc"><em>Shown when System is TI-83.</em><br>A switch on the console, as MAME names it - 'Battery Status'. The machine reads it, so a movie needs the same value to play back. The default is MAME's.</td></tr>
 <tr><td class="nm"><strong>BIOS</strong></td><td class="mono">Atari 7800, Atari 7800 (prototype with Asteroids)</td><td class="mono">Atari 7800</td><td class="desc"><em>Shown when System is Atari 7800 (NTSC).</em><br>Which of the machine's BIOS versions it starts with. The default is MAME's. A movie needs the same one to play back.</td></tr>
@@ -160,9 +160,9 @@
 <tr><td class="nm"><strong>VideoNuLA</strong></td><td class="mono">No, Yes</td><td class="mono">No</td><td class="desc"><em>Shown when System is one of BBC Micro Model A, BBC Micro Model B, BBC Micro Model B+ 64K, BBC Micro Model B+ 128K, BBC Master 128.</em><br>A part of the machine's set-up, as MAME names it - 'VideoNuLA'. The machine reads it, so a movie needs the same value to play back. The default is MAME's.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -172,10 +172,10 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>MAME Home Systems can ask for up to 57 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <details><summary>Show all 57 files</summary>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari 7800 (NTSC) - 7800.u7</strong></td><td class="mono">7800.u7</td><td class="mono sha">D9D134BB6B36907C615A594CC7688F7BFCEF5B43</td><td class="desc"><em>Asked for when System is Atari 7800 (NTSC) and not (BIOS is Atari 7800 (prototype with Asteroids)).</em><br>firmware.what.rom_ofAtari 7800 (NTSC) (firmware.size.kb4), which MAME names 7800.u7. Used by - Atari 7800 (NTSC). It is part of the machine, so you supply it, and the core checks it is the right one.</td></tr>
 <tr><td class="nm"><strong>Atari 7800 (NTSC) - c300558-001a.u7</strong></td><td class="mono">c300558-001a.u7</td><td class="mono sha">14584B1EAFE9721804782D4B1AC3A4A7313E455F</td><td class="desc"><em>Asked for when System is Atari 7800 (NTSC) and BIOS is Atari 7800 (prototype with Asteroids).</em><br>firmware.what.rom_ofAtari 7800 (NTSC) (firmware.size.kb16), which MAME names c300558-001a.u7. Used by - Atari 7800 (NTSC). It is part of the machine, so you supply it, and the core checks it is the right one.</td></tr>
 <tr><td class="nm"><strong>Atari 7800 (PAL) - c300558-001b.u7</strong></td><td class="mono">c300558-001b.u7</td><td class="mono sha">5A140136A16D1D83E4FF32A19409CA376A8DF874</td><td class="desc"><em>Asked for when System is Atari 7800 (PAL).</em><br>firmware.what.rom_ofAtari 7800 (PAL) (firmware.size.kb16), which MAME names c300558-001b.u7. Used by - Atari 7800 (PAL). It is part of the machine, so you supply it, and the core checks it is the right one.</td></tr>
@@ -236,7 +236,7 @@
 </tbody></table></div>
 </details>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. MAME Home Systems does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

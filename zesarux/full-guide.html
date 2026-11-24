@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">ZEsarUX</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> ZX Spectrum Next</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest ZEsarUX core from the <a href="https://github.com/ToolAssisted-run/chimera-core-zesarux/tags" target="_blank" rel="noopener">ZEsarUX core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. ZEsarUX is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,13 +67,13 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. ZEsarUX shows 2 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>SD Card</strong></td><td>At most one</td><td class="mono">.mmc, .img</td><td class="desc">The image of the Next's SD card (.mmc or .img), with the Next's system (NextZXOS) on it, of at most 1 GiB - the whole card is held in the machine's memory. ZEsarUX comes with one, tbblue.mmc, and the System/Next distribution for emulators has one of 1 GiB. What the machine writes to the card stays in the machine (and in its savestates). The file is never changed. A Next needs a card to start with NextZXOS. With Start set to "fast" it needs none.</td></tr>
 <tr><td class="nm"><strong>Program</strong></td><td>At most one</td><td class="mono">.nex, .snx, .sna, .z80, .zsf, .tap, .tzx, .pzx, .bas, .dot, .scr, .sl2</td><td class="desc">A program for the Next or the Spectrum - a .nex file (the Next's own), a snapshot (.snx, .sna, .z80, .zsf), a tape (.tap, .tzx, .pzx) or a file NextZXOS opens (.bas, .dot, .scr, .sl2). When the Next starts with NextZXOS, the file is put in the top folder of the SD card, and you run it from the Browser, as on a Next. When it starts fast, the program is loaded straight into the machine.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -85,22 +85,22 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. ZEsarUX claims .mmc, .nex, .snx.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. ZEsarUX has 2 settings in the grid. All of them are always shown.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Hold NextZXOS at 7 MHz</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">NextZXOS sets the processor's speed itself, up to 28 MHz, as on a Next. When on, the processor runs no faster than 7 MHz while NextZXOS's own code runs, which spares a slow computer (ZEsarUX's own default), programs started from NextZXOS still run at the speed they choose. Leave it off to have the Next as it is. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Start</strong></td><td class="mono">nextzxos, card, fast</td><td class="mono">nextzxos</td><td class="desc">How the Next starts. "nextzxos" starts it as a Next starts - the boot ROM reads the system from the SD card, which shows its menus, and a program in the project is put on the card, where the Browser finds it. It needs an SD card image and the boot ROM. "card" starts NextZXOS from the SD card without the boot ROM and the Next's firmware - the core loads the ROMs the card's menu names and sets the Next up as the firmware does. It is for cards made for emulators, such as the System/Next distribution's, whose file system the firmware cannot read, and it needs only the card. "fast" starts the Next's hardware at once with the 48K Spectrum's ROM and no SD card, and loads the program in the project straight into the machine. A program that wants NextZXOS or files from a card does not run this way. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -110,13 +110,13 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>ZEsarUX can ask for up to 1 file. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>tbblue_loader.rom</strong></td><td class="mono">tbblue_loader.rom</td><td class="mono sha">8B2E927D0523BC27BFFCC34C39527AB0D2362E0C</td><td class="desc"><em>Asked for when Start is nextzxos.</em><br>The Next's boot ROM (8 KB), the program its FPGA starts first - it reads the Next's system from the SD card. ZEsarUX comes with it, as tbblue_loader.rom.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. ZEsarUX does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

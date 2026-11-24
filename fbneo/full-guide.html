@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">FBNeo</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Capcom CPS-1 · Capcom CPS-2 · Capcom CPS-3 · SNK Neo Geo MVS · Sega System 16 · SNK Neo Geo CD</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest FBNeo core from the <a href="https://github.com/ToolAssisted-run/chimera-core-fbneo/tags" target="_blank" rel="noopener">FBNeo core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. FBNeo is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,8 +65,8 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. FBNeo offers 6 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. FBNeo draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Capcom CPS-1</strong></td><td class="mono">Any</td></tr>
 <tr><td class="nm"><strong>Capcom CPS-2</strong></td><td class="mono">.zip</td></tr>
 <tr><td class="nm"><strong>Capcom CPS-3</strong></td><td class="mono">Any</td></tr>
@@ -76,14 +76,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. FBNeo shows 3 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Disc</strong></td><td>Exactly one</td><td class="mono">.cue, .chd</td><td class="desc"><em>Shown when System is SNK Neo Geo CD.</em><br>The Neo Geo CD game. It is either a .cue file or a .chd file. The track files (.bin) named in a .cue join the project automatically and must be in the same folder. A disc stored as a zip has to be unpacked first.</td></tr>
 <tr><td class="nm"><strong>Rom set</strong></td><td>1 to 4</td><td class="mono">.zip</td><td class="desc"><em>Shown when System is one of Capcom CPS-1, Capcom CPS-2, Capcom CPS-3, SNK Neo Geo MVS, Sega System 16.</em><br>The game's ROM set comes first, with the file name FBNeo uses (for example ssf2t.zip). The name is how the core knows which game it is. A clone's set holds only the files that differ from its parent, so add the parent's set after it (a clone of ssf2t also needs ssf2t.zip). Each ROM is found by its checksum first and by its name second.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 8</td><td class="mono">.bin</td><td class="desc">What a game keeps when the power is off, in the files Export Save Data wrote. These are the Neo Geo's NVRAM.bin and Memory_card.bin, the EEPROM of a CPS-2 or CPS-3 board, and the Neo Geo CD's backup memory. Each file is put back where it came from before the first frame.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -98,15 +98,15 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. FBNeo claims .zip.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. FBNeo has 6 settings in the grid. 3 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies settings that suit the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game, such as an arcade game's DIP switches.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>CPU Clock (%)</strong></td><td class="mono">25 to 400</td><td class="mono">100</td><td class="desc"><em>Shown when System is one of Capcom CPS-1, Capcom CPS-2, SNK Neo Geo MVS, Sega System 16.</em><br>The speed of the main processor, as a percentage of the real board's (FBNeo's CPU clock setting). Above 100 a game slows down less in busy scenes, and below 100 it slows down more. It changes how the game runs, so a movie needs the same value. It works on CPS-1, CPS-2, Neo Geo and System 16. CPS-3 ignores it.</td></tr>
 <tr><td class="nm"><strong>FM Interpolation</strong></td><td class="mono">none, 2-point, 4-point</td><td class="mono">none</td><td class="desc">How FBNeo converts the sound of the boards' FM chips (YM2151, YM2610) to the output rate. It affects the sound only, like Sample Interpolation. The default is FBNeo's own.</td></tr>
 <tr><td class="nm"><strong>Force 60 Hz</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Runs a board whose picture rate is close to 60 Hz (59.18 on the Neo Geo, 59.63 on CPS-1 and CPS-2) at exactly 60 Hz. The game then runs slightly faster and its sound changes, so it is part of the machine.</td></tr>
@@ -115,9 +115,9 @@
 <tr><td class="nm"><strong>Sample Interpolation</strong></td><td class="mono">none, 2-point, 4-point</td><td class="mono">2-point</td><td class="desc">How FBNeo converts the sound of the boards' sample chips (QSound, the MSM6295 and similar) to the output rate. It affects the sound only. The game runs the same, and a movie plays back with any value. The default is FBNeo's own.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -127,14 +127,14 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>FBNeo can ask for up to 2 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Neo Geo Bios Set</strong></td><td class="mono">neogeo.zip</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is one of SNK Neo Geo MVS, SNK Neo Geo CD.</em><br>The Neo Geo's BIOS set, in the file FBNeo calls neogeo.zip. It holds the MVS and AES BIOS ROMs, the sound processor's BIOS and two graphics ROMs. The whole zip is given to the core, which picks the ROMs it needs by their checksums. No size or hash is required, because sets differ in what they contain.</td></tr>
 <tr><td class="nm"><strong>Neo Geo CD Bios Set</strong></td><td class="mono">neocdz.zip</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is SNK Neo Geo CD.</em><br>The Neo Geo CD's BIOS set, in the file FBNeo calls neocdz.zip. It holds neocd.bin, the console's own BIOS, and any replacement BIOS the console's BIOS setting can choose. The whole zip is given to the core, which picks ROMs by their checksums. The console also needs neogeo.zip, for a graphics ROM (000-lo.lo) it shares with the cartridge machine.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. FBNeo does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

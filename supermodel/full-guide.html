@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Supermodel</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Sega Model 3</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Supermodel core from the <a href="https://github.com/ToolAssisted-run/chimera-core-supermodel/tags" target="_blank" rel="noopener">Supermodel core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Supermodel is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,14 +67,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Supermodel shows 3 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.zip</td><td class="desc">The game's ROM set - the .zip named as Supermodel and MAME name it (for example vf3.zip, scud.zip or srally2.zip). Supermodel knows a game's files by their contents, so the names of the files inside do not matter.</td></tr>
 <tr><td class="nm"><strong>Parent ROM set</strong></td><td>At most one</td><td class="mono">.zip</td><td class="desc">Only for a clone (a version of a game whose set holds only the files that differ, such as vf3a.zip) - the zip of the set it is a version of (vf3.zip for vf3a.zip). A game that is not a clone needs nothing here.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.nv</td><td class="desc">What the game remembers, as Supermodel keeps it for each game - its NVRAM file (the EEPROM and the backup RAM, which hold the game's settings, its records and its bookkeeping), as Supermodel writes it to its NVRAM folder or as Emulator &gt; Export Save Data wrote it (&lt;game&gt;.nv). It is put in the machine before the game starts. With none, the game starts with blank memory, as a new board does.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -86,20 +86,20 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Supermodel claims .zip.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Supermodel has 3 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Drawing Scale</strong></td><td class="mono">1x, 2x, 3x, 4x</td><td class="mono">1x</td><td class="desc">How many times the Model 3's own 496x384 the picture is drawn - at 2x it is 992x768, with sharper 3D. The core draws on the processor, so each step up is slower (2x draws four times the pixels). It changes the picture only.</td></tr>
 <tr><td class="nm"><strong>Idle Skip</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">When the game's processor waits in a loop for something to happen, Supermodel skips ahead instead of running every pass of the loop, as upstream does by default. It makes the core faster. The game is meant to come out the same either way, but the processor spends its time differently. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Starting Clock</strong></td><td class="mono">any whole number</td><td class="mono">946684800</td><td class="desc">The date and time the Model 3's real-time clock shows when the machine is switched on, in UTC. It then runs with the frames (57.524 a second, as the hardware's). The default is the first of January 2000. This is a setting, and not your computer's clock, so that a movie plays back the same on any day. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Supermodel does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

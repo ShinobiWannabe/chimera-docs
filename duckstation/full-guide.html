@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">DuckStation</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> PlayStation · Namco System 11 · Konami GQ</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest DuckStation core from the <a href="https://github.com/ToolAssisted-run/chimera-core-duckstation/tags" target="_blank" rel="noopener">DuckStation core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. DuckStation is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,15 +65,15 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. DuckStation offers 3 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn. The choices are Software (Native), Software (OpenGL), Hardware (OpenGL), Hardware (Vulkan). The default is Software (Native). A Hardware choice uses your graphics card. It is fast, but the picture is drawn outside the savestate, so video can differ on another computer. A warning appears under the box when you pick one.</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>PlayStation</strong></td><td class="mono">.chd, .cue, .ecm, .exe, .pbp, .ps-exe, .psexe</td></tr>
 <tr><td class="nm"><strong>Namco System 11</strong></td><td class="mono">Any</td></tr>
 <tr><td class="nm"><strong>Konami GQ</strong></td><td class="mono">Any</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. DuckStation shows 4 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Discs or program</strong></td><td>0 to 8</td><td class="mono">.cue, .chd, .bin, .img, .iso, .pbp, .ecm, .exe, .psexe, .ps-exe</td><td class="desc"><em>Shown when System is PlayStation.</em><br>What the console runs. This is usually a CD image - a .cue file with the .bin files it names beside it, a .chd, a single .bin, .img or .iso of one data track, a PlayStation Store .pbp, or an .ecm. For a game on several discs, list them all in order. The first is in the drive when the console is switched on, and the Next Disc, Previous Disc and Disc Swap controls change it when the game asks. It can also be one PlayStation EXECUTABLE (.exe, .psexe, .ps-exe), which is how homebrew and test programs are distributed. The tray then stays empty, and the console is given the program once its own ROM has started. With nothing here the console starts into its own menu.</td></tr>
@@ -81,7 +81,7 @@
 <tr><td class="nm"><strong>Rom set</strong></td><td>1 to 3</td><td class="mono">.zip, .chd</td><td class="desc"><em>Shown when System is one of Namco System 11, Konami GQ.</em><br>The game's MAME rom set. This is the .zip, named exactly as MAME names it (tekken.zip, cryptklr.zip). The set is recognised by its name, so a renamed zip is an unknown game. It must be a complete (non-merged) set from a current MAME release - every rom the game needs, under the name MAME gives it now, including the roms a clone shares with its parent. A game with a hard disk or a CD has it as a .chd, named as MAME names it (420uaa04.chd). Put it here beside the zip. Where the board's own firmware is a separate zip, it comes from the firmware list and not from here.</td></tr>
 <tr><td class="nm"><strong>Board memory</strong></td><td>0 to 4</td><td class="mono">.nv</td><td class="desc"><em>Shown when System is one of Namco System 11, Konami GQ.</em><br>What the board keeps while the power is off - the EEPROM with the operator's settings and the high scores, or a flash card. It is optional. Without it the board starts blank, as a new board did, and may spend its first start setting it up. The files are the ones Export Save Data writes, and they are read by name (at28c16.nv, eeprom.nv). The board says which files it keeps, and a file with another name is refused.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -96,14 +96,14 @@
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. DuckStation claims .chd, .cue, .ecm, .exe, .pbp, .ps-exe, .psexe.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. DuckStation has 30 settings in the grid. 27 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>BIOS</strong></td><td class="mono">v1.0-j, v1.1-j, v2.0-a, v2.0-e, v2.1-a, v2.1-e, v2.1-j, v2.2-a, v2.2-e, v2.2-j, v3.0-a, v3.0-e, v3.0-j, v4.0-j, v4.1-a, v4.1-e, v4.3-j, v4.4-e, v4.5-a, v4.5-e</td><td class="mono">v4.1-a</td><td class="desc"><em>Shown when System is PlayStation.</em><br>Which of Sony's boot ROMs the console has. The boot ROM is the machine's operating system. It differs by region and by revision. For example 'v4.1-a' is version 4.1 for North America (the one in the SCPH-7001), a 'j' is for Japan and an 'e' is for Europe. A project records one of them, and Chimera asks for that file. A game runs on any BIOS that accepts its disc, but a movie plays back only on the one it was made with.</td></tr>
 <tr><td class="nm"><strong>Console Region</strong></td><td class="mono">auto, ntsc-u, ntsc-j, pal</td><td class="mono">auto</td><td class="desc"><em>Shown when System is PlayStation.</em><br>Which market the console was made for. It decides the video timing (NTSC 59.83 Hz or PAL 49.76 Hz) and which discs the drive accepts. 'auto' reads the disc and becomes the console that disc was made for, which is right for almost every game. With no disc it becomes the console its BIOS was made for.</td></tr>
 <tr><td class="nm"><strong>Controller 1</strong></td><td class="mono">none, digital, dualshock, analogJoystick, negcon, negconRumble, guncon, justifier, mouse</td><td class="mono">dualshock</td><td class="desc"><em>Shown when System is PlayStation.</em><br>What is plugged into port 1. 'dualshock' is the analog controller, in the mode it starts in when switched on. 'digital' is the original pad with no sticks. 'analogJoystick' is the flight controller with two sticks. 'negcon' is Namco's twisting pad for racing games, and 'negconRumble' is the later one with motors. 'guncon' and 'justifier' are the two light guns. They are not interchangeable, and a game works with one or the other. 'mouse' is the PlayStation Mouse. DuckStation's game database lists games that cannot work with a DualShock. Such a game gets the digital pad whatever is chosen here.</td></tr>
@@ -136,9 +136,9 @@
 <tr><td class="nm"><strong>Widescreen Hack</strong></td><td class="mono">off, 16 to 9, 19 to 9, 20 to 9</td><td class="mono">off</td><td class="desc"><em>Shown when System is PlayStation.</em><br>DuckStation's widescreen hack. The game's 3D view is widened to suit a screen of this shape, by changing what its geometry processor calculates. The picture is still the console's own, squeezed. Set Config &gt; Display &gt; Aspect Ratio to the same shape to see it as intended. The 2D parts of a game (menus, status displays, sprites) are not widened and look stretched. It changes the MACHINE and not only the picture - different geometry is drawn, and that takes the video chip a different time. So a movie made with it needs it. DuckStation's game database lists games that break with it, and for those it is turned off.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -148,9 +148,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>DuckStation can ask for up to 21 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>PlayStation BIOS (SCPH-1000, DTL-H1000 (v1.0))</strong></td><td class="mono">PSX_1.0(J).bin</td><td class="mono sha">343883A7B555646DA8CEE54AADD2795B6E7DD070</td><td class="desc"><em>Asked for when System is PlayStation and BIOS is v1.0-j.</em><br>The console's 512 KB boot ROM, copied from a PlayStation you own. This project asks for version 1.0 for Japan, the ROM of the SCPH-1000, DTL-H1000. Another copy of the same version is accepted. A different version is a different machine, and you choose it with the BIOS setting.</td></tr>
 <tr><td class="nm"><strong>PlayStation BIOS (SCPH-3000, DTL-H1000H (v1.1 01-22-95))</strong></td><td class="mono">PSX_1.1(J).bin</td><td class="mono sha">B06F4A861F74270BE819AA2A07DB8D0563A7CC4E</td><td class="desc"><em>Asked for when System is PlayStation and BIOS is v1.1-j.</em><br>The console's 512 KB boot ROM, copied from a PlayStation you own. This project asks for version 1.1 for Japan, the ROM of the SCPH-3000, DTL-H1000H. Another copy of the same version is accepted. A different version is a different machine, and you choose it with the BIOS setting.</td></tr>
 <tr><td class="nm"><strong>PlayStation BIOS (SCPH-1001, DTL-H1001 (v2.0 05-07-95 A))</strong></td><td class="mono">PSX_2.0(A).bin</td><td class="mono sha">649895EFD79D14790EABB362E94EB0622093DFB9</td><td class="desc"><em>Asked for when System is PlayStation and BIOS is v2.0-a.</em><br>The console's 512 KB boot ROM, copied from a PlayStation you own. This project asks for version 2.0 for North America, the ROM of the SCPH-1001, DTL-H1001. Another copy of the same version is accepted. A different version is a different machine, and you choose it with the BIOS setting.</td></tr>
@@ -174,7 +174,7 @@
 <tr><td class="nm"><strong>Namco C76 sound processor</strong></td><td class="mono">namcoc76.zip</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Namco System 11.</em><br>The program inside the sound processor that every Namco System 11 board has (the C76, a Mitsubishi M37702). The file is namcoc76.zip as MAME names it, with c76.bin inside. It is a MAME set and is used whole. The core reads the rom out of it and checks that rom by its own CRC and SHA-1. No size or hash of the zip itself is required, because zips of the same rom differ.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. DuckStation does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

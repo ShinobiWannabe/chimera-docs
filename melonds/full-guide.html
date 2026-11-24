@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">melonDS</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Nintendo DS · Nintendo DSi</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest melonDS core from the <a href="https://github.com/ToolAssisted-run/chimera-core-melonds/tags" target="_blank" rel="noopener">melonDS core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. melonDS is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,20 +65,20 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. melonDS offers 2 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. melonDS draws one way, so the box is greyed out and shows Software (Native).</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Nintendo DS</strong></td><td class="mono">.nds</td></tr>
 <tr><td class="nm"><strong>Nintendo DSi</strong></td><td class="mono">Any</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. melonDS shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.nds</td><td class="desc">The game's cartridge, a .nds file. A game stored as a zip has to be unpacked first. A game sold only in the DSi's shop (DSiWare) is not a cartridge and cannot be started this way.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc">What the cartridge's save memory holds at the start, for a project that begins from a saved game - a .sav file, as Emulator &gt; Export Save Data... writes it and as melonDS, DeSmuME (raw saves) and BizHawk keep it. The file is never changed. Leave this empty to start with an empty cartridge. File names. a save file is identified by its extension, .sav.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -90,14 +90,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. melonDS claims .nds.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. melonDS has 9 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>BIOS</strong></td><td class="mono">free, original</td><td class="mono">free</td><td class="desc">Which BIOS the console's DS side starts with. 'free' is the replacement BIOS that melonDS carries - nothing has to be supplied, and most games run with it. 'original' is Nintendo's own, for the games that need it and, on a DS, for starting from the console's menu - the project then needs the DS's two BIOS files and, on a DS, its firmware file. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>CPU</strong></td><td class="mono">jit, interpreter</td><td class="mono">jit</td><td class="desc">How the console's two ARM processors are run. 'jit' is melonDS's recompiler - it turns the game's code into code for your computer and is faster (about one and a half times in the game measured, where drawing the picture takes much of the time). 'interpreter' runs it one instruction at a time, as this core always did before this setting existed. The two count the machine's time differently, so a movie needs the same value - a project made before this setting existed was made with the interpreter, and plays back only with 'interpreter' chosen. Changing it restarts the core.</td></tr>
 <tr><td class="nm"><strong>Language</strong></td><td class="mono">japanese, english, french, german, italian, spanish</td><td class="mono">english</td><td class="desc">The language the console is set to. Many games read it to choose their own language. It replaces the language stored in a firmware file or in a DSi's NAND image. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -109,9 +109,9 @@
 <tr><td class="nm"><strong>Swap Screens</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Exchanges the two screens in the 'stacked' and 'side-by-side' layouts - the lower screen comes first. It changes the picture only.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -121,9 +121,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>melonDS can ask for up to 7 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>DS ARM7 BIOS</strong></td><td class="mono">bios7.bin</td><td class="mono sha">24F67BDEA115A2C847C8813A262502EE1607B7DF</td><td class="desc"><em>Asked for when BIOS is original.</em><br>The BIOS of the Nintendo DS's second processor (16 KB). It is usually named bios7.bin or biosnds7.bin. It is Nintendo's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>DS ARM9 BIOS</strong></td><td class="mono">bios9.bin</td><td class="mono sha">BFAAC75F101C135E32E2AAF541DE6B1BE4C8C62D</td><td class="desc"><em>Asked for when BIOS is original.</em><br>The BIOS of the Nintendo DS's main processor (4 KB). It is usually named bios9.bin or biosnds9.bin. It is Nintendo's and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>DS firmware</strong></td><td class="mono">firmware.bin</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when BIOS is original and System is Nintendo DS.</em><br>The firmware of a Nintendo DS or DS Lite (128, 256 or 512 KB) - the console's menu and its user settings. It is usually named firmware.bin. It is Nintendo's, with the settings of the console it was read from, and you have to supply it.</td></tr>
@@ -133,7 +133,7 @@
 <tr><td class="nm"><strong>DSi NAND image</strong></td><td class="mono">dsinand.bin</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Nintendo DSi.</em><br>The whole contents of a Nintendo DSi's internal memory (about 240 MB), with the console's footer at its end, as a DSi's dumping tools write it - the DSi's system, its menu and its settings. The core works on a copy in memory and never changes your file. It is Nintendo's, read from one console, and you have to supply it.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. melonDS does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

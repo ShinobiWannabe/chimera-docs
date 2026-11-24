@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Geartowns</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> FM Towns</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Geartowns core from the <a href="https://github.com/ToolAssisted-run/chimera-core-geartowns/tags" target="_blank" rel="noopener">Geartowns core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Geartowns is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,14 +67,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Geartowns shows 3 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>CDs</strong></td><td>Any number</td><td class="mono">.cue, .iso, .chd</td><td class="desc">CD images - a .cue sheet with its tracks, an .iso or a .chd. The first is in the drive at power on. The Next CD button changes to the next one.</td></tr>
 <tr><td class="nm"><strong>Floppy disks</strong></td><td>Any number</td><td class="mono">.d77, .d88, .hdm, .xdf, .img, .mfm</td><td class="desc">Floppy disk images (.d77, .d88, .hdm, .xdf, .img, .mfm). The first is in drive 1 at power on. The Next Floppy Disk button puts the next one in drive 1. What a game writes stays in the machine and its savestates, and the files are never changed.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.zip, .ram, .d88, .d77</td><td class="desc">Save data given out by Export Save Data - the machine's CMOS (CMOS.RAM), its save disk (SAVEDISK.d88), or both in a zip. The machine starts with it, and a save disk in it becomes the machine's save disk.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -88,14 +88,14 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Geartowns claims .chd, .cue, .d77, .d88, .hdm, .iso, .mfm, .xdf.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Geartowns has 10 settings in the grid. 1 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Boot from</strong></td><td class="mono">auto, cdrom, floppy1, floppy2</td><td class="mono">auto</td><td class="desc">The drive the machine starts from. Auto tries the CD, then the floppy drives, as the system ROM does. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>CPU speed (MHz)</strong></td><td class="mono">auto, 16, 20, 25, 33, 40, 50, 66, 100</td><td class="mono">auto</td><td class="desc">The processor's clock. Auto takes the model's own, or the game database's for a game it knows. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Free FM Towns ROMs</strong></td><td class="mono">off, forTsugaru, forUNZ</td><td class="mono">off</td><td class="desc"><em>Shown when Model is model1_2.</em><br>Run the Model 1/2 on the Free FM Towns Project's ROMs (github.com/captainys/TOWNSROM) instead of Fujitsu's. The project releases two sets, one made for the Tsugaru emulator and one for UNZ. Only their system ROMs differ. They are free. Many games do not run on them. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -108,9 +108,9 @@
 <tr><td class="nm"><strong>Save disk</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">Give the machine a blank, formatted 1232 KB floppy of its own, for games that keep their saves on a user or save disk. It is not in a drive at power on - Next Floppy Disk puts it in drive 1, after the project's own floppies. What a game writes to it stays in the machine and its savestates, and Export Save Data gives it out. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -120,9 +120,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Geartowns can ask for up to 33 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>System ROM (FMT_SYS.ROM (Model 1/2))</strong></td><td class="mono">FMT_SYS.ROM</td><td class="mono sha">15D9CC705F3534FE97A2386E4D4848A1602CC534</td><td class="desc"><em>Asked for when Model is model1_2 and Free FM Towns ROMs is off.</em><br>Dumped from an FM Towns Model 1 or 2 you own (fmtowns set in MAME).</td></tr>
 <tr><td class="nm"><strong>OS ROM (FMT_DOS.ROM (Model 1/2))</strong></td><td class="mono">FMT_DOS.ROM</td><td class="mono sha">57FD146478226F7F215CAF63154C763A6D52165E</td><td class="desc"><em>Asked for when Model is model1_2 and Free FM Towns ROMs is off.</em><br>Dumped from an FM Towns Model 1 or 2 you own (fmtowns set in MAME).</td></tr>
 <tr><td class="nm"><strong>Font ROM (FMT_FNT.ROM (Model 1/2))</strong></td><td class="mono">FMT_FNT.ROM</td><td class="mono sha">FA5F7A18060AFA35678DCBDC3589A1455ABA26DC</td><td class="desc"><em>Asked for when Model is model1_2 and Free FM Towns ROMs is off.</em><br>Dumped from an FM Towns Model 1 or 2 you own (fmtowns set in MAME).</td></tr>
@@ -158,7 +158,7 @@
 <tr><td class="nm"><strong>Marty extension ROM 3 (MAR_EX3.ROM (Marty 2))</strong></td><td class="mono">MAR_EX3.ROM</td><td class="mono sha">19B669AA6488BDAF8569E89B1B1067E51246A768</td><td class="desc"><em>Asked for when Model is marty.</em><br>Dumped from an FM Towns Marty you own (fmtmarty2 set in MAME). The Marty has not been booted with these files yet - its system and OS ROMs were not on hand to test, and MAME's other Marty set (mrom.m37) holds another revision of the system ROM.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Geartowns does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

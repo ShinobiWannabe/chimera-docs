@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Fuse</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> ZX Spectrum</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Fuse core from the <a href="https://github.com/ToolAssisted-run/chimera-core-fuse/tags" target="_blank" rel="noopener">Fuse core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Fuse is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,12 +67,12 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Fuse shows 1 group of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Tape, Snapshot or Disc</strong></td><td>At most one</td><td class="mono">.tap, .tzx, .pzx, .csw, .z80, .sna, .szx, .snp, .sp, .zxs, .dsk, .trd, .scl, .udi, .fdi, .mgt, .img, .opd, .opu, .mdr, .dck, .rom</td><td class="desc">What goes into the machine. A tape (.tap, .tzx, .pzx, .csw) is loaded as a tape recorder would play it. A snapshot (.z80, .sna, .szx and others) is a whole machine as it stood at one moment, and starts there. A disc is put into the drive of a machine that has one - .dsk for the +3, .trd and .scl for the Pentagon and Scorpion, and the others for the disc interfaces Fuse emulates. A .mdr file is a Microdrive cartridge, a .dck file a Timex cartridge, a .rom file an Interface 2 cartridge. With no file the machine starts in its BASIC. Fuse tells what a file is from its contents.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -84,14 +84,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Fuse claims .dck, .mdr, .mgt, .pzx, .scl, .sna, .szx, .tap, .trd, .tzx, .udi, .z80.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Fuse has 8 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Issue 2 Keyboard</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">The first 48K Spectrums (issue 1 and 2 boards) read the keyboard a little differently from all later ones, and a few early games work only on them. Leave it off unless a game from 1982 or 1983 does not answer the keys. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Joystick 1</strong></td><td class="mono">none, cursor, kempston, sinclair1, sinclair2, timex1, timex2, fuller</td><td class="mono">kempston</td><td class="desc">What the first joystick (the buttons P1 Up, Down, Left, Right and Fire) is plugged into. "kempston" is the Kempston interface, the one most games offer. "sinclair1" and "sinclair2" are the two sockets of the Interface 2 and of the +2 and +3, which press the keys 6 to 0 and 1 to 5. "cursor" presses 5, 6, 7, 8 and 0. "timex1" and "timex2" are the Timex computers' own sockets, and "fuller" the Fuller box. "none" leaves it unplugged. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Joystick 2</strong></td><td class="mono">none, cursor, kempston, sinclair1, sinclair2, timex1, timex2, fuller</td><td class="mono">none</td><td class="desc">What the second joystick (the buttons P2 Up, Down, Left, Right and Fire) is plugged into. The choices are Joystick 1's. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -102,9 +102,9 @@
 <tr><td class="nm"><strong>Tape Loading</strong></td><td class="mono">fast, real</td><td class="mono">fast</td><td class="desc">How a tape loads. "fast" loads a standard tape block at once instead of playing it, and runs a game's own loading routine without waiting for the tape, so a game is there in seconds. "real" plays the tape as a tape recorder would, with the stripes and the noise, taking the minutes it took. A few protected games load only with "real". It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -114,9 +114,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Fuse can ask for up to 7 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>128p-0.rom</strong></td><td class="mono">128p-0.rom</td><td class="mono sha">D07FCDECA892EE80494D286EA9EA5BF3928A1ACA</td><td class="desc"><em>Asked for when Machine is one of pentagon, pentagon512, pentagon1024.</em><br>The first ROM of the Pentagon 128 (16 KB). It does not come with Fuse, so this core does not include it, and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>trdos.rom</strong></td><td class="mono">trdos.rom</td><td class="mono sha">21695E3F2A8F796386CE66EEA8A246B0AC44810C</td><td class="desc"><em>Asked for when Machine is one of pentagon, pentagon512, pentagon1024.</em><br>The TR-DOS ROM of the Pentagon's Beta 128 disc interface (16 KB), version 5.03. Amstrad owns it and allows it to be distributed with emulators. It does not come with Fuse, so this core does not include it, and you have to supply it.</td></tr>
 <tr><td class="nm"><strong>gluck.rom</strong></td><td class="mono">gluck.rom</td><td class="mono sha">015EB96DAFB273D4F4512C467E9B43C305FD1BC4</td><td class="desc"><em>Asked for when Machine is one of pentagon512, pentagon1024.</em><br>The Gluck service ROM of the Pentagon 512 and 1024 (16 KB). Amstrad owns it and allows it to be distributed with emulators. It does not come with Fuse, so this core does not include it, and you have to supply it.</td></tr>
@@ -126,7 +126,7 @@
 <tr><td class="nm"><strong>256s-3.rom</strong></td><td class="mono">256s-3.rom</td><td class="mono sha">33703E97CC93B7EDFCC0334B64233CF81B7930DB</td><td class="desc"><em>Asked for when Machine is scorpion.</em><br>The fourth of the four ROMs of the Scorpion ZS 256 (16 KB). It does not come with Fuse, so this core does not include it, and you have to supply it.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Fuse does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

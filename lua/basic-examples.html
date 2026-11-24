@@ -53,7 +53,7 @@
   <main id="main" class="content">
     <div class="eyebrow">Lua</div><h1>Basic Examples</h1>
 <p class="lead">The Chimera functions that scripts use most, with a short example for each group and a note on when to use it. The function names and arguments were checked against the Chimera source code. The starting point was the Common Functions script that Bizhawk users know, rewritten for Chimera and for the <a href="https://github.com/luarocks/lua-style-guide">LuaRocks style guide</a>. CoolHandMike explains that script in the videos <a href="https://www.youtube.com/watch?v=g1yEtXz7UqY">Bizhawk: Common Lua Functions</a> and <a href="https://www.youtube.com/watch?v=KUj4j0le6x8">Bizhawk: Intro to Lua Scripting</a>. If the Lua language is new to you, read <a href="index.html">Basics</a> first.</p>
-<h2 id="run">How a script runs</h2>
+<h2 id="run">How a Script Runs</h2>
 <p>Chimera runs a script from the Lua Console. See <a href="../chimera/lua-console.html">Lua Console</a> for how to open and start one. There are two ways to write a script that works on every frame.</p>
 <div class="tablewrap"><table><thead><tr><th>Way</th><th>How it looks</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="nm"><strong>A loop</strong></td><td class="desc"><code>while true do ... emu.frameadvance() end</code></td><td class="desc">Simple scripts and anything that follows a plan from one frame to the next. Your code runs, then <code>emu.frameadvance()</code> hands one frame back to the game.</td></tr>
@@ -75,7 +75,7 @@
 <tr><td class="mono"><code>emu.getsystemid()</code>, <code>emu.getcorename()</code></td><td class="desc">The system and core that are running.</td><td class="desc">To make one script serve several systems.</td></tr>
 </tbody></table></div>
 <p class="callout">A script that uses a function from another program, such as Bizhawk, may fail with a message that a value is nil. This usually means the function is not in Chimera. See the end of this page for the known differences.</p>
-<h2 id="output">Showing messages</h2>
+<h2 id="output">Showing Messages</h2>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>console.log(...)</code></td><td class="desc">Writes its values on one line in the Output box of the Lua Console. It accepts several values and tables.</td><td class="desc">Checking a value while you write a script.</td></tr>
 <tr><td class="mono"><code>console.writeline(text)</code>, <code>console.write(text)</code></td><td class="desc">Writes a line, or text without a line break.</td><td class="desc">Building a line from several parts.</td></tr>
@@ -85,9 +85,9 @@
 <pre class="lua"><code>console.clear()
 console.log(<span class="ts">"Frame"</span>, emu.framecount(), <span class="ts">"lag"</span>, emu.lagcount())
 gui.addmessage(<span class="ts">"Script started"</span>)</code></pre>
-<h2 id="memory">Reading and writing memory</h2>
+<h2 id="memory">Reading and Writing Memory</h2>
 <p>Memory is where the game keeps lives, positions, timers and everything else. A script finds an address with the <a href="../chimera/ram-search.html">RAM Search</a> and the <a href="../chimera/hex-editor.html">Hex Editor</a> tools, and then reads it every frame.</p>
-<h3 id="domains">Memory domains</h3>
+<h3 id="domains">Memory Domains</h3>
 <p>A <strong>memory domain</strong> is one block of memory that a core exposes, such as the main RAM or the video RAM. Each core has its own list. The <code>mainmemory</code> functions use the main memory of the core. The <code>memory</code> functions use the domain you pick.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>mainmemory.getname()</code></td><td class="desc">The name of the main memory domain.</td><td class="desc">To print or pass to the <code>memory</code> functions.</td></tr>
@@ -101,7 +101,7 @@ console.log(<span class="ts">"Main memory is "</span> .. mainmemory.getname())
 <span class="tk">if</span> <span class="tk">not</span> memory.usememorydomain(<span class="ts">"WRAM"</span>) <span class="tk">then</span>
    console.log(<span class="ts">"This core has no WRAM domain"</span>)
 <span class="tk">end</span></code></pre>
-<h3 id="read">Reading values</h3>
+<h3 id="read">Reading Values</h3>
 <p>The name of a read function tells its size and byte order. Pick the one that matches how the game stores the value.</p>
 <div class="tablewrap"><table><thead><tr><th>Part of the name</th><th>Meaning</th></tr></thead><tbody>
 <tr><td class="mono"><code>u8</code> <code>u16</code> <code>u24</code> <code>u32</code></td><td class="desc">Unsigned. The value is 0 or more. A u8 is 0 to 255.</td></tr>
@@ -130,13 +130,13 @@ console.log(<span class="ts">"Main memory is "</span> .. mainmemory.getname())
    total = total + value
 <span class="tk">end</span>
 console.log(<span class="ts">"Sum of 64 bytes "</span> .. total)</code></pre>
-<h3 id="write">Writing values</h3>
+<h3 id="write">Writing Values</h3>
 <p>Replace <code>read</code> with <code>write</code> in any read function and add the new value as the last argument.</p>
 <pre class="lua"><code>mainmemory.write_u8(<span class="tn">0x0359</span>, <span class="tn">9</span>)
 mainmemory.write_u16_be(<span class="tn">0x0362</span>, <span class="tn">500</span>)
 mainmemory.write_bytes_as_array(<span class="tn">0x0100</span>, {<span class="tn">0xAB</span>, <span class="tn">0x12</span>, <span class="tn">0xCD</span>, <span class="tn">0x34</span>})</code></pre>
 <p class="callout">A memory write is not stored in the movie. A movie that depends on a write will not play back the same way on its own. Use writes to test an idea, then enter the real input in TAStudio.</p>
-<h2 id="bits">Working with bits</h2>
+<h2 id="bits">Working with Bits</h2>
 <p>Games often pack several yes or no values into one byte. The <code>bit</code> library reads and changes single bits. Bit 0 is the rightmost bit.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>bit.check(value, position)</code></td><td class="desc">True when the bit is on.</td><td class="desc">Reading one flag.</td></tr>
@@ -158,7 +158,7 @@ mainmemory.write_u8(<span class="tn">0x0400</span>, flags)
 
 <span class="tk">local</span> high_nibble = bit.rshift(bit.band(flags, <span class="tn">0xF0</span>), <span class="tn">4</span>)
 console.log(<span class="ts">"High nibble "</span> .. high_nibble)</code></pre>
-<h2 id="drawing">Drawing on the screen</h2>
+<h2 id="drawing">Drawing on the Screen</h2>
 <p>Drawings are made in the coordinates of the game picture, where 0, 0 is the top left corner. A drawing lasts one frame, so draw again on every frame. A <strong>color</strong> can be a name such as <code>"red"</code>, a text such as <code>"#FF8800"</code>, or a number written as <code>0xAARRGGBB</code>. AA is the see through amount, where FF is solid.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>gui.text(x, y, text, color, anchor)</code></td><td class="desc">Quick text. The anchor can be topleft, topright, bottomleft or bottomright.</td><td class="desc">Most text. It is much faster than the others.</td></tr>
@@ -184,7 +184,7 @@ gui.drawImage(<span class="ts">"feather.png"</span>, <span class="tn">64</span>,
    <span class="tk">local</span> x_position = client.bufferwidth() + <span class="tn">8</span>
    gui.text(x_position, <span class="tn">10</span>, <span class="ts">"Side panel"</span>)
 <span class="tk">end</span></code></pre>
-<h2 id="client">The window and the emulator</h2>
+<h2 id="client">The Window and the Emulator</h2>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>client.screenwidth()</code>, <code>client.screenheight()</code></td><td class="desc">Size in pixels of the drawing area.</td><td class="desc">Placing text relative to the edges.</td></tr>
 <tr><td class="mono"><code>client.bufferwidth()</code>, <code>client.bufferheight()</code></td><td class="desc">Size of the game picture without padding.</td><td class="desc">Placing things in the padding.</td></tr>
@@ -199,7 +199,7 @@ gui.drawImage(<span class="ts">"feather.png"</span>, <span class="tn">64</span>,
       gui.addmessage(<span class="ts">"Paused. No lives left"</span>)
    <span class="tk">end</span>
 <span class="tk">end</span></code></pre>
-<h2 id="host-input">Reading the keyboard and the mouse</h2>
+<h2 id="host-input">Reading the Keyboard and the Mouse</h2>
 <p><code>input.get()</code> returns the keys and buttons on your computer that are held now. It is not the game controller.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>input.get()</code></td><td class="desc">A table with an entry for each key held.</td><td class="desc">Starting an action from a key you pick.</td></tr>
@@ -212,7 +212,7 @@ gui.drawImage(<span class="ts">"feather.png"</span>, <span class="tn">64</span>,
 
 <span class="tk">local</span> mouse = input.getmouse()
 gui.text(<span class="tn">10</span>, <span class="tn">200</span>, <span class="ts">"Mouse "</span> .. mouse.X .. <span class="ts">", "</span> .. mouse.Y)</code></pre>
-<h2 id="controllers">Reading the controller</h2>
+<h2 id="controllers">Reading the Controller</h2>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it returns</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>joypad.get(controller)</code></td><td class="desc">The input of this frame as the movie sees it.</td><td class="desc">Showing what the movie presses.</td></tr>
 <tr><td class="mono"><code>joypad.getwithmovie(controller)</code></td><td class="desc">The input the core will get, including the movie input.</td><td class="desc">Checking what the game really received.</td></tr>
@@ -227,14 +227,14 @@ gui.text(<span class="tn">10</span>, <span class="tn">200</span>, <span class="t
 <span class="tk">if</span> pad_one[<span class="ts">"Right"</span>] <span class="tk">then</span>
    gui.text(<span class="tn">10</span>, <span class="tn">10</span>, <span class="ts">"Holding right"</span>)
 <span class="tk">end</span></code></pre>
-<h2 id="writing-input">Writing inputs</h2>
+<h2 id="writing-input">Writing Inputs</h2>
 <p>There are three ways to put input into a run. They suit different jobs.</p>
 <div class="tablewrap"><table><thead><tr><th>Way</th><th>What it changes</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="nm"><strong><code>joypad.set</code> and its relatives</strong></td><td class="desc">The input the core receives on the current frame only.</td><td class="desc">A script that plays the game, such as a bot, or that adds a button to what you press. Call it again each frame.</td></tr>
 <tr><td class="nm"><strong><code>tastudio.submitinputchange</code> and its relatives</strong></td><td class="desc">Any frame of the TAStudio movie.</td><td class="desc">Writing a stretch of input into the movie, from a plan or from a file.</td></tr>
 <tr><td class="nm"><strong><code>movie.getinput</code> and its relatives</strong></td><td class="desc">Nothing. They read the movie.</td><td class="desc">Checking or copying what is already in the movie.</td></tr>
 </tbody></table></div>
-<h3 id="joypad-set">Setting the controller for this frame</h3>
+<h3 id="joypad-set">Setting the Controller for This Frame</h3>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="mono"><code>joypad.set(buttons, controller)</code></td><td class="desc">Sets buttons from a table of true and false. A button that is left out of the table is not changed.</td></tr>
 <tr><td class="mono"><code>joypad.setfrommnemonicstr(line)</code></td><td class="desc">Sets every button from one line of text written like a line in the movie input log. Read a line with <code>movie.getinputasmnemonic(frame)</code> to see the layout for a core.</td></tr>
@@ -260,7 +260,7 @@ gui.text(<span class="tn">10</span>, <span class="tn">200</span>, <span class="t
    emu.frameadvance()
 <span class="tk">end</span></code></pre>
 <p class="callout"><code>joypad.set</code> lasts one frame, so call it on every frame, as the loop above does. While TAStudio is recording, check the result in the piano roll before you rely on it. To place input in a chosen frame of the movie, use the TAStudio functions below.</p>
-<h3 id="tastudio-edit">Writing inputs into the TAStudio movie</h3>
+<h3 id="tastudio-edit">Writing Inputs into the TAStudio Movie</h3>
 <p>These functions work on the open TAStudio project. First queue the edits, then apply them together. All the edits become one step that the Undo button of TAStudio can take back. They do nothing when TAStudio is not open, so test <code>tastudio.engaged()</code> first.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="mono"><code>tastudio.submitinputchange(frame, button, state)</code></td><td class="desc">Queues a button held (true) or released (false) on a frame.</td></tr>
@@ -284,7 +284,7 @@ gui.text(<span class="tn">10</span>, <span class="tn">200</span>, <span class="t
 <span class="tk">end</span>
 
 hold_button(<span class="ts">"P1 A"</span>, <span class="tn">100</span>, <span class="tn">110</span>)</code></pre>
-<h3 id="movie-read">Reading the movie</h3>
+<h3 id="movie-read">Reading the Movie</h3>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>movie.length()</code></td><td class="desc">The number of frames in the movie.</td><td class="desc">Looping over the whole movie.</td></tr>
 <tr><td class="mono"><code>movie.getinput(frame, controller)</code></td><td class="desc">A table of the buttons held on a frame.</td><td class="desc">Checking input before changing it.</td></tr>
@@ -304,7 +304,7 @@ hold_button(<span class="ts">"P1 A"</span>, <span class="tn">100</span>, <span c
 <span class="tk">end</span>
 
 console.log(<span class="ts">"A is held on "</span> .. count_frames_with(<span class="ts">"P1 A"</span>) .. <span class="ts">" frames"</span>)</code></pre>
-<h2 id="savestates">Saving and loading game state</h2>
+<h2 id="savestates">Saving and Loading Game State</h2>
 <p>Older Bizhawk scripts call <code>savestate.saveslot</code> and <code>savestate.loadslot</code>. Chimera does not have a <code>savestate</code> library. Use one of these instead.</p>
 <div class="tablewrap"><table><thead><tr><th>Tool</th><th>What it is</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>memorysavestate</code></td><td class="desc">A state kept in memory and picked by an identifier. It holds only the core data, not the movie input.</td><td class="desc">Trying something many times from one point in a single script run.</td></tr>
@@ -325,7 +325,7 @@ console.log(<span class="ts">"A is held on "</span> .. count_frames_with(<span c
 event.onexit(<span class="tk">function</span>()
    memorysavestate.removestate(checkpoint)
 <span class="tk">end</span>)</code></pre>
-<h2 id="branches">Saving and loading branches</h2>
+<h2 id="branches">Saving and Loading Branches</h2>
 <p>A <strong>branch</strong> is a saved copy of the movie input up to a frame, with the game state at that frame. See <a href="../tastudio/branches.html">Branches</a> for how to use them by hand. A script can load, list, name and watch branches. A script cannot create one. To save a branch, press Add in the Branches box or press Alt+Insert. Branches are kept in the TAStudio project when you save it.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>tastudio.getbranches()</code></td><td class="desc">A table that starts at 0. Each entry has Id, Frame and Text.</td><td class="desc">Listing branches or finding one by its name.</td></tr>
@@ -365,7 +365,7 @@ tastudio.onbranchsave(<span class="tk">function</span>(index)
    file:close()
 <span class="tk">end</span>)</code></pre>
 <p class="callout"><code>tastudio.loadbranch</code> cannot be used inside an input or memory callback. Call it from the main part of the script.</p>
-<h2 id="files">Reading and writing files</h2>
+<h2 id="files">Reading and Writing Files</h2>
 <p>Scripts read and write files with the <code>io</code> library that comes with Lua. A path without a folder, such as <code>"results.txt"</code>, is in the same folder as the script. Use forward slashes in longer paths. Always close a file when you are done.</p>
 <div class="tablewrap"><table><thead><tr><th>Call</th><th>What it does</th><th>When to use it</th></tr></thead><tbody>
 <tr><td class="mono"><code>io.open(path, "w")</code></td><td class="desc">Opens a file for writing. An old file of that name is replaced.</td><td class="desc">Saving a fresh result.</td></tr>
@@ -488,7 +488,7 @@ event.onframeend(<span class="tk">function</span>()
    gui.text(<span class="tn">10</span>, <span class="tn">10</span>, <span class="ts">"Input reads so far "</span> .. polls)
 <span class="tk">end</span>)</code></pre>
 <p class="callout">The function runs more than once in a frame on some cores, as many times as the game reads its controls. Keep it short, and use <code>event.unregisterbyid</code> to stop it when it is not needed.</p>
-<h2 id="example">Putting it together</h2>
+<h2 id="example">Putting It Together</h2>
 <p>This script shows a small display, holds right, and jumps when you press the space bar. It is the old Common Functions script reduced to its useful parts and written for Chimera. Change the addresses for your game.</p>
 <pre class="lua"><code><span class="tk">local</span> LIVES_ADDRESS = <span class="tn">0x0359</span>
 <span class="tk">local</span> X_ADDRESS = <span class="tn">0x0362</span>
@@ -516,7 +516,7 @@ event.onframeend(<span class="tk">function</span>()
    drive()
    emu.frameadvance()
 <span class="tk">end</span></code></pre>
-<h2 id="other-libraries">Other libraries</h2>
+<h2 id="other-libraries">Other Libraries</h2>
 <div class="tablewrap"><table><thead><tr><th>Library</th><th>What it holds</th></tr></thead><tbody>
 <tr><td class="mono"><code>bizstring</code></td><td class="desc">Text helpers such as hex, pad_start, split, trim, contains and replace.</td></tr>
 <tr><td class="mono"><code>userdata</code></td><td class="desc">Keeps values under a key, with set, get, remove and get_keys.</td></tr>
@@ -526,7 +526,7 @@ event.onframeend(<span class="tk">function</span>()
 <tr><td class="mono"><code>comm</code>, <code>SQL</code></td><td class="desc">Network and database access.</td></tr>
 </tbody></table></div>
 <p>The Help menu of the Lua Console lists every function with its arguments and an example. <code>client.getluafunctionslist()</code> returns the same list to a script.</p>
-<h2 id="differences">Differences from Bizhawk scripts</h2>
+<h2 id="differences">Differences from Bizhawk Scripts</h2>
 <p>Old scripts need a few changes before they run here.</p>
 <div class="tablewrap"><table><thead><tr><th>In an old script</th><th>In Chimera</th></tr></thead><tbody>
 <tr><td class="nm"><strong><code>savestate.saveslot(n)</code> and <code>savestate.loadslot(n)</code></strong></td><td class="desc">There is no <code>savestate</code> library. Use <code>memorysavestate</code>, a TAStudio branch, or the greenzone.</td></tr>

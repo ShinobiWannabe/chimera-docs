@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">AppleWin</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Apple II</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest AppleWin core from the <a href="https://github.com/ToolAssisted-run/chimera-core-applewin/tags" target="_blank" rel="noopener">AppleWin core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. AppleWin is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,14 +67,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. AppleWin shows 3 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Disk II drive 1</strong></td><td>Any number</td><td class="mono">.dsk, .do, .po, .nib, .woz, .2mg</td><td class="desc">Disk images for drive 1 (slot 6). Accepted are DOS-order images (.dsk, .do), ProDOS-order images (.po), nibble images (.nib), .woz images and 140K .2mg images. The machine starts from the first one. The order here is the order the Next Disk 1 input goes through.</td></tr>
 <tr><td class="nm"><strong>Disk II drive 2</strong></td><td>Any number</td><td class="mono">.dsk, .do, .po, .nib, .woz, .2mg</td><td class="desc">Disk images for drive 2. The first one is in the drive when the machine starts, and the Next Disk 2 input goes through the rest.</td></tr>
 <tr><td class="nm"><strong>Hard disk</strong></td><td>0 to 2</td><td class="mono">.hdv, .2mg, .po</td><td class="desc">Up to two ProDOS hard disk images, on a controller card in slot 7. What the machine writes is kept in memory and saved in savestates. The file itself is never changed.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -87,14 +87,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. AppleWin claims .2mg, .do, .dsk, .hdv, .nib, .po, .woz.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. AppleWin has 14 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Apple II Model</strong></td><td class="mono">apple2eEnhanced, apple2e, apple2plus, apple2, apple2jplus, pravets82, pravets8m, pravets8a, tk3000, base64a</td><td class="mono">apple2eEnhanced</td><td class="desc">Which Apple II this is. The choices are the enhanced //e (with a 65C02 processor, the machine most software expects), the original //e, the ][+ and the ][ (6502 processor, no lowercase letters, no 80 columns), the Japanese ][ J-Plus, and the clones AppleWin knows. The model decides the ROM, the processor and the keyboard.</td></tr>
 <tr><td class="nm"><strong>Enhanced Disk Speed</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">On (AppleWin's default), the Disk II drive reads at full speed and not at the speed of a real drive. Off gives the real drive's timing. Either way the timing is the same on every computer.</td></tr>
 <tr><td class="nm"><strong>Half Scanlines</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Draws every second line dark, to look like a picture tube. AppleWin has this on by default. It is off here, because Chimera scales a full picture better.</td></tr>
@@ -111,9 +111,9 @@
 <tr><td class="nm"><strong>Speaker Volume</strong></td><td class="mono">0 to 100</td><td class="mono">60</td><td class="desc">The volume of the Apple's speaker, in percent. It changes the sound output only.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. AppleWin always asks for at least one, so this page always appears. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -123,9 +123,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>AppleWin can ask for up to 20 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Enhanced Apple IIe ROM</strong></td><td class="mono">Apple2e_Enhanced.rom</td><td class="mono sha">B8EA90ABE135A0031065E01697C4A3A20D51198B</td><td class="desc"><em>Asked for when Apple II Model is apple2eEnhanced.</em><br>The system ROM of the enhanced Apple IIe, the 65C02 machine of 1985 (16 KB). It holds the monitor program, Applesoft BASIC and the 80-column firmware. It is Apple's and you have to supply it. AppleWin's source has it as resource/Apple2e_Enhanced.rom.</td></tr>
 <tr><td class="nm"><strong>Apple IIe ROM</strong></td><td class="mono">Apple2e.rom</td><td class="mono sha">61FA9254628E5BB7236FB474006116D67684D747</td><td class="desc"><em>Asked for when Apple II Model is apple2e.</em><br>The system ROM of the original (unenhanced) Apple IIe (16 KB). It is Apple's and you have to supply it. AppleWin's source has it as resource/Apple2e.rom.</td></tr>
 <tr><td class="nm"><strong>Apple II Plus ROM</strong></td><td class="mono">Apple2_Plus.rom</td><td class="mono sha">33A24F5489BA9195B44BE77D9AFB2252594CB5C7</td><td class="desc"><em>Asked for when Apple II Model is apple2plus.</em><br>The ROM of the Apple II Plus (12 KB). It holds the autostart monitor and Applesoft BASIC. It is Apple's and you have to supply it. AppleWin's source has it as resource/Apple2_Plus.rom.</td></tr>
@@ -148,7 +148,7 @@
 <tr><td class="nm"><strong>Parallel printer card firmware</strong></td><td class="mono">Parallel.rom</td><td class="mono sha">C75C751589CBCC1AD4AB4F63676AF7ABADD86F5B</td><td class="desc"><em>Asked for when Printer card is slot1.</em><br>The firmware of the parallel printer card (256 bytes), which AppleWin puts in slot 1 by default. It is needed as long as the Printer card setting keeps the card. It is Apple's and you have to supply it. AppleWin's source has it as resource/Parallel.rom.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. AppleWin does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

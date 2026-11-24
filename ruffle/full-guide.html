@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Ruffle</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Flash</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Ruffle core from the <a href="https://github.com/ToolAssisted-run/chimera-core-ruffle/tags" target="_blank" rel="noopener">Ruffle core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Ruffle is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,14 +67,14 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Ruffle shows 3 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Movie</strong></td><td>Exactly one</td><td class="mono">.swf</td><td class="desc">The Flash movie (.swf) to play.</td></tr>
 <tr><td class="nm"><strong>Files the movie loads</strong></td><td>Any number</td><td class="mono">.swf, .mp3, .png, .jpg, .jpeg, .gif, .xml, .txt, .dat, .bin, .flv, .csv</td><td class="desc">Everything the movie loads while it runs (with loadMovie, loadSound, loadVariables or URLLoader). These are more .swf files, images, sounds and data. Keep the names the movie asks for, because it looks for them next to itself. A movie that loads nothing needs nothing here.</td></tr>
 <tr><td class="nm"><strong>Fonts</strong></td><td>Any number</td><td class="mono">.ttf, .otf, .ttc, .otc</td><td class="desc">Fonts the movie draws its text with (.ttf, .otf, .ttc). A Flash movie often uses the computer's own fonts, and Ruffle here has only a small one with no Chinese, Japanese or Korean letters. If text is missing, add a font that has those letters, for example the one the movie names. Leave this empty if all text shows.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -87,14 +87,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Ruffle claims .swf.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Ruffle has 9 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Flash Player version</strong></td><td class="mono">0 to 32</td><td class="mono">0</td><td class="desc">Which Flash Player version the movie is told it runs on. 0 means the version the SWF file asks for, which is right for almost everything. Raise it when a movie refuses to run on the version it finds. Lower it when a movie takes a code path for a newer player that does not work. Movies of this age often behave differently depending on the player version. It changes what the movie does, so a movie recorded at one version must be played back at the same one.</td></tr>
 <tr><td class="nm"><strong>Frame rate</strong></td><td class="mono">0 to 1000</td><td class="mono">0</td><td class="desc">How many times a second the machine advances, which is also how often the input can change. 0 means the movie's own frame rate, which is what a Flash player uses and what almost everything needs. One frame here is then one frame of the movie, and when the movie changes its rate from ActionScript, the frames here change with it. With a higher number the movie still runs at its own speed. Nothing plays faster, but each movie frame becomes several frames here, so a click, a key press or a mouse move can be placed between two movie frames. That makes a game easier to control when it reads the mouse in the middle of its frame or runs by elapsed time. The cost is more frames to draw, more rows of input and a larger file. A multiple of the movie's rate (30 to 60 or 120) keeps the movie frames evenly spaced. Any other number also works. It is part of the machine, so a movie recorded at one rate must be played back at the same one.</td></tr>
 <tr><td class="nm"><strong>Load behaviour</strong></td><td class="mono">streaming, delayed, blocking</td><td class="mono">streaming</td><td class="desc">What a movie sees while another SWF it loads is still arriving. 'streaming' lets the loaded movie start before it is complete and reports its progress as it grows, like a real player on a real connection. 'delayed' holds the loaded movie back until all of it has arrived. 'blocking' stops everything until the load is finished, so the movie never sees a partial load. Files arrive at once from disk here, so in practice this mostly decides whether a loading animation gets to play.</td></tr>
@@ -106,7 +106,7 @@
 <tr><td class="nm"><strong>Substitute missing fonts</strong></td><td class="mono">True or False</td><td class="mono">True</td><td class="desc">Draws text in Ruffle's built-in font when the movie asks for a system font it did not include. With this off, such text is not drawn at all. That is what a computer without the font would have shown, but it usually just means missing menus. It changes the picture only.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Ruffle does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

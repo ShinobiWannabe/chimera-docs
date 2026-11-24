@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">RPCS3</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> PlayStation 3</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest RPCS3 core from the <a href="https://github.com/ToolAssisted-run/chimera-core-rpcs3/tags" target="_blank" rel="noopener">RPCS3 core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice. The pictures use Sonic Unleashed, packed into an ISO with the Reproducible Media Maker.</p>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page1-core-list.png" alt="The open Core list on Page 1 with RPCS3 highlighted" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page1-core-list.png" alt="The open Core list on Page 1 with RPCS3 highlighted" width="620" height="510"></noscript><figcaption>The Core list with RPCS3 highlighted.</figcaption></figure>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page1.png" alt="Page 1 with RPCS3 chosen, System greyed out as PlayStation 3, and Renderer set to Hardware (Vulkan)" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page1.png" alt="Page 1 with RPCS3 chosen, System greyed out as PlayStation 3, and Renderer set to Hardware (Vulkan)" width="620" height="510"></noscript><figcaption>Page 1 with RPCS3 chosen. The warning under Renderer is about hardware renderers.</figcaption></figure>
@@ -69,7 +69,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page2.png" alt="Page 2 with the Sonic Unleashed ISO in the Game group and the empty Disc key and Packages groups" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page2.png" alt="Page 2 with the Sonic Unleashed ISO in the Game group and the empty Disc key and Packages groups" width="620" height="510"></noscript><figcaption>Page 2 with the game added. The ISO was packed from the disc folder with the <a href="../chimera/media-maker.html">Reproducible Media Maker</a>, so it needs no disc key.</figcaption></figure>
 <p>This page asks for the game files and other data. The core decides what appears here. RPCS3 shows 5 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
@@ -79,7 +79,7 @@
 <tr><td class="nm"><strong>Licences</strong></td><td>Any number</td><td class="mono">.rap</td><td class="desc">The account licence (.rap) for a PlayStation Store title that was paid for. A purchased package is protected (NPDRM) - its executable and its data are encrypted, and the key is this 16-byte file. The console keeps it in the user's exdata folder and looks it up BY NAME, so the file's name is the content id and must not be changed. Give one for each package that needs it, and the machine decrypts and starts what it unlocks. Without it a licensed game stops at 'failed to decrypt content'. A free package (a demo, or a repack that needs no licence) needs none. The project and the movie record exactly which file it was, as they do for every other file the machine starts with. File names. A .rap file is named after the content it unlocks, and the console finds it by that name, for example UP9000-NPUA80134_00-ECHOCHROME000000.rap. If it is renamed the console cannot find it, so give it exactly as you got it.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.zip</td><td class="desc">The saved games the console starts with. This is the zip that Emulator &gt; Export Save Data... writes, given back unchanged. It holds the user's savedata folder, with one directory per save (BLUS30007-SAVE-..., with PARAM.SFO, icons and the game's own files). It is unpacked onto the console's hard disk before the machine starts, so a run can continue where another stopped. The file is never changed. The project and the movie record exactly which file it was, so a movie that starts from a saved game can be played back by anyone who has the same file. Leave it empty and the console has no saves. A zip that holds anything else is refused.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -93,16 +93,16 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. RPCS3 claims .bin, .elf, .iso, .pkg, .self, .zip.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page3.png" alt="Page 3 with the compatibility note for Sonic Unleashed above the settings grid" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page3.png" alt="Page 3 with the compatibility note for Sonic Unleashed above the settings grid" width="620" height="510"></noscript><figcaption>Page 3 for Sonic Unleashed. The note says the game is Ingame on the RPCS3 compatibility list and lists the wiki's recommended settings.</figcaption></figure>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. RPCS3 has 49 settings in the grid. All of them are always shown.</p>
 <p>When you arrive on this page, Chimera asks the core to look up your game. If the core knows it, Chimera applies the RPCS3 wiki's recommended settings for the game and shows a note above the grid with where they came from, or that the game is not known. The note also lists the settings it changed. The core can also add settings that exist only for your game.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Accurate PPU 128 reservations</strong></td><td class="mono">-1 to 14</td><td class="mono">0</td><td class="desc">How long a loop on a 128-byte PPU memory reservation may be and still be made exact. 0 means never and -1 means always (the wiki's 'Always Enabled'). It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Accurate RSX reservation access</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Makes the RSX (the graphics chip) respect the Cell processor's memory reservations exactly when it reads and writes shared memory. It is part of the machine, so a movie needs the same value.</td></tr>
 <tr><td class="nm"><strong>Accurate SPU DMA</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Makes every SPU memory transfer (DMA) exactly as indivisible as it is on the hardware. It is part of the machine, so a movie needs the same value.</td></tr>
@@ -154,9 +154,9 @@
 <tr><td class="nm"><strong>ZCULL accuracy</strong></td><td class="mono">Precise, Approximate, Relaxed</td><td class="mono">Precise</td><td class="desc">How exactly the counts of visible pixels (the ZCULL statistics of the RSX, the PS3's graphics chip) are reported back to the game. 'Precise' counts every sample and waits for the graphics card. 'Approximate' and 'Relaxed' answer sooner with a less exact count. Some games need that to run at all, and some draw wrongly with it. It is part of the machine, so a movie needs the same value.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page4.png" alt="Page 4 listing PlayStation 3 System Software, PS3UPDAT.PUP, found" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page4.png" alt="Page 4 listing PlayStation 3 System Software, PS3UPDAT.PUP, found" width="620" height="510"></noscript><figcaption>The firmware list with the PS3 system software found.</figcaption></figure>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
@@ -167,15 +167,15 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Next stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>RPCS3 can ask for up to 1 file. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>PlayStation 3 System Software</strong></td><td class="mono">PS3UPDAT.PUP</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when the file under Game ends in .iso or the file under Game ends in .pkg.</em><br>Sony's PS3 system software update, PS3UPDAT.PUP, the file Sony distributes for the console (version 4.80 or newer). The machine decrypts it into its internal storage when it starts, before the first frame, which is how a console holds its system software. The system libraries that games use come from it. Homebrew that uses only the system's basic calls starts without it. Every real game needs it, whether it is on a disc or sold only as a download. Two projects with different versions are different machines and cannot share movies.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-5">Page 5 - Compile the game's code</h2>
+<h2 id="page-5">Page 5 - Compile the Game's Code</h2>
 <p>This page appears when you added a game. RPCS3 translates the console's code into your computer's before running it. Doing it once now, in parallel, makes the game fast enough to work on. Otherwise every session pays for it again. It can take several minutes. The result depends only on the game and this core, so it is the same on every computer and is not part of the run.</p>
-<h3 id="page-5-list">The list</h3>
+<h3 id="page-5-list">The List</h3>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page5.png" alt="Page 5 before compiling, with an empty list and the Compile button" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page5.png" alt="Page 5 before compiling, with an empty list and the Compile button" width="620" height="510"></noscript><figcaption>Page 5 before Compile.</figcaption></figure>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-page5-compiled.png" alt="Page 5 after compiling, with the list of modules marked ready and the line saying all 390 modules are compiled" width="620" height="510"><noscript><img src="../assets/chimera-screenshots/rpcs3-page5-compiled.png" alt="Page 5 after compiling, with the list of modules marked ready and the line saying all 390 modules are compiled" width="620" height="510"></noscript><figcaption>Page 5 after Compile. In this build the State column reads ready and the line under the list gives the total.</figcaption></figure>
 <div class="tablewrap"><table><thead><tr><th>Column</th><th>What it shows</th></tr></thead><tbody>
@@ -189,7 +189,7 @@
 <li>Create stays greyed out until every module says Compiled. If you press it early, the message says to compile first. If you close the wizard during a compile, it stops the work first.</li>
 </ul>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>To change a project's settings later, choose Project Settings in the File menu. A changed setting is a different machine, so the game starts again at frame 0 with your inputs kept. New Chimera Project also opens filled in with your last answers.</p>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/rpcs3-tastudio.png" alt="TAStudio for the Sonic Unleashed project with 2400 frames" width="720" height="630"><noscript><img src="../assets/chimera-screenshots/rpcs3-tastudio.png" alt="TAStudio for the Sonic Unleashed project with 2400 frames" width="720" height="630"></noscript><figcaption>TAStudio with the Sonic Unleashed project after 2400 empty frames.</figcaption></figure>

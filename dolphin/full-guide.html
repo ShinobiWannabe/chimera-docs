@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Dolphin</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> GameCube · Wii · Triforce</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Dolphin core from the <a href="https://github.com/ToolAssisted-run/chimera-core-dolphin/tags" target="_blank" rel="noopener">Dolphin core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Dolphin is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -65,21 +65,21 @@
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Dolphin offers 3 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn. The choices are Software (Native), Hardware (OpenGL), Hardware (Vulkan). The default is Hardware (OpenGL). A Hardware choice uses your graphics card. It is fast, but the picture is drawn outside the savestate, so video can differ on another computer. A warning appears under the box when you pick one.</td></tr>
 </tbody></table></div>
-<h3 id="page-1-systems">System choices</h3>
-<div class="tablewrap"><table><thead><tr><th>System</th><th>File types the system claims</th></tr></thead><tbody>
+<h3 id="page-1-systems">System Choices</h3>
+<div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>GameCube</strong></td><td class="mono">.dol, .elf, .gcm, .iso, .rvz</td></tr>
 <tr><td class="nm"><strong>Wii</strong></td><td class="mono">.iso, .rvz, .wad</td></tr>
 <tr><td class="nm"><strong>Triforce</strong></td><td class="mono">.bin, .gcm, .iso, .rvz</td></tr>
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Dolphin shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>1 to 8</td><td class="mono">.iso, .gcm, .rvz, .dol, .elf, .wad</td><td class="desc">The game. It can be a disc image (.iso or .gcm, or Dolphin's .rvz), a homebrew program (.dol or .elf) that is started directly, or a Wii channel (.wad, as used for WiiWare and Virtual Console games). A .wad makes this a Wii project. It is installed into the console's internal memory before the machine starts and launched from there, as the Wii Menu would do. A game on several discs takes every disc image, in order - the first is in the drive when the console is switched on, and the Next Disc, Previous Disc and Disc Swap controls change it when the game asks.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 2</td><td class="mono">.raw, .zip</td><td class="desc">The saved data the machine starts with. Put back exactly what Emulator &gt; Export Save Data... wrote, to continue a run from where another one stopped. The file is never changed, and the project and the movie record exactly which file it was. For a GameCube it is the memory card image under the same name (MemoryCardA.USA.raw, or .EUR. or .JAP. according to the game's region). Leave it empty and the machine starts with an empty, formatted card. For a Wii it is the .zip that Export Save Data writes, holding the game's own save files from the console's internal memory (nand/title/.../data/...). They are put into the game's save folder before it starts. A save from a different game is refused.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -92,14 +92,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Dolphin claims .bin, .dol, .elf, .gcm, .iso, .rvz, .wad.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Dolphin has 18 settings in the grid. 15 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Anisotropic Filtering</strong></td><td class="mono">default, 1x, 2x, 4x, 8x, 16x</td><td class="mono">default</td><td class="desc"><em>Shown when Renderer is one of Hardware (OpenGL), Hardware (Vulkan).</em><br>Anisotropic texture filtering (Graphics &gt; Enhancements). It makes textures seen at a flat angle sharper. 'default' leaves each texture as the game set it. It can change how the game runs and not only how it looks, because games read parts of their own picture back into the console's memory. A movie made with one value may not play back with another, so choose it when you create the project.</td></tr>
 <tr><td class="nm"><strong>Anti-Aliasing (MSAA)</strong></td><td class="mono">off, 2x, 4x, 8x</td><td class="mono">off</td><td class="desc"><em>Shown when Renderer is one of Hardware (OpenGL), Hardware (Vulkan).</em><br>Multisample anti-aliasing (Graphics &gt; Enhancements &gt; Anti-Aliasing). It smooths the edges of what the graphics card draws. It can change how the game runs and not only how it looks, because games read parts of their own picture back into the console's memory. A movie made with one value may not play back with another, so choose it when you create the project.</td></tr>
 <tr><td class="nm"><strong>Controller in Port 1</strong></td><td class="mono">none, gc-controller, wii-remote, wii-remote-nunchuk, classic-controller</td><td class="mono">gc-controller</td><td class="desc"><em>Shown when System is one of GameCube, Wii.</em><br>What is plugged into controller port 1. With the port empty, games find nothing connected there, as on a real console, and some games behave differently. The port's buttons and sticks are then also removed from the input columns and from the movie. On a Wii the port can instead hold Wii Remote 1 - "wii-remote" alone, "wii-remote-nunchuk" with a Nunchuk, or "classic-controller" with a Classic Controller (whose buttons are then the port's, and the Wii Remote's own are not used). A Wii Remote has its buttons, a pointer (Pointer X and Y, where it points on the screen, which the mouse drives out of the box), Shake (a shake every way at once) and Tilt X and Y. It has no free motion and no MotionPlus. A GameCube project refuses a Wii controller.</td></tr>
@@ -120,9 +120,9 @@
 <tr><td class="nm"><strong>Widescreen Hack</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when Renderer is one of Hardware (OpenGL), Hardware (Vulkan).</em><br>Dolphin's widescreen hack (Graphics &gt; General). The game's 3D view is widened to fill a 16 to 9 screen. The picture keeps the console's own width, so it looks squeezed until you set Config &gt; Display &gt; Aspect Ratio to 16 to 9. The 2D parts of a game (menus, status displays) are not widened and may look stretched. It can change how the game runs and not only how it looks, because games read parts of their own picture back into the console's memory. A movie made with one value may not play back with another, so choose it when you create the project.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -132,13 +132,13 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Dolphin can ask for up to 1 file. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Triforce SegaBoot</strong></td><td class="mono">segaboot.gcm</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System is Triforce and Triforce - SegaBoot Firmware is True.</em><br>The Triforce's own firmware. It is the program the arcade board starts from, and the cabinet's TEST switch opens a menu in it. The file is a 2 MiB image whose header reads RELSAB / SegaBoot. It is asked for only when 'Triforce - SegaBoot Firmware' is on.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Dolphin does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

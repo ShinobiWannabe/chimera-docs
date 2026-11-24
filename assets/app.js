@@ -85,6 +85,38 @@
       var fr=document.createDocumentFragment();rows.forEach(function(x){fr.appendChild(x.r)});tb2.appendChild(fr);
     })});
   });
+  // ---- Inputs and Firmware pages: tables with more than 20 rows are shown a page at a time ----
+  if(/\/(inputs|firmware)\.html$/.test(location.pathname)){
+    var pagers=[];
+    [].forEach.call(document.querySelectorAll('.content table'),function(tbl){
+      var body=tbl.tBodies[0];if(!body||body.rows.length<=20)return;
+      var st={size:5,page:0};
+      var bar=document.createElement('div');bar.className='tpager';
+      bar.innerHTML='<span class="plabel">Rows per page</span><span class="pseg" role="group" aria-label="Rows per page"><button type="button" data-n="5">5</button><button type="button" data-n="10">10</button><button type="button" data-n="20">20</button><button type="button" data-n="0">None</button></span>'+
+        '<button type="button" class="pv" aria-label="Previous page">\u2039 Previous</button><span class="pinfo" aria-live="polite"></span><button type="button" class="nx" aria-label="Next page">Next \u203a</button>';
+      var anchor=tbl.closest('.tablewrap')||tbl;anchor.parentNode.insertBefore(bar,anchor.nextSibling);
+      var segs=[].slice.call(bar.querySelectorAll('.pseg button')),pv=bar.querySelector('.pv'),nx=bar.querySelector('.nx'),info=bar.querySelector('.pinfo');
+      function shown(){return [].filter.call(body.rows,function(r){return !r.hidden})}
+      function draw(){var rows=shown(),n=rows.length,size=st.size||n||1,pages=Math.max(1,Math.ceil(n/size));
+        if(st.page>=pages)st.page=pages-1;if(st.page<0)st.page=0;
+        var a=st.page*size,b=Math.min(n,a+size);
+        [].forEach.call(body.rows,function(r){r.classList.add('pg-off')});
+        rows.slice(a,b).forEach(function(r){r.classList.remove('pg-off')});
+        info.textContent=n?('Rows '+(a+1)+' to '+b+' of '+n):'No rows';
+        pv.disabled=st.page===0;nx.disabled=st.page>=pages-1;
+        pv.hidden=nx.hidden=!st.size||pages<2;
+        segs.forEach(function(b){var on=Number(b.getAttribute('data-n'))===st.size;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)})}
+      segs.forEach(function(b){b.addEventListener('click',function(){st.size=Number(b.getAttribute('data-n'));st.page=0;draw()})});
+      pv.addEventListener('click',function(){st.page--;draw()});
+      nx.addEventListener('click',function(){st.page++;draw()});
+      [].forEach.call(tbl.querySelectorAll('thead button'),function(b){b.addEventListener('click',function(){st.page=0;draw()})});
+      pagers.push({tbl:tbl,st:st,draw:draw,shown:shown});draw();
+    });
+    [].forEach.call(document.querySelectorAll('.gfilter'),function(f){f.addEventListener('input',function(){pagers.forEach(function(p){p.st.page=0;p.draw()})})});
+    var toHash=function(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var el=document.getElementById(id);if(!el||el.tagName!=='TR')return;
+      pagers.forEach(function(p){if(!p.tbl.contains(el))return;var i=p.shown().indexOf(el);if(i<0)return;if(p.st.size)p.st.page=Math.floor(i/p.st.size);p.draw()})};
+    toHash();addEventListener('hashchange',toHash);
+  }
   // ---- firmware cells: the + button shows the other values ----
   document.querySelectorAll('button.xp').forEach(function(b){
     var more=b.nextElementSibling,n=b.textContent;

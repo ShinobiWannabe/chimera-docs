@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">PPSSPP</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> PlayStation Portable</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest PPSSPP core from the <a href="https://github.com/ToolAssisted-run/chimera-core-ppsspp/tags" target="_blank" rel="noopener">PPSSPP core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. PPSSPP is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,7 +67,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. PPSSPP shows 4 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>UMD disc</strong></td><td>Exactly one</td><td class="mono">.iso, .cso, .pbp, .prx, .elf</td><td class="desc">The PSP game. It can be a UMD dump (.iso, or compressed .cso) or homebrew (an EBOOT .pbp, or a plain .prx or .elf).</td></tr>
@@ -75,7 +75,7 @@
 <tr><td class="nm"><strong>DLC</strong></td><td>Any number</td><td class="mono">.zip</td><td class="desc">Downloadable content. It is either a zip of the game's DLC folder as it is on a memory stick (for example ULUS10336, with the EDAT files and PARAM.PBP inside), which is put under PSP/GAME, or a zip of a whole memory stick, whose PSP/ folders are put where they belong. It is unpacked onto the memory stick before the machine starts, and its hash is recorded like the save data's. Several zips can be given.</td></tr>
 <tr><td class="nm"><strong>Cheats</strong></td><td>At most one</td><td class="mono">.ini, .db</td><td class="desc">Cheat codes in PPSSPP's CWCheat format - a game's .ini, or a cheat.db that holds many games. Only the codes for the game being played that are switched on run. A code's line starts with _C1 when it is on and _C0 when it is off, so change _C0 to _C1 for the codes you want. The codes run all the time, and a movie made with them needs the same file to play back the same. The project records which file it was. Leave this empty for no cheats.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -88,14 +88,14 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. PPSSPP claims .cso, .elf, .iso, .pbp, .prx.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. PPSSPP has 18 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Confirm Button</strong></td><td class="mono">cross, circle</td><td class="mono">cross</td><td class="desc">Which button the system uses to confirm - Circle on Japanese consoles and Cross elsewhere. Games read it to arrange their menus.</td></tr>
 <tr><td class="nm"><strong>Console Clock</strong></td><td class="mono">any text</td><td class="mono">2017-05-27 12.44.28</td><td class="desc">The console's date and time at power-on, written as YYYY-MM-DD HH - MM - SS. Games read the clock for the dates of save files, for daily events and for content that depends on the date. From this start the clock advances with the emulated console and never with your computer's clock. A value that cannot be read is replaced by the default.</td></tr>
 <tr><td class="nm"><strong>CPU Clock (MHz)</strong></td><td class="mono">0 to 333</td><td class="mono">0</td><td class="desc">Fixes the processor's speed at this many MHz. 0 leaves the speed to the game (the console starts at 222 MHz and a game can raise it to 333). A lower or higher speed changes the timing, so this is part of the machine.</td></tr>
@@ -116,9 +116,9 @@
 <tr><td class="nm"><strong>Time Zone (minutes)</strong></td><td class="mono">-720 to 840</td><td class="mono">0</td><td class="desc">The console's time zone as a difference from UTC in minutes (-720 to 840). Games read it together with the clock.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -128,9 +128,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>PPSSPP can ask for up to 19 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>System Font ltn0 (Latin sans-serif regular) (6.61 official)</strong></td><td class="mono">ltn0.pgf</td><td class="mono sha">BD0BE6D3C32C74F0CDE1B96E475F1936ECD0EC41</td><td class="desc"><em>Asked for when System Fonts is sony.</em><br>The console's sans-serif regular Latin font. Copy it from your own console (folder flash0 - /font). A real copy is exactly 69108 bytes, and a file with that size and the listed hash is shown as ok. The listed hash is of the file in Sony's last official firmware (6.61). Any readable file you choose is used, including a replacement font of your own. Such a file is shown as custom or unrecognised and is not refused, and a movie records its hash. The file is optional. Without it the core uses the free replacement font included in the package, which has different character shapes and sizes. That is a different machine, and a movie records which one was used.</td></tr>
 <tr><td class="nm"><strong>System Font ltn1 (Latin serif regular) (6.61 official)</strong></td><td class="mono">ltn1.pgf</td><td class="mono sha">1280929BB682D299453ECA425AAF86415F3C5192</td><td class="desc"><em>Asked for when System Fonts is sony.</em><br>The console's serif regular Latin font. Copy it from your own console (folder flash0 - /font). A real copy is exactly 65124 bytes, and a file with that size and the listed hash is shown as ok. The listed hash is of the file in Sony's last official firmware (6.61). Any readable file you choose is used, including a replacement font of your own. Such a file is shown as custom or unrecognised and is not refused, and a movie records its hash. The file is optional. Without it the core uses the free replacement font included in the package, which has different character shapes and sizes. That is a different machine, and a movie records which one was used.</td></tr>
 <tr><td class="nm"><strong>System Font ltn2 (Latin sans-serif italic) (6.61 official)</strong></td><td class="mono">ltn2.pgf</td><td class="mono sha">10D4C7445DE6A7AF273A2CDC0393FEF9F9A9BDC2</td><td class="desc"><em>Asked for when System Fonts is sony.</em><br>The console's sans-serif italic Latin font. Copy it from your own console (folder flash0 - /font). A real copy is exactly 72948 bytes, and a file with that size and the listed hash is shown as ok. The listed hash is of the file in Sony's last official firmware (6.61). Any readable file you choose is used, including a replacement font of your own. Such a file is shown as custom or unrecognised and is not refused, and a movie records its hash. The file is optional. Without it the core uses the free replacement font included in the package, which has different character shapes and sizes. That is a different machine, and a movie records which one was used.</td></tr>
@@ -152,7 +152,7 @@
 <tr><td class="nm"><strong>System Font zh_gb (Chinese)</strong></td><td class="mono">zh_gb.pgf</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when System Fonts is sony.</em><br>A Chinese font that certain games install themselves. No console came with it. The PSP's font functions read it from flash0 when it is there. Copy it from your own console (folder flash0 - /font). The file is optional. Without it the core uses the free replacement font included in the package, which has different character shapes and sizes. That is a different machine, and a movie records which one was used.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. PPSSPP does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

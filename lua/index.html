@@ -53,7 +53,7 @@
   <main id="main" class="content">
     <div class="eyebrow">Lua</div><h1>Basics</h1>
 <p class="lead">A very short tour of the Lua language, just enough to read and write Chimera scripts. It follows Sections 2 and 3 of the <a href="https://www.lua.org/manual/5.5/manual.html">Lua 5.5 manual</a>. Each part names the manual section it comes from.</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul>
 <li><strong>Lua</strong> is a small scripting language. A <strong>script</strong> is a text file that ends in .lua. Chimera runs scripts from the Lua Console, which is described on the <a href="../chimera/lua-console.html">Lua Console</a> page.</li>
 <li>Chimera runs <strong>Lua 5.4</strong>. The 5.5 manual is almost the same for what is shown here. Two things from 5.5 do not work in Chimera. These are the <code>global</code> keyword and read-only loop variables. Avoid changing a loop variable inside its loop so a script works on both.</li>
@@ -70,7 +70,7 @@
 <tr><td class="nm"><strong>Spacing</strong></td><td class="desc">A space after commas and around operators, except for <code>..</code>. A space after <code>--</code> in comments.</td></tr>
 <tr><td class="nm"><strong>Yes or no checks</strong></td><td class="desc">Names of functions that answer yes or no start with <code>is_</code>. Test a value with <code>if name then</code>, not <code>if name ~= nil then</code>.</td></tr>
 </tbody></table></div>
-<h2 id="first-script">Your first script</h2>
+<h2 id="first-script">Your First Script</h2>
 <p>A script that does not loop runs once and stops. This one writes a line to the Output box of the Lua Console.</p>
 <pre class="lua"><code>console.log(<span class="ts">"Hello from Lua"</span>)</code></pre>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/lua-first-script-console.png" alt="The Lua Console with first-script in the list and Hello from Lua in the Output box" width="760" height="490"><noscript><img src="../assets/chimera-screenshots/lua-first-script-console.png" alt="The Lua Console with first-script in the list and Hello from Lua in the Output box" width="760" height="490"></noscript><figcaption>The Lua Console after opening the first script. Hello from Lua is in the Output box.</figcaption></figure>
@@ -80,7 +80,7 @@
    emu.frameadvance()
 <span class="tk">end</span></code></pre>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/lua-first-script-game.png" alt="The Legend of Zelda game window with the text Frame 21891 at the top left" width="586" height="561"><noscript><img src="../assets/chimera-screenshots/lua-first-script-game.png" alt="The Legend of Zelda game window with the text Frame 21891 at the top left" width="586" height="561"></noscript><figcaption>The loop draws the frame number at the top left of the game picture on every frame.</figcaption></figure>
-<h2 id="types">Values and types (manual 2.1)</h2>
+<h2 id="types">Values and Types (Manual 2.1)</h2>
 <p>A variable has no type. Its value does. Lua has eight types.</p>
 <div class="tablewrap"><table><thead><tr><th>Type</th><th>Example</th><th>Notes</th></tr></thead><tbody>
 <tr><td class="nm"><strong>nil</strong></td><td class="mono"><code>nil</code></td><td class="desc">Means no value. A variable that was never set is nil.</td></tr>
@@ -99,7 +99,7 @@
 <span class="tk">local</span> nothing = <span class="tk">nil</span> <span class="tc">-- no value</span>
 console.log(type(lives), type(name), type(nothing))</code></pre>
 <p>Tables, functions and userdata are passed by reference. Two variables can point at the same table.</p>
-<h2 id="variables">Variables and scope (manual 2.2 and 3.2)</h2>
+<h2 id="variables">Variables and Scope (Manual 2.2 and 3.2)</h2>
 <ul>
 <li>A variable made with <code>local</code> exists only in the block where it is declared. A block is the code between <code>do</code> and <code>end</code>, or in a function, loop or <code>if</code>.</li>
 <li>A name that is not declared <code>local</code> is a <strong>global</strong>. Globals are shared by the whole script and are slower, so avoid them.</li>
@@ -113,7 +113,7 @@ console.log(type(lives), type(name), type(nothing))</code></pre>
 <span class="tk">end</span>
 
 console.log(score) <span class="tc">-- 10</span></code></pre>
-<h2 id="lexical">Lexical conventions (manual 3.1)</h2>
+<h2 id="lexical">Lexical Conventions (Manual 3.1)</h2>
 <ul>
 <li>Lua is case sensitive. <code>Lives</code> and <code>lives</code> are different names.</li>
 <li>A comment starts with <code>--</code> and runs to the end of the line. A long comment sits between <code>--[[</code> and <code>]]</code>.</li>
@@ -128,7 +128,7 @@ console.log(score) <span class="tc">-- 10</span></code></pre>
 <span class="tk">local</span> raw = <span class="ts">[[Line one
 Line two]]</span>
 <span class="tk">local</span> mask = <span class="tn">0xFF</span></code></pre>
-<h2 id="statements">Statements (manual 3.3)</h2>
+<h2 id="statements">Statements (Manual 3.3)</h2>
 <h3 id="assign">Assignment</h3>
 <p>Several variables can be set in one statement. Every value on the right is worked out first, so two variables can be swapped.</p>
 <pre class="lua"><code><span class="tk">local</span> x, y = <span class="tn">10</span>, <span class="tn">20</span>
@@ -177,11 +177,11 @@ x, y = y, x
    console.log(i) <span class="tc">-- only odd numbers</span>
    ::continue::
 <span class="tk">end</span></code></pre>
-<h3 id="attribs">Constants and closing variables</h3>
+<h3 id="attribs">Constants and Closing Variables</h3>
 <p>A local can carry an attribute in angle brackets. <code>&lt;const&gt;</code> makes it read only. <code>&lt;close&gt;</code> runs the value's <code>__close</code> method when the variable goes out of scope. It is rarely needed in game scripts.</p>
 <pre class="lua"><code><span class="tk">local</span> max_lives &lt;const&gt; = <span class="tn">5</span></code></pre>
 <p>Style note. The guide asks for UPPER_CASE only for constants, so a fixed value that is used in many places can be written <code>local MAX_LIVES &lt;const&gt; = 5</code>.</p>
-<h2 id="expressions">Expressions (manual 3.4)</h2>
+<h2 id="expressions">Expressions (Manual 3.4)</h2>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>Operators</th><th>Notes</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Arithmetic</strong></td><td class="mono"><code>+ - * / // % ^</code></td><td class="desc"><code>/</code> always gives a float. <code>//</code> divides and rounds down. <code>%</code> is the remainder. <code>^</code> is the power.</td></tr>
 <tr><td class="nm"><strong>Comparison</strong></td><td class="mono"><code>== ~= &lt; &lt;= &gt; &gt;=</code></td><td class="desc"><code>~=</code> means not equal. Values of different types are never equal, so <code>1 == "1"</code> is false.</td></tr>
@@ -199,7 +199,7 @@ x, y = y, x
 <span class="tk">local</span> both = (lives == <span class="tk">nil</span>) <span class="tk">and</span> <span class="ts">"empty"</span> <span class="tk">or</span> <span class="ts">"set"</span>
 <span class="tk">local</span> size = #<span class="ts">"Chimera"</span> <span class="tc">-- 7</span></code></pre>
 <p class="callout">Avoid <code>x and y or z</code> when <code>y</code> can be nil or false. In that case the result is wrong. Use an <code>if</code> block instead.</p>
-<h2 id="tables">Tables (manual 3.4.9)</h2>
+<h2 id="tables">Tables (Manual 3.4.9)</h2>
 <p>A <strong>table</strong> holds many values under keys. A key can be a number or a text. A table used as a list has the keys 1, 2, 3 and so on. <strong>Lists start at 1.</strong> Some Chimera functions return lists that start at 0. Their first item is not counted by <code>#</code>, so loop over them with a number range.</p>
 <pre class="lua"><code><span class="tk">local</span> player = {
    name = <span class="ts">"Mario"</span>,
@@ -219,7 +219,7 @@ console.log(#frames) <span class="tc">-- 3</span>
    console.log(key, value)
 <span class="tk">end</span></code></pre>
 <p>The style guide asks for a comma after every field, including the last, and the plain <code>key = value</code> form when the name is a valid identifier.</p>
-<h2 id="functions">Functions (manual 3.4.10 and 3.4.11)</h2>
+<h2 id="functions">Functions (Manual 3.4.10 and 3.4.11)</h2>
 <p>A function can take any number of values and return any number of values. A missing argument is nil and an extra one is ignored.</p>
 <pre class="lua"><code><span class="tk">local</span> <span class="tk">function</span> clamp(value, low, high)
    <span class="tk">if</span> value &lt; low <span class="tk">then</span> <span class="tk">return</span> low <span class="tk">end</span>
@@ -260,7 +260,7 @@ console.log(clamp(<span class="tn">300</span>, <span class="tn">0</span>, <span 
 
 <span class="tk">local</span> next_id = make_counter()
 console.log(sum(<span class="tn">1</span>, <span class="tn">2</span>, <span class="tn">3</span>), next_id(), next_id())</code></pre>
-<h2 id="errors">Errors (manual 2.3)</h2>
+<h2 id="errors">Errors (Manual 2.3)</h2>
 <p><code>error</code> stops the script with a message. <code>assert</code> does the same when its first argument is false or nil. <code>pcall</code> runs a function and catches an error instead of stopping. When an error is not caught, Chimera prints it in the Output box and stops that script.</p>
 <pre class="lua"><code><span class="tk">local</span> <span class="tk">function</span> read_score(path)
    <span class="tk">local</span> file, err = io.open(path, <span class="ts">"r"</span>)
@@ -286,7 +286,7 @@ console.log(ok, message)</code></pre>
 <span class="tk">if</span> <span class="tk">not</span> ok <span class="tk">then</span>
    console.log(message)
 <span class="tk">end</span></code></pre>
-<h2 id="advanced">Metatables, coroutines and garbage collection (manual 2.4 to 2.6)</h2>
+<h2 id="advanced">Metatables, Coroutines and Garbage Collection (Manual 2.4 to 2.6)</h2>
 <p>These are rarely needed in game scripts, so each gets only a short note.</p>
 <ul>
 <li><strong>Metatables</strong> change how a table behaves. For example <code>__index</code> supplies a value for a missing key. Chimera tables from the API do not need them.</li>
@@ -306,7 +306,7 @@ console.log(settings.speed) <span class="tc">-- 1, taken from defaults</span>
 steps() <span class="tc">-- prints step one</span>
 steps() <span class="tc">-- prints step two</span></code></pre>
 <p>To spread a sequence over frames, call <code>steps()</code> each frame and let the script call <code>emu.frameadvance()</code> between the steps.</p>
-<h2 id="library">Handy library functions</h2>
+<h2 id="library">Handy Library Functions</h2>
 <p>Lua ships with small libraries for text, tables and numbers. These are the ones scripts use most.</p>
 <div class="tablewrap"><table><thead><tr><th>Function</th><th>What it does</th><th>Example</th></tr></thead><tbody>
 <tr><td class="nm"><strong><code>string.format</code></strong></td><td class="desc">Builds text from a pattern. %d is a whole number, %s is text, %x is hex, %.2f is a decimal.</td><td class="mono"><code>string.format("%04X", 255)</code> gives 00FF</td></tr>
@@ -317,7 +317,7 @@ steps() <span class="tc">-- prints step two</span></code></pre>
 <tr><td class="nm"><strong><code>math.floor</code>, <code>math.max</code>, <code>math.min</code></strong></td><td class="desc">Round down, and pick the larger or smaller number.</td><td class="mono"><code>math.floor(3.7)</code> gives 3</td></tr>
 <tr><td class="nm"><strong><code>io.open</code></strong></td><td class="desc">Opens a file. See Reading and writing files in the Basic Examples.</td><td class="mono"><code>io.open("log.txt", "w")</code></td></tr>
 </tbody></table></div>
-<h2 id="next">What next</h2>
+<h2 id="next">What Next</h2>
 <ul>
 <li>Go to <a href="basic-examples.html">Basic Examples</a> for the Chimera functions that scripts use all the time.</li>
 <li>Use <a href="lua-references.html">Lua References</a> to look up any function, with its parameters and the cores that support it.</li>

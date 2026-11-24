@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">Opera</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> 3DO Interactive Multiplayer</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Opera core from the <a href="https://github.com/ToolAssisted-run/chimera-core-opera/tags" target="_blank" rel="noopener">Opera core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Opera is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,13 +67,13 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Opera shows 2 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Discs</strong></td><td>At least 1</td><td class="mono">.iso, .cue, .chd, .bin</td><td class="desc">3DO disc images. Each can be a raw dump (.iso or .bin), a .cue file whose track files join the project automatically, or a .chd file. The first disc is in the drive when the machine starts. The order here is the order the Previous Disc and Next Disc inputs go through.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.ram</td><td class="desc">The saved data the console starts with. A 3DO keeps saved games and its own settings in a small internal memory (NVRAM). This is the file that Emulator &gt; Export Save Data... writes. Put it back under the same name, NVRAM.ram, to continue a run from where another one stopped. The file is never changed. The project and the movie record exactly which file it was, so a movie that starts from a saved game can be played back by anyone who has the same file. Leave it empty and the console starts with nothing saved.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -87,14 +87,14 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Opera claims .bin, .chd, .cue, .iso.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Opera has 6 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Controller 1 Type</strong></td><td class="mono">gamepad, none, mouse, flightStick, lightGun, arcadeLightGun, orbatakTrackball</td><td class="mono">gamepad</td><td class="desc">What is plugged into the console's port 1.</td></tr>
 <tr><td class="nm"><strong>Controller 2 Type</strong></td><td class="mono">gamepad, none, mouse, flightStick, lightGun, arcadeLightGun, orbatakTrackball</td><td class="mono">none</td><td class="desc">What is plugged into the console's port 2.</td></tr>
 <tr><td class="nm"><strong>Font ROM</strong></td><td class="mono">none, panasonicFZ1Kanji, panasonicFZ10Kanji</td><td class="mono">none</td><td class="desc">An extra Kanji font ROM for Japanese games. When one is chosen, the firmware page asks for its file.</td></tr>
@@ -103,9 +103,9 @@
 <tr><td class="nm"><strong>Video Standard</strong></td><td class="mono">ntsc, pal1, pal2</td><td class="mono">ntsc</td><td class="desc">The video timing and picture size. NTSC is 320x240 at 60 Hz, PAL1 is 320x288 at 50 Hz and PAL2 is 384x288 at 50 Hz. Choose the one that matches the game and the console's region.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -115,9 +115,9 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Opera can ask for up to 14 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Panasonic FZ-1 (U) BIOS</strong></td><td class="mono">panafz1.bin</td><td class="mono sha">34BF189111295F74D7B7DFC1F304D98B8D36325A</td><td class="desc"><em>Asked for when System Type is panasonicFZ1U.</em><br>The BIOS (boot ROM) for the Panasonic FZ-1 (U) system type. The id is the usual file name of the dump.</td></tr>
 <tr><td class="nm"><strong>Panasonic FZ-1 (E) BIOS</strong></td><td class="mono">panafz1e.bin</td><td class="mono sha">1D0DB81E171EBC1D07CEFC8CE8AB082306186E56</td><td class="desc"><em>Asked for when System Type is panasonicFZ1E.</em><br>The BIOS (boot ROM) for the Panasonic FZ-1 (E) system type. The id is the usual file name of the dump.</td></tr>
 <tr><td class="nm"><strong>Panasonic FZ-1 (J) BIOS</strong></td><td class="mono">panafz1j.bin</td><td class="mono sha">EC7EC62D60EC0459A14ED56EBC66761EF3C80EFC</td><td class="desc"><em>Asked for when System Type is panasonicFZ1J.</em><br>The BIOS (boot ROM) for the Panasonic FZ-1 (J) system type. The id is the usual file name of the dump.</td></tr>
@@ -134,7 +134,7 @@
 <tr><td class="nm"><strong>Kanji ROM (Panasonic FZ-10)</strong></td><td class="mono">panafz10ja-anvil-kanji.bin</td><td class="mono sha">2E857B957803D0331FD229328DF01F3FFAB69EEE</td><td class="desc"><em>Asked for when Font ROM is panasonicFZ10Kanji.</em><br>The Kanji font ROM of the FZ-10.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. Opera does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

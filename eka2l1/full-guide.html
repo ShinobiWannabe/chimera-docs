@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">EKA2L1</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Symbian (Nokia N-Gage)</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest EKA2L1 core from the <a href="https://github.com/ToolAssisted-run/chimera-core-eka2l1/tags" target="_blank" rel="noopener">EKA2L1 core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. EKA2L1 is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,12 +67,12 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Add your files</h2>
+<h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. EKA2L1 shows 1 group of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.n-gage, .blz, .rar, .zip, .7z, .sis, .sisx</td><td class="desc">An N-Gage game, in one of four forms. An N-Gage 2.0 game (.n-gage) is installed by the N-Gage application, and the wizard then asks for that application and for the phone's RPKG as firmware. A card image (.blz) is unpacked by the BLZ installer, and the wizard then asks for that installer as firmware. A card dump (a .rar, .zip or .7z that holds the card's System\Apps folders) is copied onto the machine's memory card. A Symbian package (.sis, .sisx) is installed onto drive C. In every case the installed game is in the machine's own memory, so it is part of every savestate and every movie made from this project.</td></tr>
 </tbody></table></div>
-<h3 id="page-2-controls">Controls in each group</h3>
+<h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
 <li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
@@ -84,22 +84,22 @@
 <li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
-<h3 id="page-2-drop">Starting from a dropped file</h3>
+<h3 id="page-2-drop">Starting from a Dropped File</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. EKA2L1 claims .7z, .blz, .rar, .sis, .sisx, .zip.</p>
 
-<h2 id="page-3">Page 3 - Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. EKA2L1 has 3 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Clock start (UTC)</strong></td><td class="mono">any text</td><td class="mono">2010-01-01 00.00.00</td><td class="desc">The date and time the phone's clock shows when the machine starts, in UTC. Write it as YYYY-MM-DD HH - MM - SS or just YYYY-MM-DD, from 1980 to 2099. The clock belongs to the emulated phone. It starts here on every run and advances with the instructions the phone executes, never with your computer's time. A game that picks its random numbers from the time therefore gets the same numbers on every run. A different date changes what such a game does, so the date is part of the machine and a movie records it.</td></tr>
 <tr><td class="nm"><strong>OpenGL ES 1</strong></td><td class="mono">emulated, software</td><td class="mono">emulated</td><td class="desc">How the phone's OpenGL ES 1 graphics are drawn. 'emulated' (EKA2L1's default, which it calls 'GPU accelerated GLES1') replaces the phone's own graphics library with the emulator's. That one draws with the software OpenGL built into this core, inside the sandbox, so the result is the same on every computer. 'software' keeps the phone's own drawing code, written by Nokia and run like any other phone code. It is slower, and it is exactly what the phone ran, so it is worth trying when a game's 3D looks wrong with 'emulated'. With either choice a movie plays back identically, and it records which one it was made with.</td></tr>
 <tr><td class="nm"><strong>Screen buffer sync</strong></td><td class="mono">preferred, on, off</td><td class="mono">preferred</td><td class="desc">Whether the picture the phone's window system puts together is also copied into the screen memory that an application can read. 'preferred' is EKA2L1's own choice. It is on for an older phone (the N-Gage, Symbian 6 to 8) and off for a newer one (Symbian 9 and later, including N-Gage 2.0). A game that reads its own screen, to save a screenshot or to draw over the last frame, needs it on and may show an old or broken picture without it. Everything else runs faster with it off. The copy goes into the phone's memory, so the setting is part of the machine and a movie records it. Two other EKA2L1 options are left out on purpose. 'CPU emulation' is always the interpreter here, because the recompiler was measured to be slower in this core. 'Real-time accuracy' only affects a timer that follows your computer's clock, which this core does not use.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 - Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. EKA2L1 always asks for at least one, so this page always appears. The list changes when you go back and change a setting.</p>
-<h3 id="page-4-list">The list</h3>
+<h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
@@ -109,16 +109,16 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-4-which">Which files can be asked for</h3>
+<h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>EKA2L1 can ask for up to 4 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Symbian device ROM</strong></td><td class="mono">SYM.ROM</td><td class="mono sha">(your own file)</td><td class="desc">A dump of the phone's ROM. It says which device this is (maker, model, firmware code and Symbian version) and it holds the phone's drive Z. Together with the game it is the whole machine. A dump from any Symbian phone is accepted. No particular file is required, because every model's dump is a different file.</td></tr>
 <tr><td class="nm"><strong>Symbian device RPKG (SYM.RPKG)</strong></td><td class="mono">SYM.RPKG</td><td class="mono sha">(your own file)</td><td class="desc"><em>Asked for when the file under Game ends in .n-gage.</em><br>The rest of drive Z of a Symbian 9 phone. Such a phone keeps only its core system in the ROM image. The applications, the resources and the files that say which phone it is are in a second image, which is dumped as an RPKG file next to the ROM. The core reads it where it is, as drive Z, and unpacks nothing. No particular file is required, because every model's dump is different, but it has to be the RPKG that belongs to the ROM given with it. It is needed for an N-Gage 2.0 game, which runs on such a phone. The Nokia 5320 XpressMusic is the one that was tested.</td></tr>
 <tr><td class="nm"><strong>BLZ installer (BLZinstapp.sis)</strong></td><td class="mono">BLZinstapp.sis</td><td class="mono sha">2DA9BD5ADFE6ACDE66A41D880D85DF3BBE242E64</td><td class="desc"><em>Asked for when the file under Game ends in .blz.</em><br>The Symbian application that unpacks an N-Gage .blz card image. A .blz is a compressed file the phone cannot read by itself. This application is installed in the machine and unpacks the game onto the memory card, and the game runs from there. It is needed only for a .blz project.</td></tr>
 <tr><td class="nm"><strong>N-Gage 2.0 application (v1.40.1557)</strong></td><td class="mono">N-Gage INSTALLER v.1.40.1557.sis</td><td class="mono sha">D5F580220CE038172C980BE3BD658E0E48A0E882</td><td class="desc"><em>Asked for when the file under Game ends in .n-gage.</em><br>The N-Gage 2.0 application, as the package that installs it (N-Gage INSTALLER v.1.40.1557). The phone cannot run an .n-gage file directly. The N-Gage application installs such a game from E\n-gage\ the first time it is started. This package is installed in the machine and started, and the game then appears in its My Games list, with Start Game on the left soft key. It is needed only for a .n-gage project.</td></tr>
 </tbody></table></div>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard goes back to Page 2 and says why. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. EKA2L1 does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

@@ -53,11 +53,11 @@
   <main id="main" class="content">
     <div class="eyebrow">SyndicatFX</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Syndicate</p>
-<h2 id="before">Before you begin</h2>
+<h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest SyndicatFX core from the <a href="https://github.com/ToolAssisted-run/chimera-core-syndicatfx/tags" target="_blank" rel="noopener">SyndicatFX core tags page</a> on GitHub.</li></ul>
 <p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="page-1">Page 1 - Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. SyndicatFX is a game core, which runs one game. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -67,18 +67,18 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 - Set up the game</h2>
+<h2 id="page-2">Page 2 - Set Up the Game</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-2-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. SyndicatFX has 2 settings in the grid. All of them are always shown.</p>
-<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Allowed values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Language</strong></td><td class="mono">English, French, Italian</td><td class="mono">English</td><td class="desc">The game's language (the original '-c' option). The menus come from SyndicatFX's translations, and the mission briefings from the CD's own sets. It changes the game (its texts and layout), so a movie records it.</td></tr>
 <tr><td class="nm"><strong>Sound</strong></td><td class="mono">Sound Blaster, None</td><td class="mono">Sound Blaster</td><td class="desc">The sound card chosen in the game's setup. 'Sound Blaster' is the default and the only card the game supports. Its digitized sounds play one at a time, as on the card, and the music plays on its FM chip through the game's own driver. 'None' is no card (the original '-s' option). The game waits for its song to end before a won or lost mission ends, so the choice changes the game, and a movie records it.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-3">Page 3 - Provide firmware</h2>
+<h2 id="page-3">Page 3 - Provide Firmware</h2>
 <p>This page asks where to find the firmware and game data files the core needs. SyndicatFX always asks for at least one, so this page always appears. The list changes when you go back and change a setting.</p>
-<h3 id="page-3-list">The list</h3>
+<h3 id="page-3-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
 <p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-3-buttons">Buttons</h3>
@@ -88,10 +88,10 @@
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
 <p>Create stays greyed out until every row that is not optional has a file.</p>
-<h3 id="page-3-which">Which files can be asked for</h3>
+<h3 id="page-3-which">Which Files Can Be Asked For</h3>
 <p>SyndicatFX can ask for up to 438 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <details><summary>Show all 438 files</summary>
-<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>Expected file</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
+<div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
 <tr><td class="nm"><strong>COL01.DAT</strong></td><td class="mono">COL01.DAT</td><td class="mono sha">F9720895CD59692D22C6A4362D81397218EAD80F</td><td class="desc">Syndicate Plus CD (EA/Bullfrog 1994) - SYNDICAT\DATA\COL01.DAT. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
 <tr><td class="nm"><strong>GAME01.DAT</strong></td><td class="mono">GAME01.DAT</td><td class="mono sha">C4859BBA0DDC854A37179E48C5CE809600F6C132</td><td class="desc">Syndicate Plus CD (EA/Bullfrog 1994) - SYNDICAT\DATA\GAME01.DAT. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
 <tr><td class="nm"><strong>GAME02.DAT</strong></td><td class="mono">GAME02.DAT</td><td class="mono sha">6AADDC0FEE1382844D191BC77A0083F186107436</td><td class="desc">Syndicate Plus CD (EA/Bullfrog 1994) - SYNDICAT\DATA\GAME02.DAT. You have to supply it. The package contains none of the game's data. A modified file of your own can be used instead, and the project records exactly which file it was.</td></tr>
@@ -533,7 +533,7 @@
 </tbody></table></div>
 </details>
 
-<h2 id="create">Create the project</h2>
+<h2 id="create">Create the Project</h2>
 <p>On the last page the Next button reads Create. Chimera then reads every file you added, which can take a while for large files, and checks them against the core's rules. If a file is refused, the wizard shows the reason. If all is well, the wizard closes and the project opens in TAStudio at the first frame, which is the first picture the game draws.</p>
 <p>Some cores add a page that compiles the game's code before the project is made. SyndicatFX does not, so you will not see it.</p>
 <p>A project's settings cannot be edited once it exists, because a changed setting is a different machine. To change one, choose New Chimera Project again. The wizard opens filled in with your last answers, so you change that one setting and go through the pages to Create again.</p>

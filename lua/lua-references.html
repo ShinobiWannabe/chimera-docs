@@ -53,7 +53,7 @@
   <main id="main" class="content">
     <div class="eyebrow">Lua</div><h1>Lua References</h1>
 <p>This page lists every Lua function in the Chimera frontend, 437 in all across 21 libraries. Each entry gives the definition, the parameters, what it returns, an example and the cores that support it. A library is a group of functions that share a name in front, such as <code>memory</code>.</p>
-<h2 id="how-to-read">How to read this page</h2>
+<h2 id="how-to-read">How to Read This Page</h2>
 <div class="tablewrap ref"><table><thead><tr><th>Part</th><th>Meaning</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Heading</strong></td><td class="desc">The function with its parameters. A parameter in square brackets is optional.</td></tr>
 <tr><td class="nm"><strong>Parameters</strong></td><td class="desc">Each parameter with its Lua type. The types are integer, number, string, boolean, table, function and any value.</td></tr>
@@ -64,7 +64,7 @@
 </tbody></table></div>
 <p>The same functions are listed inside Chimera. In the Lua Console choose Help, Lua Functions List (F1). Type in the box beside Filter to find a function.</p>
 <figure class="shot"><img data-src="../assets/chimera-screenshots/lua-console-functions-list.png" alt="The Lua Functions window filtered by memory.read_u8, showing mainmemory.read_u8 and memory.read_u8" width="760" height="390"><noscript><img src="../assets/chimera-screenshots/lua-console-functions-list.png" alt="The Lua Functions window filtered by memory.read_u8, showing mainmemory.read_u8 and memory.read_u8" width="760" height="390"></noscript><figcaption>The Lua Functions window in Chimera, filtered by memory.read_u8.</figcaption></figure>
-<h2 id="core-support">Core support</h2>
+<h2 id="core-support">Core Support</h2>
 <p>Most functions work the same on every core, because the frontend provides them and not the core. A few depend on what the core reports to the engine, so each entry carries one of three marks.</p>
 <ul>
 <li><span class="tag all">All 62 cores</span> works on every core.</li>
@@ -83,7 +83,7 @@
 <tr><td class="nm"><strong><code>emu.setrenderplanes</code></strong></td><td class="mono">No core</td><td class="desc">Not supported in this version of the frontend.</td></tr>
 <tr><td class="nm"><strong><code>emu.getboardname</code>, <code>emu.getdisplaytype</code></strong></td><td class="mono">No core</td><td class="desc">Board and region information. No core reports it, so both return an empty string.</td></tr>
 </tbody></table></div>
-<h3 id="events-partway">Events that run partway through a frame</h3>
+<h3 id="events-partway">Events That Run Partway Through a Frame</h3>
 <p>A core runs in a sandbox that Chimera calls once for each frame. A Lua function can only run in the middle of a frame when the core calls back into Chimera, and the core must be written to do that. So far 10 cores can report the reads of the controls, so <code>event.oninputpoll</code> works on them. The function runs inside the frame, so it may read memory but must not advance the emulation, save a state or load one. Memory events such as <code>event.on_bus_read</code>, <code>event.on_bus_write</code> and <code>event.on_bus_exec</code> work the same way for a core that watches memory. The core exports a list of address spaces and the calls that start and stop watching an address, and the function may also give back a number that replaces the value read or written, where the core allows it. No core exports these calls yet, so every core refuses the memory events.</p>
 <p>A call that a core refuses raises an error that says why. The Lua Console prints the reason once on its first line. A script can catch the error with <code>pcall</code> and read the reason from the second value it returns.</p>
 <pre class="lua"><code><span class="tk">local</span> <span class="tk">function</span> on_read(address, value, flags)
@@ -96,7 +96,7 @@
 <span class="tk">end</span></code></pre>
 <p>The cores that report their reads of the controls are <a href="../cemu/index.html">Cemu</a>, <a href="../gambatte/index.html">Gambatte</a>, <a href="../gpgx/index.html">Genesis Plus GX</a>, <a href="../mesen/index.html">Mesen</a>, <a href="../quickernes/index.html">quickerNES</a>, <a href="../neshawk/index.html">QuickerNesHawk</a>, <a href="../snes9x/index.html">Snes9x</a>, <a href="../stella/index.html">Stella</a>, <a href="../tic80/index.html">TIC-80</a>, <a href="../uzem/index.html">Uzem</a>.</p>
 <p class="callout">Memory domains also vary by core. A core with memory buses adds a domain for each bus, and <code>memory.getmemorydomainlist</code> lists them. Every other function that takes a domain accepts those names too.</p>
-<h3 id="core-table">Support for each core</h3>
+<h3 id="core-table">Support for Each Core</h3>
 <div class="tablewrap ref"><table><thead><tr><th>Core</th><th>Kind</th><th>Registers</th><th>Set registers</th><th>Cycle count</th><th>Memory buses</th><th>Game properties</th><th>Input reads</th></tr></thead><tbody>
 <tr><td class="nm"><strong><a href="../86box/index.html">86Box</a></strong></td><td class="mono">Emulator</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td></tr>
 <tr><td class="nm"><strong><a href="../applewin/index.html">AppleWin</a></strong></td><td class="mono">Emulator</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td><td class="mono">No</td></tr>
@@ -2945,7 +2945,7 @@ mainmemory.write_bytes_as_binary_string(<span class="tn">0x10A</span>, string.ch
 <p><span class="tag all">All 62 cores</span></p>
 <pre class="lua"><code>gui.use_surface(<span class="ts">"client"</span>)</code></pre>
 </div>
-<h2 id="lib-canvas">Canvas object</h2>
+<h2 id="lib-canvas">Canvas Object</h2>
 <p>The functions of the table that gui.createcanvas returns. Each canvas is its own window that you draw into.</p>
 <p>Make a canvas first, then call the functions on the table it returns.</p>
 <pre class="lua"><code><span class="tk">local</span> canvas = gui.createcanvas(<span class="tn">200</span>, <span class="tn">100</span>)
