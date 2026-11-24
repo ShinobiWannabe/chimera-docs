@@ -55,8 +55,11 @@
     <p class="syslist"><strong>System</strong> PlayStation Vita</p>
 <h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Vita3K core from the <a href="https://github.com/ToolAssisted-run/chimera-core-vita3k/tags" target="_blank" rel="noopener">Vita3K core tags page</a> on GitHub.</li></ul>
-<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera → Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
+<h2 id="open">Open the New Chimera Project Wizard</h2>
+<p>To run a game in Chimera you first make a project. A project holds the core, your game files and your settings, and it is where you make a movie (the list of inputs pressed on each frame). The New Chimera Project wizard makes the project. A wizard is a window that asks its questions one page at a time, and the sections below go through its pages in order.</p>
+<p>Open the File menu and choose New Chimera Project. The wizard opens on Page 1.</p>
 <h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
@@ -72,26 +75,26 @@
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.vpk, .zip, .pkg</td><td class="desc">The game, in one of three forms. It can be a .vpk file. It can be a NoNpDRM dump packed as a .zip (the game's folder, including its sce_sys/package/work.bin). Or it can be a PlayStation Store package (.pkg), with the game's licence in the Licence slot. Vita3K installs it into the machine before it starts. Vita3K's compatibility list (vita3k.org/compatibility) says which games work.</td></tr>
 <tr><td class="nm"><strong>Licence</strong></td><td>At most one</td><td class="mono">.bin, .rif, .txt</td><td class="desc"><em>Shown when the file under Game ends in .pkg.</em><br>The licence that decrypts a .pkg game. It is the game's work.bin (the 512-byte file a NoNpDRM dump keeps in sce_sys/package), the console's own .rif file for the game, or a .txt file holding the licence as a zRIF (one line of letters and digits, as NoPayStation lists it and a KEY.txt beside a package holds it). A package is encrypted and installs nothing without it. A .vpk or a .zip dump needs none, because a dump includes its own. The project and the movie record exactly which file was used, as they do for the game.</td></tr>
-<tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.zip</td><td class="desc">What the game already saved, as Emulator &gt; Export Save Data... wrote it. It is a .zip with savedata/&lt;TITLE ID&gt;/... (the system's save data) and data/... (where homebrew keeps its files). A save copied from a Vita with ux0 - /user/00/ in front of the path, or a plain &lt;TITLE ID&gt;/ folder, is accepted too. It is put into the machine before the game starts.</td></tr>
+<tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.zip</td><td class="desc">What the game already saved, as Emulator → Export Save Data... wrote it. It is a .zip with savedata/&lt;TITLE ID&gt;/... (the system's save data) and data/... (where homebrew keeps its files). A save copied from a Vita with ux0 - /user/00/ in front of the path, or a plain &lt;TITLE ID&gt;/ folder, is accepted too. It is put into the machine before the game starts.</td></tr>
 </tbody></table></div>
 <h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
-<li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
+<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
 <li><strong>Drag and drop</strong> works on each list. A file you drop lands in the group you drop it on. Folders are ignored.</li>
 </ul>
 <h3 id="page-2-rules">Rules</h3>
 <ul>
 <li>Groups whose How many is Exactly one or At least one need a file. These are Game. Next will not continue until each has a file.</li>
-<li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
+<li>Each group's title shows how many files it takes and the file types it expects. A file of another file type is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
-<li>A group is greyed out when its condition is not met. The description of the group starts with that condition in italics.</li>
+<li>A group is greyed out when its condition is not met.</li>
 </ul>
 <h3 id="page-2-drop">Starting from a Dropped File</h3>
-<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Vita3K claims .vpk.</p>
+<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. Vita3K claims .vpk.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
-<p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
+<p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Vita3K has 8 settings in the grid. All of them are always shown.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>

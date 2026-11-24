@@ -85,11 +85,11 @@
       var fr=document.createDocumentFragment();rows.forEach(function(x){fr.appendChild(x.r)});tb2.appendChild(fr);
     })});
   });
-  // ---- Inputs and Firmware pages: tables with more than 20 rows are shown a page at a time ----
-  if(/\/(inputs|firmware)\.html$/.test(location.pathname)){
+  // ---- every page: tables with more than 5 rows are shown a page at a time ----
+  {
     var pagers=[];
     [].forEach.call(document.querySelectorAll('.content table'),function(tbl){
-      var body=tbl.tBodies[0];if(!body||body.rows.length<=20)return;
+      var body=tbl.tBodies[0];if(!body||body.rows.length<=5)return;
       var st={size:5,page:0};
       var bar=document.createElement('div');bar.className='tpager';
       bar.innerHTML='<span class="plabel">Rows per page</span><span class="pseg" role="group" aria-label="Rows per page"><button type="button" data-n="5">5</button><button type="button" data-n="10">10</button><button type="button" data-n="20">20</button><button type="button" data-n="0">None</button></span>'+

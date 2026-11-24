@@ -55,8 +55,11 @@
     <p class="syslist"><strong>System</strong> Sword of the Samurai</p>
 <h2 id="before">Before You Begin</h2>
 <ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest OpenSamurai core from the <a href="https://github.com/ToolAssisted-run/chimera-core-opensamurai/tags" target="_blank" rel="noopener">OpenSamurai core tags page</a> on GitHub.</li></ul>
-<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera → Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
+<h2 id="open">Open the New Chimera Project Wizard</h2>
+<p>To run a game in Chimera you first make a project. A project holds the core, your game files and your settings, and it is where you make a movie (the list of inputs pressed on each frame). The New Chimera Project wizard makes the project. A wizard is a window that asks its questions one page at a time, and the sections below go through its pages in order.</p>
+<p>Open the File menu and choose New Chimera Project. The wizard opens on Page 1.</p>
 <h2 id="page-1">Page 1 - Choose the Core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
@@ -74,19 +77,19 @@
 </tbody></table></div>
 <h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
-<li><strong>Add</strong> opens a file picker titled Add to and the group name. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files. You can select several files at once.</li>
+<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
 <li><strong>Drag and drop</strong> works on each list. A file you drop lands in the group you drop it on. Folders are ignored.</li>
 </ul>
 <h3 id="page-2-rules">Rules</h3>
 <ul>
 <li>No group must be filled. Some systems start with nothing added, and others report that a game is missing when you press Create.</li>
-<li>Each group's title shows how many files it takes and the file types it expects. A file with another extension is still added, and a message at the bottom tells you it is not what the group expects.</li>
+<li>Each group's title shows how many files it takes and the file types it expects. A file of another file type is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
 
 <h2 id="page-3">Page 3 - Set Up the Game</h2>
-<p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
+<p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. OpenSamurai has 5 settings in the grid. All of them are always shown.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
