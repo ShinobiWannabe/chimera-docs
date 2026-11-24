@@ -12,6 +12,13 @@
   mb.addEventListener('click',function(){var o=sb.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
   var op=document.querySelector('details.grp[open]');
   if(op&&sb.scrollHeight>sb.clientHeight){sb.scrollTop=Math.max(0,op.offsetTop-90)}
+  // ---- every page: "Report a mistake" box at the bottom of the main column, kept out of the table of contents ----
+  var mainEl=document.getElementById('main');
+  if(mainEl&&!mainEl.querySelector('.qs-report')){
+    var rep=document.createElement('section');rep.className='qs-report';
+    rep.innerHTML='<h2>Report a mistake</h2><p>To report anything on this page that is wrong, tell us in the <a href="https://discord.com/invite/xy8UYSCWzB" target="_blank" rel="noopener">ToolAssisted.run Discord</a> or open an issue on <a href="https://github.com/ShinobiWannabe/chimera-docs/issues" target="_blank" rel="noopener">GitHub</a>.</p>';
+    mainEl.appendChild(rep);
+  }
   // ---- table of contents from h2/h3 ----
   var hs=document.querySelectorAll('.content h2[id],.content h3[id]');
   if(hs.length){
@@ -23,6 +30,33 @@
     var spy=function(){var cur=0;hs.forEach(function(h,i){if(h.getBoundingClientRect().top<120)cur=i});
       links.forEach(function(a,i){a.classList.toggle('on',i===cur)})};
     addEventListener('scroll',spy,{passive:true});spy();
+  }
+  // ---- every page: Beta tag, buttons that hide the side columns, and the in-page table of contents ----
+  var h1=mainEl&&mainEl.querySelector('h1');
+  if(h1&&!h1.querySelector('.qs-beta')){
+    var bt=document.createElement('span');bt.className='qs-beta';bt.textContent='Beta';h1.appendChild(document.createTextNode(' '));h1.appendChild(bt);
+    var tocEl=document.getElementById('toc'),tocLinks=tocEl&&!tocEl.hidden?tocEl.querySelectorAll('ul a'):[];
+    var bar=document.createElement('div');bar.className='qs-bar';
+    var nb=document.createElement('button');nb.type='button';nb.id='qs-navbtn';nb.setAttribute('aria-controls','sidebar');
+    var tbn=document.createElement('button');tbn.type='button';tbn.id='qs-tocbtn';tbn.setAttribute('aria-controls','toc');
+    if(sb)bar.appendChild(nb);
+    var box=null;
+    if(tocLinks.length){
+      bar.appendChild(tbn);
+      box=document.createElement('details');box.className='qs-toc';box.id='qs-toc';
+      box.innerHTML='<summary>Page Table of Contents</summary><ul></ul>';
+      var bu=box.querySelector('ul');
+      [].forEach.call(tocLinks,function(a){var li=document.createElement('li'),c=document.createElement('a');c.href=a.getAttribute('href');c.textContent=a.textContent;if(a.style.paddingLeft)li.className='h3';li.appendChild(c);bu.appendChild(li)});
+    }
+    h1.parentNode.insertBefore(bar,h1.nextSibling);
+    if(box)bar.parentNode.insertBefore(box,bar.nextSibling);
+    var getK=function(k){try{return localStorage.getItem(k)==='1'}catch(e){return false}};
+    var putK=function(k,v){try{localStorage.setItem(k,v?'1':'0')}catch(e){}};
+    var setK=function(btn,key,on,what,save){document.body.classList.toggle(key,on);btn.setAttribute('aria-pressed',on);btn.textContent=(on?'Show ':'Hide ')+what;if(save)putK(key,on)};
+    setK(nb,'qs-hide-nav',getK('qs-hide-nav'),'navigation');
+    setK(tbn,'qs-hide-toc',tocLinks.length?getK('qs-hide-toc'):false,'table of contents');
+    nb.addEventListener('click',function(){setK(nb,'qs-hide-nav',!document.body.classList.contains('qs-hide-nav'),'navigation',true)});
+    tbn.addEventListener('click',function(){var on=!document.body.classList.contains('qs-hide-toc');setK(tbn,'qs-hide-toc',on,'table of contents',true);if(on&&box)box.open=true});
   }
   // ---- filter: each .tools block filters the table/cards that follows it ----
   document.querySelectorAll('.tools').forEach(function(t){

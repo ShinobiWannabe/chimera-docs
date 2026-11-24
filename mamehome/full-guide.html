@@ -54,23 +54,10 @@
     <div class="eyebrow">MAME Home Systems</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> Atari 7800 · Intellivision · Vectrex · Odyssey 2 / Videopac · Channel F · Amstrad CPC · TI-83 · BBC Micro</p>
 <h2 id="before">Before you begin</h2>
-<ul>
-<li>A <strong>core</strong> is the package that holds an emulator. This page uses the MAME Home Systems core, which runs 8 systems, listed under System choices on Page 1. You get it from the Releases page of the chimera-core-mamehome repository on GitHub. In Chimera, the File menu entry Core Manager lists the cores you have installed.</li>
-<li>A <strong>project</strong> is what Chimera creates for one game. It records the names and SHA1 values of your files, your settings and your recorded inputs. A SHA1 is a fingerprint of a file's contents. A project never records where your files are on disk.</li>
-<li><strong>Firmware</strong> means system files copied from real hardware or from a game, such as a BIOS (the built-in startup program of a console or computer). Chimera does not include any.</li>
-<li>Nothing is saved to disk when you press Create. The project stays in memory until you choose Save Project, which asks where to put it.</li>
-<li>A <strong>movie</strong> is a recording of the inputs you press. It plays back the same way each time.</li>
-<li>A <strong>frame</strong> is one picture the game draws. A game draws many of them each second.</li>
-</ul>
+<ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest MAME Home Systems core from the <a href="https://github.com/ToolAssisted-run/chimera-core-mamehome/tags" target="_blank" rel="noopener">MAME Home Systems core tags page</a> on GitHub.</li></ul>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="buttons">Buttons on every page</h2>
-<div class="tablewrap"><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Back</strong></td><td class="desc">Returns to the page before. It is greyed out on Page 1. Pages that do not apply are skipped. Your answers are kept.</td></tr>
-<tr><td class="nm"><strong>Next</strong></td><td class="desc">Goes to the next page. On the last page it is called Create. If something is missing, a red message at the bottom left says what.</td></tr>
-<tr><td class="nm"><strong>Cancel</strong></td><td class="desc">Closes the wizard and creates nothing.</td></tr>
-</tbody></table></div>
-
-<h2 id="page-1">Page 1 Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. MAME Home Systems is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -113,7 +100,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 Add your files</h2>
+<h2 id="page-2">Page 2 - Add your files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. MAME Home Systems shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>1 to 20</td><td class="mono">.a78, .bin, .int, .itv, .rom, .vec, .gam, .chf, .cpr, .dsk, .ipf, .cdt, .wav, .sna, .ssd, .dsd, .uef, .83p, .83g</td><td class="desc">The game - a cartridge (.a78 for the Atari 7800, .int, .itv, .bin or .rom for the Intellivision, .vec, .gam or .bin for the Vectrex, .bin or .rom for the Odyssey 2, .chf or .bin for the Channel F, .cpr for the GX4000 and the CPC+), or for an Amstrad CPC a disk (.dsk), a tape (.cdt, .wav) or a snapshot (.sna), or for the TI-83 a program or a group of variables (.83p, .83g), which the core sends over the link cable a few seconds after power-on. Each file goes into the first of the machine's slots or drives that takes its kind. A CPC's disks are one list for its first drive, which starts with the first of them, Next Disk and Previous Disk put another in, and Eject Disk leaves the drive empty. Your files are never changed - Export Save Data writes out each disk the machine wrote to, under its own name, and a new project can take it as its game. The Machine setting says which machine it is.</td></tr>
@@ -135,7 +122,7 @@
 <h3 id="page-2-drop">Starting from a dropped file</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. MAME Home Systems claims .83g, .83p, .a78, .cdt, .chf, .cpr, .dsk, .gam, .int, .itv, .sna, .vec.</p>
 
-<h2 id="page-3">Page 3 Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set up the machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. MAME Home Systems has 30 settings in the grid. 30 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
@@ -173,7 +160,7 @@
 <tr><td class="nm"><strong>VideoNuLA</strong></td><td class="mono">No, Yes</td><td class="mono">No</td><td class="desc"><em>Shown when System is one of BBC Micro Model A, BBC Micro Model B, BBC Micro Model B+ 64K, BBC Micro Model B+ 128K, BBC Master 128.</em><br>A part of the machine's set-up, as MAME names it - 'VideoNuLA'. The machine reads it, so a movie needs the same value to play back. The default is MAME's.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
 <h3 id="page-4-list">The list</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>

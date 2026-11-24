@@ -54,24 +54,10 @@
     <div class="eyebrow">rsdkv5u</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> Sonic Origins (Sonic 1, Sonic 2, Sonic CD)</p>
 <h2 id="before">Before you begin</h2>
-<ul>
-<li>A <strong>core</strong> is the package that holds an emulator. This page uses the rsdkv5u core, which runs Sonic Origins (Sonic 1, Sonic 2, Sonic CD). You get it from the Releases page of the chimera-core-rsdkv5u repository on GitHub. In Chimera, the File menu entry Core Manager lists the cores you have installed.</li>
-<li>A <strong>project</strong> is what Chimera creates for one game. It records the names and SHA1 values of your files, your settings and your recorded inputs. A SHA1 is a fingerprint of a file's contents. A project never records where your files are on disk.</li>
-<li><strong>Firmware</strong> means system files copied from real hardware or from a game, such as a BIOS (the built-in startup program of a console or computer). Chimera does not include any.</li>
-<li>Nothing is saved to disk when you press Create. The project stays in memory until you choose Save Project, which asks where to put it.</li>
-<li>A <strong>movie</strong> is a recording of the inputs you press. It plays back the same way each time.</li>
-<li>A <strong>hash</strong> is a fingerprint of a file's contents, like a SHA1.</li>
-<li>A <strong>frame</strong> is one picture the game draws. A game draws many of them each second.</li>
-</ul>
+<ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest rsdkv5u core from the <a href="https://github.com/ToolAssisted-run/chimera-core-rsdkv5u/tags" target="_blank" rel="noopener">rsdkv5u core tags page</a> on GitHub.</li></ul>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="buttons">Buttons on every page</h2>
-<div class="tablewrap"><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Back</strong></td><td class="desc">Returns to the page before. It is greyed out on Page 1. Pages that do not apply are skipped. Your answers are kept.</td></tr>
-<tr><td class="nm"><strong>Next</strong></td><td class="desc">Goes to the next page. On the last page it is called Create. If something is missing, a red message at the bottom left says what.</td></tr>
-<tr><td class="nm"><strong>Cancel</strong></td><td class="desc">Closes the wizard and creates nothing.</td></tr>
-</tbody></table></div>
-
-<h2 id="page-1">Page 1 Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. rsdkv5u is a game core, which runs one game. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -81,7 +67,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 Add your files</h2>
+<h2 id="page-2">Page 2 - Add your files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. rsdkv5u shows 1 group of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Save data</strong></td><td>0 to 8</td><td class="mono">.bin</td><td class="desc">The files the game wrote, as Export Save Data gave them, under their own names. They are put in place before the game starts, so the game finds them as its own.</td></tr>
@@ -100,7 +86,7 @@
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 </ul>
 
-<h2 id="page-3">Page 3 Set up the game</h2>
+<h2 id="page-3">Page 3 - Set up the game</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated game, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. rsdkv5u has 6 settings in the grid. All of them are always shown.</p>
@@ -113,7 +99,7 @@
 <tr><td class="nm"><strong>Screen Width</strong></td><td class="mono">320 to 424</td><td class="mono">424</td><td class="desc">How many pixels wide the screen is (the engine's pixWidth setting). 424 is upstream's default, a 16 to 9 screen, 320 a 4 to 3 one. The width changes how far ahead the player sees and which objects are awake, so it changes the game, and a movie records it.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting.</p>
 <h3 id="page-4-list">The list</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>

@@ -54,23 +54,10 @@
     <div class="eyebrow">touchHLE</div><h1>Full Guide</h1>
     <p class="syslist"><strong>System</strong> iPhone OS</p>
 <h2 id="before">Before you begin</h2>
-<ul>
-<li>A <strong>core</strong> is the package that holds an emulator. This page uses the touchHLE core, which runs iPhone OS. You get it from the Releases page of the chimera-core-touchhle repository on GitHub. In Chimera, the File menu entry Core Manager lists the cores you have installed.</li>
-<li>A <strong>project</strong> is what Chimera creates for one game. It records the names and SHA1 values of your files, your settings and your recorded inputs. A SHA1 is a fingerprint of a file's contents. A project never records where your files are on disk.</li>
-<li><strong>Firmware</strong> means system files copied from real hardware or from a game, such as a BIOS (the built-in startup program of a console or computer). Chimera does not include any.</li>
-<li>Nothing is saved to disk when you press Create. The project stays in memory until you choose Save Project, which asks where to put it.</li>
-<li>A <strong>movie</strong> is a recording of the inputs you press. It plays back the same way each time.</li>
-<li>A <strong>frame</strong> is one picture the game draws. A game draws many of them each second.</li>
-</ul>
+<ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest touchHLE core from the <a href="https://github.com/ToolAssisted-run/chimera-core-touchhle/tags" target="_blank" rel="noopener">touchHLE core tags page</a> on GitHub.</li></ul>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="buttons">Buttons on every page</h2>
-<div class="tablewrap"><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Back</strong></td><td class="desc">Returns to the page before. It is greyed out on Page 1. Pages that do not apply are skipped. Your answers are kept.</td></tr>
-<tr><td class="nm"><strong>Next</strong></td><td class="desc">Goes to the next page. On the last page it is called Create. If something is missing, a red message at the bottom left says what.</td></tr>
-<tr><td class="nm"><strong>Cancel</strong></td><td class="desc">Closes the wizard and creates nothing.</td></tr>
-</tbody></table></div>
-
-<h2 id="page-1">Page 1 Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. touchHLE is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -80,7 +67,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 Add your files</h2>
+<h2 id="page-2">Page 2 - Add your files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. touchHLE shows 2 groups of files. Hover over a group to see the core's own help text.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>App</strong></td><td>Exactly one</td><td class="mono">.ipa</td><td class="desc">A DECRYPTED .ipa file for iPhone OS 2.x to iOS 4.0. An app downloaded from the App Store is encrypted and does not run. touchHLE's compatibility database (appdb.touchhle.org) lists which apps and versions work.</td></tr>
@@ -101,7 +88,7 @@
 <h3 id="page-2-drop">Starting from a dropped file</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. touchHLE claims .ipa.</p>
 
-<h2 id="page-3">Page 3 Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set up the machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. touchHLE has 4 settings in the grid. All of them are always shown.</p>

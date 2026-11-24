@@ -54,27 +54,10 @@
     <div class="eyebrow">Dolphin</div><h1>Full Guide</h1>
     <p class="syslist"><strong>Systems</strong> GameCube · Wii · Triforce</p>
 <h2 id="before">Before you begin</h2>
-<ul>
-<li>A <strong>core</strong> is the package that holds an emulator. This page uses the Dolphin core, which runs GameCube, Wii, Triforce. You get it from the Releases page of the chimera-core-dolphin repository on GitHub. In Chimera, the File menu entry Core Manager lists the cores you have installed.</li>
-<li>A <strong>project</strong> is what Chimera creates for one game. It records the names and SHA1 values of your files, your settings and your recorded inputs. A SHA1 is a fingerprint of a file's contents. A project never records where your files are on disk.</li>
-<li><strong>Firmware</strong> means system files copied from real hardware or from a game, such as a BIOS (the built-in startup program of a console or computer). Chimera does not include any.</li>
-<li>Nothing is saved to disk when you press Create. The project stays in memory until you choose Save Project, which asks where to put it.</li>
-<li>A <strong>movie</strong> is a recording of the inputs you press. It plays back the same way each time.</li>
-<li>A <strong>savestate</strong> is a copy of the whole machine at one moment. You can return to it later.</li>
-<li>A <strong>lag frame</strong> is a frame in which the game did not read your input. The lag count is how many there have been.</li>
-<li>A <strong>TAS</strong> (tool-assisted speedrun) is a run made with tools such as slow motion and savestates. TASVideos is a website that publishes them.</li>
-<li>A <strong>recompiler</strong> (also called a JIT) translates the console's code into your computer's code before running it, which is fast. An <strong>interpreter</strong> reads the console's code one step at a time, which is slower.</li>
-<li>A <strong>frame</strong> is one picture the game draws. A game draws many of them each second.</li>
-</ul>
+<ul class="qs-get"><li>Get the newest Chimera from the <a href="https://github.com/ToolAssisted-run/chimera/tags" target="_blank" rel="noopener">Chimera tags page</a> on GitHub.</li><li>Get the newest Dolphin core from the <a href="https://github.com/ToolAssisted-run/chimera-core-dolphin/tags" target="_blank" rel="noopener">Dolphin core tags page</a> on GitHub.</li></ul>
+<p>Most of these steps are the same as in <a href="../chimera/index.html">Chimera &gt; Quickstart</a>. Look there for a picture of each wizard page and for more general information.</p>
 
-<h2 id="buttons">Buttons on every page</h2>
-<div class="tablewrap"><table><thead><tr><th>Button</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Back</strong></td><td class="desc">Returns to the page before. It is greyed out on Page 1. Pages that do not apply are skipped. Your answers are kept.</td></tr>
-<tr><td class="nm"><strong>Next</strong></td><td class="desc">Goes to the next page. On the last page it is called Create. If something is missing, a red message at the bottom left says what.</td></tr>
-<tr><td class="nm"><strong>Cancel</strong></td><td class="desc">Closes the wizard and creates nothing.</td></tr>
-</tbody></table></div>
-
-<h2 id="page-1">Page 1 Choose the core</h2>
+<h2 id="page-1">Page 1 - Choose the core</h2>
 <p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Dolphin is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
@@ -90,7 +73,7 @@
 </tbody></table></div>
 <p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
-<h2 id="page-2">Page 2 Add your files</h2>
+<h2 id="page-2">Page 2 - Add your files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Dolphin shows 2 groups of files. Hover over a group to see the core's own help text. The file types offered in each group narrow to the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>1 to 8</td><td class="mono">.iso, .gcm, .rvz, .dol, .elf, .wad</td><td class="desc">The game. It can be a disc image (.iso or .gcm, or Dolphin's .rvz), a homebrew program (.dol or .elf) that is started directly, or a Wii channel (.wad, as used for WiiWare and Virtual Console games). A .wad makes this a Wii project. It is installed into the console's internal memory before the machine starts and launched from there, as the Wii Menu would do. A game on several discs takes every disc image, in order - the first is in the drive when the console is switched on, and the Next Disc, Previous Disc and Disc Swap controls change it when the game asks.</td></tr>
@@ -112,7 +95,7 @@
 <h3 id="page-2-drop">Starting from a dropped file</h3>
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims the file's extension already chosen. The file goes into the first group that lists that extension. Dolphin claims .bin, .dol, .elf, .gcm, .iso, .rvz, .wad.</p>
 
-<h2 id="page-3">Page 3 Set up the machine</h2>
+<h2 id="page-3">Page 3 - Set up the machine</h2>
 <p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A recording made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Dolphin has 18 settings in the grid. 15 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
@@ -137,7 +120,7 @@
 <tr><td class="nm"><strong>Widescreen Hack</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc"><em>Shown when Renderer is one of Hardware (OpenGL), Hardware (Vulkan).</em><br>Dolphin's widescreen hack (Graphics &gt; General). The game's 3D view is widened to fill a 16 to 9 screen. The picture keeps the console's own width, so it looks squeezed until you set Config &gt; Display &gt; Aspect Ratio to 16 to 9. The 2D parts of a game (menus, status displays) are not widened and may look stretched. It can change how the game runs and not only how it looks, because games read parts of their own picture back into the console's memory. A movie made with one value may not play back with another, so choose it when you create the project.</td></tr>
 </tbody></table></div>
 
-<h2 id="page-4">Page 4 Provide firmware</h2>
+<h2 id="page-4">Page 4 - Provide firmware</h2>
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
 <h3 id="page-4-list">The list</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>

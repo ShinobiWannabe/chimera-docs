@@ -274,3 +274,34 @@ tr.mfgroup:hover td{background:var(--panel)}
 figure.shot{margin:.6em 0 1.2em}
 figure.shot img{display:block;max-width:100%;height:auto}
 figure.shot figcaption{margin-top:.4em;color:var(--muted);font-size:.9rem}
+/* every page: Beta tag, buttons that hide the side columns, in-page table of contents, report box */
+.qs-beta{display:inline-block;vertical-align:middle;margin-left:4px;font-size:.8rem;font-weight:700;border-radius:999px;padding:2px 10px;border:2px solid #b45309;color:#b45309;letter-spacing:.03em}
+:root[data-theme="dark"] .qs-beta{color:#fdba74;border-color:#fdba74}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qs-beta{color:#fdba74;border-color:#fdba74}}
+.qs-bar{display:flex;flex-wrap:wrap;gap:8px;margin:.6em 0 1em}
+.qs-bar button{font:inherit;font-size:.85rem;cursor:pointer;color:var(--ink);background:var(--bg);border:2.5px solid var(--hair);border-radius:999px;padding:4px 14px}
+.qs-bar button:hover,.qs-bar button:focus-visible{border-color:var(--accent)}
+.qs-toc{display:none;border:2.5px solid var(--hair);border-radius:12px;padding:8px 14px;margin:0 0 1.2em;background:var(--bg)}
+.qs-toc>summary{font-weight:700;cursor:pointer}
+.qs-toc ul{list-style:none;padding-left:0;margin:.4em 0}
+.qs-toc li{margin:.15em 0}
+.qs-toc li.h3{padding-left:1.2em}
+.qs-report{border:2.5px solid var(--hair);border-radius:12px;padding:4px 16px 8px;margin-top:2em;background:var(--panel)}
+.qs-report h2{margin-top:.6em}
+body.qs-hide-toc .qs-toc{display:block}
+body.qs-hide-nav .sidebar{display:none!important}
+body.qs-hide-nav .shell{grid-template-columns:minmax(0,1fr) 230px}
+body.qs-hide-toc .toc{display:none!important}
+body.qs-hide-toc .shell{grid-template-columns:240px minmax(0,1fr)}
+body.qs-hide-nav.qs-hide-toc .shell{grid-template-columns:minmax(0,1fr)}
+@media (max-width:1220px){
+  .content .qs-toc{display:block}
+  #qs-tocbtn{display:none}
+  body.qs-hide-toc .shell{grid-template-columns:220px minmax(0,1fr)}
+  body.qs-hide-nav .shell,body.qs-hide-nav.qs-hide-toc .shell{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:960px){
+  body.qs-hide-nav .shell,body.qs-hide-toc .shell{grid-template-columns:minmax(0,1fr)}
+  body.qs-hide-nav .sidebar.open{display:block!important}
+  .qs-bar{display:none}
+}
