@@ -66,8 +66,9 @@
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. DSDA-Doom is a game core, which runs one game. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the DSDA-Doom line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the game version to run. DSDA-Doom offers 9 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
-<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. DSDA-Doom draws one way, so the box is greyed out and shows Software (Native).</td></tr>
+<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. DSDA-Doom draws one way, so the box is disabled and shows Software (Native).</td></tr>
 </tbody></table></div>
+<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message that tells you to install one.</p>
 <h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Doom II</strong></td></tr>
@@ -80,7 +81,6 @@
 <tr><td class="nm"><strong>Freedoom - Phase 1</strong></td></tr>
 <tr><td class="nm"><strong>Freedoom - Phase 2</strong></td></tr>
 </tbody></table></div>
-<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
 <h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. DSDA-Doom shows 1 group of files. Hover over a group to see the core's own help text. Each group offers only the file types of the System you chose on Page 1.</p>
@@ -89,7 +89,7 @@
 </tbody></table></div>
 <h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
-<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files.</li>
+<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder (the folder for your game files), which is set under Config → Paths. It filters to the group's file types, and you can switch it to All files.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
 <li><strong>Up and Down arrows</strong> appear in the groups that take more than one file, which are PWADs and patches. They move the selected row. The order is kept in the project.</li>
 <li><strong>Drag and drop</strong> works on each list. A file you drop lands in the group you drop it on. Folders are ignored.</li>
@@ -104,7 +104,7 @@
 <h2 id="page-3">Page 3 - Set Up the Game</h2>
 <p>This page asks for the emulation settings. Every setting here is part of the emulated game unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
-<p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. DSDA-Doom has 60 settings in the grid. 14 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
+<p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. DSDA-Doom has 60 settings in the grid. 14 of them appear only in some cases. Each of those descriptions starts with the case in italics.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>[Hexen] Player 1 Class</strong></td><td class="mono">Fighter, Cleric, Mage</td><td class="mono">Fighter</td><td class="desc"><em>Shown when System is Hexen.</em><br>The Hexen class of player 1.</td></tr>
 <tr><td class="nm"><strong>[Hexen] Player 2 Class</strong></td><td class="mono">Fighter, Cleric, Mage</td><td class="mono">Fighter</td><td class="desc"><em>Shown when System is Hexen.</em><br>The Hexen class of player 2.</td></tr>
@@ -172,14 +172,14 @@
 <p>This page asks where to find the firmware and game data files the core needs. DSDA-Doom always asks for at least one, so this page always appears. The list changes when you go back and change a setting or the System.</p>
 <h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
-<p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
+<p>Chimera looks in the Firmware folder first. That folder is set under Config → Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
 <ul>
 <li><strong>Select File</strong> picks a file for the selected row. Double-clicking a row does the same. It works even when a file was already found. If the row shows a SHA1, the file must match it, or the wizard refuses the file and shows the SHA1 it found. A row that shows "(your own file)" has no fixed SHA1, so any file is accepted and its SHA1 is recorded.</li>
 <li><strong>Clear</strong> removes the file chosen for the selected row.</li>
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
-<p>Create stays greyed out until every row that is not optional has a file.</p>
+<p>Create stays disabled until every row that is not optional has a file.</p>
 <h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>DSDA-Doom can ask for up to 9 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>

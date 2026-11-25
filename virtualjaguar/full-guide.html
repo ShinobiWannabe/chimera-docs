@@ -66,38 +66,38 @@
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Virtual Jaguar is an emulator. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the Virtual Jaguar line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Virtual Jaguar offers 2 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
-<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Virtual Jaguar draws one way, so the box is greyed out and shows Software (Native).</td></tr>
+<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Virtual Jaguar draws one way, so the box is disabled and shows Software (Native).</td></tr>
 </tbody></table></div>
+<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message that tells you to install one.</p>
 <h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari Jaguar</strong></td><td class="mono">.abs, .cof, .j64, .jag, .rom</td></tr>
 <tr><td class="nm"><strong>Atari Jaguar CD</strong></td><td class="mono">.cdi</td></tr>
 </tbody></table></div>
-<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
 <h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Virtual Jaguar shows 3 groups of files. Hover over a group to see the core's own help text. Each group offers only the file types of the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.j64, .jag, .rom, .abs, .cof, .bin</td><td class="desc"><em>Shown when System is Atari Jaguar.</em><br>The game's cartridge - a .j64 or .rom file (or .jag, .abs, .cof, .bin for homebrew).</td></tr>
-<tr><td class="nm"><strong>Disc</strong></td><td>Exactly one</td><td class="mono">.cue, .chd, .cdi</td><td class="desc"><em>Shown when System is Atari Jaguar CD.</em><br>The game's Jaguar CD - a .cue file with the track files it names beside it, a .chd file, or a .cdi file.</td></tr>
+<tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.j64, .jag, .rom, .abs, .cof, .bin</td><td class="desc"><em>Enabled when System is Atari Jaguar.</em><br>The game's cartridge - a .j64 or .rom file (or .jag, .abs, .cof, .bin for homebrew).</td></tr>
+<tr><td class="nm"><strong>Disc</strong></td><td>Exactly one</td><td class="mono">.cue, .chd, .cdi</td><td class="desc"><em>Enabled when System is Atari Jaguar CD.</em><br>The game's Jaguar CD - a .cue file with the track files it names beside it, a .chd file, or a .cdi file.</td></tr>
 <tr><td class="nm"><strong>Save data</strong></td><td>At most one</td><td class="mono">.eeprom, .memtrack, .srm, .sav</td><td class="desc">What the machine's save memory holds at the start, for a project that begins from a saved game - a file as Emulator → Export Save Data... writes it (jaguar.eeprom for a cartridge, jaguarcd.memtrack for the CD, which holds the Memory Track's saves), or a RetroArch .srm. The file is never changed. Leave this empty to start with an empty save memory. File names. a save file is identified by its file type, .eeprom, .memtrack, .srm or .sav.</td></tr>
 </tbody></table></div>
 <h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
-<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files.</li>
+<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder (the folder for your game files), which is set under Config → Paths. It filters to the group's file types, and you can switch it to All files.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
 <li><strong>Drag and drop</strong> works on each list. A file you drop lands in the group you drop it on. Folders are ignored.</li>
 </ul>
 <h3 id="page-2-rules">Rules</h3>
 <ul>
-<li>Groups whose How many is Exactly one or At least one need a file. These are Game, Disc. Next will not continue until each has a file.</li>
+<li>Game and Disc each need a file when they are enabled. Next stays disabled until each enabled group has a file.</li>
 <li>Each group's title shows how many files it takes and the file types it expects. A file of another file type is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
 <li>A .cue file (a small text file that lists a disc's track files) counts as one row and shows how many track files it brings. All its track files must sit in the same folder as the .cue file, or the wizard refuses it and names the missing file.</li>
-<li>A group is greyed out when its condition is not met.</li>
+<li>A group is disabled when its condition is not met.</li>
 </ul>
 <h3 id="page-2-drop">Starting from a Dropped File</h3>
-<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. Virtual Jaguar claims .abs, .cdi, .cof, .j64, .jag, .rom.</p>
+<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. When more than one installed core claims that file type, the wizard picks the first one in alphabetical order. To use another core, choose it on Page 1. Virtual Jaguar claims .abs, .cdi, .cof, .j64, .jag, .rom.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here is part of the emulated machine unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>

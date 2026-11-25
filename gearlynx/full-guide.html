@@ -66,8 +66,9 @@
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Gearlynx is an emulator. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the Gearlynx line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Gearlynx offers 4 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
-<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Gearlynx draws one way, so the box is greyed out and shows Software (Native).</td></tr>
+<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Gearlynx draws one way, so the box is disabled and shows Software (Native).</td></tr>
 </tbody></table></div>
+<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message that tells you to install one.</p>
 <h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th><th>File types</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Atari Lynx</strong></td><td class="mono">.lnx, .lyx, .o</td></tr>
@@ -75,35 +76,34 @@
 <tr><td class="nm"><strong>Atari Lynx Link (three)</strong></td><td class="mono">Any</td></tr>
 <tr><td class="nm"><strong>Atari Lynx Link (four)</strong></td><td class="mono">Any</td></tr>
 </tbody></table></div>
-<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
 <h2 id="page-2">Page 2 - Add Your Files</h2>
 <p>This page asks for the game files and other data. The core decides what appears here. Gearlynx shows 8 groups of files. Hover over a group to see the core's own help text. Each group offers only the file types of the System you chose on Page 1.</p>
 <div class="tablewrap"><table><thead><tr><th>Group</th><th>How many</th><th>File types</th><th>What it is for</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Game</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc">The Lynx game - a cartridge as a .lnx file (with its header) or a .lyx file (without one), or a BS93 program (.o), the format homebrew is sent to a Lynx in.</td></tr>
-<tr><td class="nm"><strong>Game for Lynx 2</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Shown when System is one of Atari Lynx Link (two), Atari Lynx Link (three), Atari Lynx Link (four).</em><br>The game of the Lynx player 2 plays on a link machine. The same game as the others' is fine.</td></tr>
-<tr><td class="nm"><strong>Game for Lynx 3</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Shown when System is one of Atari Lynx Link (three), Atari Lynx Link (four).</em><br>The game of the Lynx player 3 plays on a link machine. The same game as the others' is fine.</td></tr>
-<tr><td class="nm"><strong>Game for Lynx 4</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Shown when System is Atari Lynx Link (four).</em><br>The game of the Lynx player 4 plays on a link machine. The same game as the others' is fine.</td></tr>
+<tr><td class="nm"><strong>Game for Lynx 2</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Enabled when System is one of Atari Lynx Link (two), Atari Lynx Link (three), Atari Lynx Link (four).</em><br>The game of the Lynx player 2 plays on a link machine. The same game as the others' is fine.</td></tr>
+<tr><td class="nm"><strong>Game for Lynx 3</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Enabled when System is one of Atari Lynx Link (three), Atari Lynx Link (four).</em><br>The game of the Lynx player 3 plays on a link machine. The same game as the others' is fine.</td></tr>
+<tr><td class="nm"><strong>Game for Lynx 4</strong></td><td>Exactly one</td><td class="mono">.lnx, .lyx, .o</td><td class="desc"><em>Enabled when System is Atari Lynx Link (four).</em><br>The game of the Lynx player 4 plays on a link machine. The same game as the others' is fine.</td></tr>
 <tr><td class="nm"><strong>Save Data</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc">Optional - what the cartridge's EEPROM holds at the start, a .sav file as Export Save Data writes it. Leave it empty to start with an empty EEPROM. File names. a saved-data file is identified by its file type, .sav.</td></tr>
-<tr><td class="nm"><strong>Save Data for Lynx 2</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Shown when System is one of Atari Lynx Link (two), Atari Lynx Link (three), Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 2's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
-<tr><td class="nm"><strong>Save Data for Lynx 3</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Shown when System is one of Atari Lynx Link (three), Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 3's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
-<tr><td class="nm"><strong>Save Data for Lynx 4</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Shown when System is Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 4's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
+<tr><td class="nm"><strong>Save Data for Lynx 2</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Enabled when System is one of Atari Lynx Link (two), Atari Lynx Link (three), Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 2's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
+<tr><td class="nm"><strong>Save Data for Lynx 3</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Enabled when System is one of Atari Lynx Link (three), Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 3's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
+<tr><td class="nm"><strong>Save Data for Lynx 4</strong></td><td>At most one</td><td class="mono">.sav</td><td class="desc"><em>Enabled when System is Atari Lynx Link (four).</em><br>Optional - what the EEPROM of Lynx 4's cartridge holds at the start, a .sav file as Export Save Data writes it. File names. a saved-data file is identified by its file type, .sav.</td></tr>
 </tbody></table></div>
 <h3 id="page-2-controls">Controls in Each Group</h3>
 <ul>
-<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder set under Config, Paths. It filters to the group's file types, and you can switch it to All files.</li>
+<li><strong>Add</strong> opens a file picker which lets a user select one or more files. It starts in the ROM folder (the folder for your game files), which is set under Config → Paths. It filters to the group's file types, and you can switch it to All files.</li>
 <li><strong>Remove</strong> takes the selected row out of the list. It does not delete the file on disk.</li>
 <li><strong>Drag and drop</strong> works on each list. A file you drop lands in the group you drop it on. Folders are ignored.</li>
 </ul>
 <h3 id="page-2-rules">Rules</h3>
 <ul>
-<li>Groups whose How many is Exactly one or At least one need a file. These are Game, Game for Lynx 2, Game for Lynx 3, Game for Lynx 4. Next will not continue until each has a file.</li>
+<li>Game, Game for Lynx 2, Game for Lynx 3 and Game for Lynx 4 each need a file when they are enabled. Next stays disabled until each enabled group has a file.</li>
 <li>Each group's title shows how many files it takes and the file types it expects. A file of another file type is still added, and a message at the bottom tells you it is not what the group expects.</li>
 <li>Adding a file with the same name as one already in the group does nothing.</li>
-<li>A group is greyed out when its condition is not met.</li>
+<li>A group is disabled when its condition is not met.</li>
 </ul>
 <h3 id="page-2-drop">Starting from a Dropped File</h3>
-<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. Gearlynx claims .lnx, .lyx, .o.</p>
+<p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. When more than one installed core claims that file type, the wizard picks the first one in alphabetical order. To use another core, choose it on Page 1. Gearlynx claims .lnx, .lyx, .o.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
 <p>This page asks for the emulation settings. Every setting here is part of the emulated machine unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
@@ -122,14 +122,14 @@
 <p>This page asks where to find the firmware files your choices need. It only appears when at least one setting calls for a file. With some settings it is skipped, and the page before it ends with Create instead of Next. The list changes when you go back and change a setting or the System.</p>
 <h3 id="page-4-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
-<p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
+<p>Chimera looks in the Firmware folder first. That folder is set under Config → Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-4-buttons">Buttons</h3>
 <ul>
 <li><strong>Select File</strong> picks a file for the selected row. Double-clicking a row does the same. It works even when a file was already found. If the row shows a SHA1, the file must match it, or the wizard refuses the file and shows the SHA1 it found. A row that shows "(your own file)" has no fixed SHA1, so any file is accepted and its SHA1 is recorded.</li>
 <li><strong>Clear</strong> removes the file chosen for the selected row.</li>
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
-<p>Create stays greyed out until every row that is not optional has a file.</p>
+<p>Create stays disabled until every row that is not optional has a file.</p>
 <h3 id="page-4-which">Which Files Can Be Asked For</h3>
 <p>Gearlynx can ask for up to 1 file. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>

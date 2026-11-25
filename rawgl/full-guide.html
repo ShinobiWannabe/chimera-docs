@@ -66,8 +66,9 @@
 <tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. rawgl is a game core, which runs one game. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the rawgl line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the game version to run. rawgl offers 10 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
-<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. rawgl draws one way, so the box is greyed out and shows Software (Native).</td></tr>
+<tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. rawgl draws one way, so the box is disabled and shows Software (Native).</td></tr>
 </tbody></table></div>
+<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message that tells you to install one.</p>
 <h3 id="page-1-systems">System Choices</h3>
 <div class="tablewrap"><table><thead><tr><th>System</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Another World (DOS)</strong></td></tr>
@@ -81,12 +82,11 @@
 <tr><td class="nm"><strong>Out of This World (DOS demo)</strong></td></tr>
 <tr><td class="nm"><strong>Another World (Atari ST rolling demo)</strong></td></tr>
 </tbody></table></div>
-<p>A link at the bottom takes you to the Chimera issue page, for reporting problems and asking for features. If no core is installed, Next shows a message asking you to pick one.</p>
 
 <h2 id="page-2">Page 2 - Set Up the Game</h2>
 <p>This page asks for the emulation settings. Every setting here is part of the emulated game unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-2-settings">Settings</h3>
-<p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. rawgl has 6 settings in the grid. 5 of them only appear in some cases. Each of those descriptions starts with the case in italics.</p>
+<p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. rawgl has 6 settings in the grid. 5 of them appear only in some cases. Each of those descriptions starts with the case in italics.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Difficulty (20th Anniversary)</strong></td><td class="mono">easy, normal, hard</td><td class="mono">normal</td><td class="desc"><em>Shown when System is Another World 20th Anniversary Edition.</em><br>The difficulty of the 20th Anniversary Edition (rawgl's --difficulty option). The game's script reads it (variable 0xBF). The other releases have no difficulty setting.</td></tr>
 <tr><td class="nm"><strong>Language</strong></td><td class="mono">us, fr, de, es, it</td><td class="mono">us</td><td class="desc"><em>Shown when System is one of Another World (DOS), Another World (Amiga, English), Another World (Amiga, French), Another World (Atari ST), Another World 15th Anniversary Edition, Another World 20th Anniversary Edition, Out of This World (DOS demo), Another World (Atari ST rolling demo).</em><br>The language rawgl uses (its --language option). It selects the game's texts. For the DOS, Amiga and Atari ST releases these are rawgl's own tables (French for 'fr', English otherwise). The anniversary editions and the Windows 3.1 release use their own text files. It also selects the DOS release's title screen, which says "Another World" in French and "Out of This World" otherwise. It changes what the game draws, so a movie records it.</td></tr>
@@ -100,14 +100,14 @@
 <p>This page asks where to find the firmware and game data files the core needs. rawgl always asks for at least one, so this page always appears. The list changes when you go back and change a setting or the System.</p>
 <h3 id="page-3-list">The List</h3>
 <p>Each row shows the firmware name, the file name the core expects, its SHA1 and its status. The status reads "found" followed by a file name, "your own" followed by a file name, "not found", or "optional - core default used". A green row has a file and a red row does not. Hover over a row to read what the file is for.</p>
-<p>Chimera looks in the Firmware folder first. That folder is set under Config, Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
+<p>Chimera looks in the Firmware folder first. That folder is set under Config → Paths and is called Firmware beside Chimera by default. It also looks at files you chose for this core before. A file it finds is matched by its SHA1, so its name does not matter.</p>
 <h3 id="page-3-buttons">Buttons</h3>
 <ul>
 <li><strong>Select File</strong> picks a file for the selected row. Double-clicking a row does the same. It works even when a file was already found. If the row shows a SHA1, the file must match it, or the wizard refuses the file and shows the SHA1 it found. A row that shows "(your own file)" has no fixed SHA1, so any file is accepted and its SHA1 is recorded.</li>
 <li><strong>Clear</strong> removes the file chosen for the selected row.</li>
 <li><strong>Scan Folder</strong> searches a folder you pick and fills every row it can. The folder picker has an Include sub-folders box, ticked by default. Turn it off for a very large folder. A row with a SHA1 takes only the exact file. A row with no SHA1 takes the file with the expected name. A message at the bottom says how many files were scanned and how many rows were filled.</li>
 </ul>
-<p>Create stays greyed out until every row that is not optional has a file.</p>
+<p>Create stays disabled until every row that is not optional has a file.</p>
 <h3 id="page-3-which">Which Files Can Be Asked For</h3>
 <p>rawgl can ask for up to 24 files. Only the rows your choices call for appear. A description that starts with an italic condition is only asked for in that case.</p>
 <div class="tablewrap"><table><thead><tr><th>Firmware</th><th>File</th><th>SHA1</th><th>What it is</th></tr></thead><tbody>
