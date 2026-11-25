@@ -61,9 +61,9 @@
 <p>To run a game in Chimera you first make a project. A project holds the core, your game files and your settings, and it is where you make a movie (the list of inputs pressed on each frame). The New Chimera Project wizard makes the project. A wizard is a window that asks its questions one page at a time, and the sections below go through its pages in order.</p>
 <p>Open the File menu and choose New Chimera Project. The wizard opens on Page 1.</p>
 <h2 id="page-1">Page 1 - Choose the Core</h2>
-<p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
+<p>Page 1 asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Gearcoleco is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
+<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. Gearcoleco is an emulator. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the Gearcoleco line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to run. Gearcoleco offers 2 choices, listed below. The choice decides which settings, files and firmware the later pages show.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. Gearcoleco draws one way, so the box is greyed out and shows Software (Native).</td></tr>
@@ -103,15 +103,15 @@
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. Gearcoleco claims .col, .cv, .ddp, .dsk.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
-<p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A movie made with a project only plays back correctly with the same settings.</p>
+<p>This page asks for the emulation settings. Every setting here is part of the emulated machine unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. Gearcoleco has 5 settings in the grid. All of them are always shown.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Border</strong></td><td class="mono">none, topBottom, full284, full320</td><td class="mono">none</td><td class="desc">How much of the border around the picture is shown. It changes the picture only.</td></tr>
-<tr><td class="nm"><strong>Cartridge Board</strong></td><td class="mono">auto, standard, megacart, activision, ocm</td><td class="mono">auto</td><td class="desc">The kind of circuit board in the cartridge, which decides how a large game switches between its banks. Automatic tells it from the game. It is part of the machine, so a movie needs the same value.</td></tr>
+<tr><td class="nm"><strong>Cartridge Board</strong></td><td class="mono">auto, standard, megacart, activision, ocm</td><td class="mono">auto</td><td class="desc">The kind of circuit board in the cartridge, which decides how a large game switches between its banks. Automatic tells it from the game.</td></tr>
 <tr><td class="nm"><strong>No Sprite Limit</strong></td><td class="mono">True or False</td><td class="mono">False</td><td class="desc">Draw every sprite on a line, not only the first four as the video chip does. The game still sees the real chip. It changes the picture only.</td></tr>
-<tr><td class="nm"><strong>Region</strong></td><td class="mono">auto, ntsc, pal</td><td class="mono">auto</td><td class="desc">NTSC runs at 60 frames a second, PAL at 50. Automatic takes it from the game's entry in Gearcoleco's list of games, and is NTSC for a game not in the list. It is part of the machine, so a movie needs the same value.</td></tr>
-<tr><td class="nm"><strong>Video Chip</strong></td><td class="mono">auto, tms9918a, f18a</td><td class="mono">auto</td><td class="desc">The console's TMS9918A, or the F18A, a modern replacement chip that some new games need. Automatic picks the F18A for the games Gearcoleco knows need it. It is part of the machine, so a movie needs the same value.</td></tr>
+<tr><td class="nm"><strong>Region</strong></td><td class="mono">auto, ntsc, pal</td><td class="mono">auto</td><td class="desc">NTSC runs at 60 frames a second, PAL at 50. Automatic takes it from the game's entry in Gearcoleco's list of games, and is NTSC for a game not in the list.</td></tr>
+<tr><td class="nm"><strong>Video Chip</strong></td><td class="mono">auto, tms9918a, f18a</td><td class="mono">auto</td><td class="desc">The console's TMS9918A, or the F18A, a modern replacement chip that some new games need. Automatic picks the F18A for the games Gearcoleco knows need it.</td></tr>
 </tbody></table></div>
 
 <h2 id="page-4">Page 4 - Provide Firmware</h2>

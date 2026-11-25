@@ -61,9 +61,9 @@
 <p>To run a game in Chimera you first make a project. A project holds the core, your game files and your settings, and it is where you make a movie (the list of inputs pressed on each frame). The New Chimera Project wizard makes the project. A wizard is a window that asks its questions one page at a time, and the sections below go through its pages in order.</p>
 <p>Open the File menu and choose New Chimera Project. The wizard opens on Page 1.</p>
 <h2 id="page-1">Page 1 - Choose the Core</h2>
-<p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
+<p>Page 1 asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. TIC-80 is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
+<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. TIC-80 is an emulator. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the TIC-80 line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to emulate. TIC-80 has one, TIC-80, so the box is greyed out.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. TIC-80 draws one way, so the box is greyed out and shows Software (Native).</td></tr>
@@ -92,13 +92,13 @@
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. TIC-80 claims .png, .tic.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
-<p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A movie made with a project only plays back correctly with the same settings.</p>
+<p>This page asks for the emulation settings. Every setting here is part of the emulated machine unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-settings">Settings</h3>
 <p>The grid lists the settings alphabetically. Click a row to read its description in the pane under the grid. A value that differs from the default is shown in bold. Right-click a row and choose Reset to put the default back. True or False settings and settings with a fixed set of choices are picked from a list. Number and text settings are typed in. The System and Renderer are not in the grid because Page 1 already asked for them. TIC-80 has 3 settings in the grid. All of them are always shown.</p>
 <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Values</th><th>Default</th><th>What it does</th></tr></thead><tbody>
 <tr><td class="nm"><strong>Mouse Cursor</strong></td><td class="mono">show, hide</td><td class="mono">show</td><td class="desc">'show' draws the mouse cursor on the picture when the cart uses the mouse, as TIC-80's own player does - the cart's own cursor, or TIC-80's arrow. 'hide' leaves it out. It changes nothing in the machine.</td></tr>
 <tr><td class="nm"><strong>Picture</strong></td><td class="mono">full, screen</td><td class="mono">full</td><td class="desc">'full' shows TIC-80's whole picture, 256x144 - the 240x136 screen and the border around it, which carts can draw on. 'screen' shows the screen alone. Mouse X and Mouse Y are a place on the picture shown. It changes nothing in the machine.</td></tr>
-<tr><td class="nm"><strong>Starting Clock</strong></td><td class="mono">0 to 2147483647</td><td class="mono">946684800</td><td class="desc">The date and time a cart reads with tstamp() when it starts, in seconds since 1970 (Unix time). It then runs with the machine, at 60 frames a second. The default is the first of January 2000. The script languages also start their random numbers from this clock. This is a setting, and not your computer's clock, so that a movie plays back the same on any day. It is part of the machine, so a movie needs the same value.</td></tr>
+<tr><td class="nm"><strong>Starting Clock</strong></td><td class="mono">0 to 2147483647</td><td class="mono">946684800</td><td class="desc">The date and time a cart reads with tstamp() when it starts, in seconds since 1970 (Unix time). It then runs with the machine, at 60 frames a second. The default is the first of January 2000. The script languages also start their random numbers from this clock. This is a setting, and not your computer's clock, so that a movie plays back the same on any day.</td></tr>
 </tbody></table></div>
 
 <h2 id="create">Create the Project</h2>

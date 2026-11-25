@@ -61,9 +61,9 @@
 <p>To run a game in Chimera you first make a project. A project holds the core, your game files and your settings, and it is where you make a movie (the list of inputs pressed on each frame). The New Chimera Project wizard makes the project. A wizard is a window that asks its questions one page at a time, and the sections below go through its pages in order.</p>
 <p>Open the File menu and choose New Chimera Project. The wizard opens on Page 1.</p>
 <h2 id="page-1">Page 1 - Choose the Core</h2>
-<p>The first page asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
+<p>Page 1 asks you to pick a core, either an emulator or a game. Everything on the later pages depends on this choice.</p>
 <div class="tablewrap"><table><thead><tr><th>Option</th><th>What it does</th></tr></thead><tbody>
-<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. PCem is an emulator. The wizard opens on the kind you used last, when you have cores of that kind installed.</td></tr>
+<tr><td class="nm"><strong>Kind</strong></td><td class="desc">Emulator or Game. It decides which cores the Core list shows. PCem is an emulator. The wizard opens on the Kind, emulator or game, of the last core you used, if a core of that Kind is still installed.</td></tr>
 <tr><td class="nm"><strong>Core</strong></td><td class="desc">Lists the installed cores of that kind. Each line shows the core name, its version date and the systems it runs. Choose the PCem line. If you have two builds of one core installed, the line also shows the first eight characters of the package's fingerprint in square brackets.</td></tr>
 <tr><td class="nm"><strong>System</strong></td><td class="desc">Names the machine to emulate. PCem has one, IBM PC compatible, so the box is greyed out.</td></tr>
 <tr><td class="nm"><strong>Renderer</strong></td><td class="desc">Chooses how the picture is drawn, for cores that offer a choice. PCem draws one way, so the box is greyed out and shows Software (Native).</td></tr>
@@ -97,7 +97,7 @@
 <p>If you drag a file onto the main Chimera window, the wizard opens with the core that claims that file type already chosen. The file goes into the first group that lists that file type. PCem claims .86f, .cue, .dsk, .fdi, .hdd, .hdi, .ima, .imd, .img, .iso, .td0, .vhd.</p>
 
 <h2 id="page-3">Page 3 - Set Up the Machine</h2>
-<p>This page asks for the emulation settings. Every setting here shapes the emulated machine, and the project records each one at the value you leave it on. A movie made with a project only plays back correctly with the same settings.</p>
+<p>This page asks for the emulation settings. Every setting here is part of the emulated machine unless its description says otherwise. The project records each one at the value you leave it on, and a movie made with a project only plays back correctly with the same settings.</p>
 <h3 id="page-3-preset">Preset</h3>
 <p>A <strong>preset</strong> is a ready-made group of setting values. Pick one in the Preset box and press Apply. Apply writes the preset's values into the grid below, and you can change any of them afterwards. The project stores the values and not the preset name. A message at the bottom says how many settings were applied.</p>
 <div class="tablewrap"><table><thead><tr><th>Preset</th><th>What it is</th><th>Values it sets</th></tr></thead><tbody>
